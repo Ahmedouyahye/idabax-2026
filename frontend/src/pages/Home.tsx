@@ -180,10 +180,74 @@ export default function Home() {
  <Badge color="bg-ink/[0.05] text-mut hover:text-accent">{nd.wilaya}</Badge>
  </Link>
  ))}
- </div>
- </Card>
- </div>
- </div>
+  </div>
+  </Card>
+  </div>
+
+  {/* Download */}
+  <section className="relative overflow-hidden rounded-3xl border border-line bg-panel/70 p-6 md:p-8">
+   <div className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-accent2/[0.06] via-transparent to-accent/[0.04]" />
+   <div className="relative">
+    <div className="mb-4 flex items-center gap-3">
+     <svg viewBox="0 0 24 24" className="h-5 w-5 text-accent" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+     </svg>
+     <h2 className="font-display text-lg font-semibold text-fg">{t("home.download.title")}</h2>
+    </div>
+    <p className="mb-5 max-w-lg text-sm leading-relaxed text-mut">
+     {t("home.download.subtitle")}
+    </p>
+    <div className="flex flex-wrap gap-4">
+     <a
+      href="/downloads/EduFocus_Rapport_Analytique.pdf"
+      download
+      className="group flex items-center gap-3.5 rounded-xl border border-line bg-panel p-4 transition-all hover:border-accent2/40 hover:bg-panel2"
+     >
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent2/10 text-accent2">
+       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+       </svg>
+      </div>
+      <div className="min-w-0">
+       <div className="text-sm font-semibold text-fg group-hover:text-accent2">{t("home.download.report")}</div>
+       <div className="text-[11px] text-mut">{t("home.download.report_sub")}</div>
+      </div>
+      <svg viewBox="0 0 24 24" className="ml-auto h-4 w-4 shrink-0 text-mut transition-transform group-hover:translate-y-0.5 group-hover:text-accent2" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+       <polyline points="7 10 12 15 17 10" />
+       <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+     </a>
+     <a
+      href="/downloads/EduFocus_Donnees_Source.zip"
+      download
+      className="group flex items-center gap-3.5 rounded-xl border border-line bg-panel p-4 transition-all hover:border-accent/40 hover:bg-panel2"
+     >
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+       </svg>
+      </div>
+      <div className="min-w-0">
+       <div className="text-sm font-semibold text-fg group-hover:text-accent">{t("home.download.data")}</div>
+       <div className="text-[11px] text-mut">{t("home.download.data_sub")}</div>
+      </div>
+      <svg viewBox="0 0 24 24" className="ml-auto h-4 w-4 shrink-0 text-mut transition-transform group-hover:translate-y-0.5 group-hover:text-accent" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+       <polyline points="7 10 12 15 17 10" />
+       <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+     </a>
+    </div>
+   </div>
+  </section>
+  </div>
  );
 }
 
