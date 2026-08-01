@@ -1,0 +1,710 @@
+% ======================================================================
+%  EduFocus | Méthodes statistiques, ML et data mining — un cours appliqué
+%  Compilation : pdflatex (3 passes pour la table des matières)
+% ======================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+% ---------- Palette EduFocus ----------
+\definecolor{eduTeal}{HTML}{4EC3A3}
+\definecolor{eduAmber}{HTML}{EEB74F}
+\definecolor{eduRed}{HTML}{EF6F5F}
+\definecolor{eduDark}{HTML}{26323A}
+\definecolor{eduMute}{HTML}{A19077}
+
+% ---------- Boîtes ----------
+\newtcolorbox{meth}[1]{
+  colback=white, colframe=eduDark, boxrule=0.9pt,
+  title={\textbf{#1}}, fonttitle=\color{white}, coltitle=white,
+  colbacktitle=eduDark, breakable, sharp corners=south
+}
+\newtcolorbox{where}{
+  colback=eduTeal!6, colframe=eduTeal, boxrule=0.7pt,
+  title={\textbf{Où c'est utilisé dans EduFocus}},
+  fonttitle=\bfseries, coltitle=black!75, colbacktitle=eduTeal!40,
+  breakable, sharp corners=south
+}
+\newtcolorbox{notebox}{
+  colback=eduAmber!10, colframe=eduAmber, boxrule=0.7pt,
+  breakable, sharp corners=south
+}
+
+\newcommand{\txt}[1]{\texttt{#1}}
+
+% ---------- Listings ----------
+\lstset{
+  language=Python, basicstyle=\ttfamily\small,
+  keywordstyle=\color{eduDark}\bfseries,
+  commentstyle=\color{eduMute}\itshape,
+  stringstyle=\color{eduRed},
+  frame=single, rulecolor=\color{black!25}, backgroundcolor=\color{black!3},
+  breaklines=true, columns=fullflexible,
+  morekeywords={as,None,True,False,def,return}
+}
+
+% ---------- En-têtes ----------
+\title{\vspace{-1.2cm}
+  {\color{eduDark}\textbf{EduFocus}}\\[0.15cm]
+  {\Large Méthodes statistiques, apprentissage machine et data mining}\\[0.25cm]
+  {\large Un cours appliqué : les mathématiques derrière l'analyse\\ de l'exclusion scolaire en Mauritanie}
+}
+\author{Projet EduFocus -- Datathon IndabaX Mauritanie 2026}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-1.1cm}
+\begin{center}
+\begin{minipage}{0.92\textwidth}
+\small\itshape\color{eduMute}
+Ce document est un \emph{cours} qui explique \textbf{pourquoi} et \textbf{comment}
+chaque méthode est utilisée dans EduFocus : d'abord l'idée, ensuite la
+\textbf{formule mathématique}, puis \textbf{où} elle intervient dans le code,
+l'API et l'interface.
+\end{minipage}
+\end{center}
+
+\tableofcontents
+\newpage
+
+% ======================================================================
+\section{Introduction : le problème et les trois familles de méthodes}
+% ======================================================================
+
+EduFocus analyse l'exclusion scolaire en Mauritanie : \textbf{375\,566 enfants
+de 6--14 ans} (soit \textbf{33,1\,\%}) sont hors de l'école formelle selon
+l'enquête EPCV 2019, sur une population cible de 1\,135\,657 enfants répartis
+dans les \textbf{13 wilayas}.
+
+Pour transformer ces données brutes en décisions d'investissement, le projet
+utilise trois familles de méthodes complémentaires :
+
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{Statistiques} : décrire (moyennes, médianes, concentration) et
+        mesurer les liaisons entre indicateurs (corrélation de Pearson).
+  \item \textbf{Apprentissage machine} : \emph{non supervisé} pour regrouper
+        les wilayas (K-means, silhouette) et \emph{supervisé} pour expliquer
+        les déterminants individuels (régression logistique).
+  \item \textbf{Data mining et graphes} : règles d'association (Apriori) et
+        analyse de réseaux (détection de communautés de Louvain) pour
+        découvrir des structures non évidentes.
+\end{enumerate}
+
+\begin{notebox}
+\textbf{Fil rouge.} Chaque méthode est décrite dans ce cours comme suit :
+\emph{idée} $\to$ \emph{formule} $\to$ \emph{exemple chiffré} $\to$
+\emph{où c'est utilisé}. Un tableau récapitulatif complet est donné au
+§~\ref{sec:resume}.
+\end{notebox}
+
+% ======================================================================
+\section{Statistiques descriptives et inférentielles}
+% ======================================================================
+
+% ----------------------------------------------------------------------
+\subsection{Normalisation min--max}
+\label{sec:minmax}
+
+\textbf{Idée.} Les indicateurs n'ont pas la même unité (un taux en \%, un
+effectif en milliers, un ratio sans dimension). Pour les comparer et les
+combiner, on les ramène sur une échelle commune $[0,\,100]$.
+
+\begin{meth}{Formule}
+\[
+x'_i \;=\; \frac{x_i - \min(x)}{\max(x) - \min(x)} \times 100
+\]
+où $\min(x)$ et $\max(x)$ sont les valeurs extrêmes observées sur les
+13 wilayas. Si $\max(x)=\min(x)$ (pas de variation), on fixe $x'_i=50$.
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/index.py} -- fonction \txt{normalize()} : normalise
+\textbf{le volume} (nombre d'enfants hors école, en échelle log, cf.~\ref{sec:log})
+et \textbf{l'intensité} (taux de hors-école) avant de construire l'indice IPE
+(§~\ref{sec:ipe}). Accessible via \txt{/api/wilayas} et affiché sur la page
+\txt{/wilayas}, la carte \txt{/carte} et le rapport \txt{/rapport}.
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Standardisation z-score}
+\label{sec:zscore}
+
+\textbf{Idée.} Pour un \emph{clustering}, les données doivent être centrées et
+réduites : chaque variable doit avoir la même échelle, sinon les variables
+grandes en valeur domineraient les calculs de distance.
+
+\begin{meth}{Formule}
+\[
+z_i \;=\; \frac{x_i - \mu}{\sigma}, \qquad
+\mu=\frac{1}{n}\sum_{i=1}^{n}x_i, \qquad
+\sigma=\sqrt{\frac{1}{n}\sum_{i=1}^{n}(x_i-\mu)^2}.
+\]
+Après transformation : moyenne $0$, écart-type $1$.
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/clustering.py} -- \txt{StandardScaler().fit\_transform(...)}
+sur 8 features (intensité, pauvreté, ruralité, dépendance jeunes, mahadra,
+aucune instruction, écart de genre, densité d'écoles) avant le K-means
+(§~\ref{sec:kmeans}).
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Transformation logarithmique}
+\label{sec:log}
+
+\textbf{Idée.} Le nombre d'enfants hors école varie de quelques milliers
+(Nouadhibou) à des centaines de milliers (Hodh Ech Chargui). Une échelle
+logarithmique « compresse » les grands nombres et rend la variable symétrique.
+
+\begin{meth}{Formule}
+\[
+y \;=\; \log(1+x) \qquad\text{(log1p)}
+\]
+Le $+1$ garantit que $x=0 \mapsto y=0$. Utilisée avant la normalisation
+min--max du \emph{volume} et dans la matrice de stratégie.
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/index.py} (\txt{np.log1p}) et
+\txt{backend/analytics/matrice.py} (axe « volume » du scatter). Page
+\txt{/strategies}.
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Médiane et partage en quadrants}
+\label{sec:median}
+
+\textbf{Idée.} La médiane coupe une distribution en deux moitiés égales. Elle
+est robuste aux valeurs extrêmes (contrairement à la moyenne).
+
+\begin{meth}{Définition}
+Pour un échantillon trié $x_{(1)}\le\dots\le x_{(n)}$ :
+\[
+\text{médiane} \;=\;
+\begin{cases}
+x_{(\frac{n+1}{2})} & \text{si } n \text{ impair}\\[0.25em]
+\frac{1}{2}\big(x_{(\frac{n}{2})}+x_{(\frac{n}{2}+1)}\big) & \text{si } n \text{ pair}.
+\end{cases}
+\]
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/matrice.py} : chaque wilaya est classée \emph{haut/bas}
+selon la médiane du volume log et la médiane de l'intensité $\to$ \textbf{4
+quadrants} (« Effort massif », « Ciblage des effectifs », « Traitement
+local », « Consolidation »). Page \txt{/strategies}, endpoint \txt{/api/matrice}.
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Corrélation de Pearson}
+\label{sec:pearson}
+
+\textbf{Idée.} Mesure la force et le sens de la \emph{liaison linéaire} entre
+deux indicateurs, en unités normalisées (donc comparable entre paires).
+
+\begin{meth}{Formule}
+\[
+r \;=\;
+\frac{\sum_{i=1}^{n}(x_i-\bar{x})(y_i-\bar{y})}
+{\sqrt{\sum_{i=1}^{n}(x_i-\bar{x})^2}\;\sqrt{\sum_{i=1}^{n}(y_i-\bar{y})^2}}
+\;=\;\frac{\operatorname{Cov}(x,y)}{\sigma_x\,\sigma_y}
+\]
+Propriétés : $r\in[-1,\,1]$ ; $r=1$ (resp.\ $-1$) : corrélation linéaire
+positive (resp.\ négative) parfaite ; $r=0$ : aucune liaison linéaire.
+\end{meth}
+
+\begin{notebox}
+\textbf{Ce que $r$ mesure et ne mesure pas.} La corrélation est \emph{symétrique}
+et \emph{sans direction de causalité} : si le taux de pauvreté et le taux de
+hors-école corrèlent à $r=0{,}84$, cela ne prouve pas que la pauvreté
+\emph{cause} le hors-école. C'est le rôle de la régression logistique
+(§~\ref{sec:logit}) d'approcher la causalité en \emph{ajustant} les facteurs.
+\end{notebox}
+
+\begin{where}
+Trois usages :
+\begin{itemize}[leftmargin=2em]
+  \item \txt{backend/analytics/indicateurs.py} : matrice complète
+        $12\times12$ affichée en heatmap sur \txt{/indicateurs} et
+        \txt{/rapport} (endpoint \txt{/api/indicateurs}). Paires les plus
+        fortes :
+        dépendance jeunes $\times$ part 0--14 ans ($r=1{,}00$), aucune
+        instruction $\times$ chef de ménage sans éducation ($r=0{,}96$),
+        ruralité $\times$ dépendance jeunes ($r=0{,}91$).
+  \item \txt{backend/analytics/graph.py} : réseau de similarité entre
+        wilayas ($|r|>0{,}85$, top-2 voisins) et graphe de corrélations
+        entre indicateurs ($|r|>0{,}75$). Page \txt{/reseau}.
+  \item \txt{backend/analytics/concentration.py} : n'utilise pas $r$ mais
+        quantifie la concentration (voir §~\ref{sec:gini}).
+\end{itemize}
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Concentration : Pareto, Lorenz et indice de Gini}
+\label{sec:gini}
+
+\textbf{Idée.} Le hors-école n'est pas uniformément réparti. On veut savoir
+\textbf{combien de wilayas portent la moitié du problème} et mesurer
+l'inégalité de la répartition (loi de Pareto « 20\,\% des zones $\to$
+80\,\% du problème »).
+
+\begin{meth}{Formules}
+\textbf{Courbe de Lorenz} (part cumulée) : on trie $x_{(1)}\ge\dots\ge x_{(n)}$
+par ordre décroissant, alors
+\[
+\text{Lorenz}(k) \;=\; \frac{\sum_{i=1}^{k}x_{(i)}}{\sum_{i=1}^{n}x_{(i)}} \times 100.
+\]
+\textbf{Indice de Gini} (formule par paires, utilisée dans le code) :
+\[
+G \;=\; \frac{\sum_{i=1}^{n}\sum_{j=1}^{n}|x_i-x_j|}
+{2\,n\sum_{i=1}^{n}x_i}.
+\]
+Interprétation : $G=0$ répartition parfaitement égale, $G=1$ concentration
+totale. $G$ est lié à l'aire entre la courbe de Lorenz et la diagonale
+(égalité parfaite).
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/concentration.py} : calcule la part cumulée des 5
+premières wilayas (\textbf{top5}), le nombre de wilayas pour atteindre
+50\,\% du problème, la courbe de Lorenz et le Gini. Endpoints
+\txt{/api/concentration} ; affiché sur \txt{/} (Home), \txt{/strategies}
+et \txt{/rapport}.
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Tendance et régression linéaire simple (moindres carrés)}
+\label{sec:ols}
+
+\textbf{Idée.} Pour projeter le taux de hors-école jusqu'en 2030, on mesure la
+pente de la tendance passée (World Bank, 2008--2024) par régression linéaire.
+
+\begin{meth}{Formule}
+Modèle $y = \beta_0 + \beta_1 x + \varepsilon$. Le moindre carré minimise
+$\sum_i\big(y_i - \beta_0 - \beta_1 x_i\big)^2$, solution :
+\[
+\beta_1 \;=\; \frac{\sum_{i}(x_i-\bar{x})(y_i-\bar{y})}
+{\sum_{i}(x_i-\bar{x})^2}, \qquad
+\beta_0 \;=\; \bar{y} - \beta_1\bar{x}.
+\]
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/scenarios.py} -- \txt{np.polyfit(x, y, 1)} : pente
+annuelle bornée dans $[-1{,}0,\,0]$ points par an, prolongée sur
+$\text{2030}-2022$ ans. Endpoint \txt{/api/scenarios}, page \txt{/strategies}.
+Les séries brutes WDI sont servies par \txt{/api/trends} sur \txt{/tendances}.
+\end{where}
+
+% ======================================================================
+\section{Apprentissage machine non supervisé : typologie des wilayas}
+% ======================================================================
+
+% ----------------------------------------------------------------------
+\subsection{K-means}
+\label{sec:kmeans}
+
+\textbf{Idée.} Regrouper les 13 wilayas en $k$ classes homogènes selon leurs
+8 indicateurs normalisés. Deux wilayas d'une même classe ont des profils
+d'exclusion proches $\Rightarrow$ la même stratégie d'investissement.
+
+\begin{meth}{Algorithme et objectif}
+On minimise l'\emph{inertie} (somme des distances quadratiques intra-classe) :
+\[
+J \;=\; \sum_{c=1}^{k}\sum_{i\in C_c}\lVert x_i - \mu_c \rVert^2 .
+\]
+Algorithme itératif (Lloyd) :
+\begin{enumerate}[leftmargin=2em]
+  \item initialiser $k$ centres $\mu_c$ aléatoirement ;
+  \item \textbf{affectation} : $C_c \gets \{i : c=\arg\min_c \lVert x_i-\mu_c\rVert\}$ ;
+  \item \textbf{mise à jour} : $\mu_c \gets \frac{1}{|C_c|}\sum_{i\in C_c} x_i$ ;
+  \item répéter 2--3 jusqu'à convergence (inertie stable).
+\end{enumerate}
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/clustering.py} : \txt{KMeans(n\_clusters=k, n\_init=20)}
+sur données z-scorées. $k=3$ retenu pour une typologie lisible (modérée /
+dominante « mahadra » / dominante « aucune instruction »). Endpoint
+\txt{/api/clusters}, pages \txt{/clusters}, \txt{/wilayas} et \txt{/rapport}.
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Choisir $k$ : inertie (coude) et silhouette}
+\label{sec:silhouette}
+
+\textbf{Idée.} L'inertie $J(k)$ décroît toujours avec $k$ ; le bon $k$ est
+celui où la courbe « casse » (méthode du coude). La \emph{silhouette} mesure
+la cohésion d'un point avec sa classe par rapport à la classe voisine.
+
+\begin{meth}{Silhouette}
+Pour chaque point $i$ :
+\begin{align*}
+a(i) &= \text{distance moyenne aux points de sa propre classe},\\
+b(i) &= \min\ \text{des distances moyennes aux autres classes},\\
+s(i) &= \frac{b(i)-a(i)}{\max\big(a(i),\,b(i)\big)} \;\in\; [-1,\,1].
+\end{align*}
+$s(i)\approx 1$ : point bien classé ; $s(i)<0$ : point probablement
+mal affecté. On choisit le $k$ qui maximise la \emph{silhouette moyenne}.
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/clustering.py} -- \txt{choose\_k()} balaye $k\in[2,6]$,
+calcule inerties + \txt{silhouette\_score} ; le $k$ optimal est ensuite
+raffiné pour la lisibilité (voir la note dans \txt{run\_all.py}).
+\end{where}
+
+% ======================================================================
+\section{Apprentissage machine supervisé : les déterminants individuels}
+% ======================================================================
+
+% ----------------------------------------------------------------------
+\subsection{Régression logistique}
+\label{sec:logit}
+
+\textbf{Idée.} Prédire une variable \emph{binaire} -- \txt{hors\_ecole}
+(0/1) pour chaque enfant de 6--14 ans de l'EPCV (16\,451 enfants) -- en
+fonction de facteurs : sexe, âge, milieu, pauvreté, éducation du chef de
+ménage, wilaya.
+
+\begin{meth}{Modèle}
+La probabilité d'être hors école s'écrit avec la fonction logistique :
+\[
+p \;=\; P(y=1\mid x) \;=\; \frac{1}{1+e^{-(\beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p)}}.
+\]
+Ou, en logit (log des cotes) :
+\[
+\log\frac{p}{1-p} \;=\; \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p.
+\]
+Les $\beta$ sont estimés par \textbf{maximum de vraisemblance} : on maximise
+$L(\beta)=\prod_i p_i^{y_i}(1-p_i)^{1-y_i}$.
+\end{meth}
+
+\begin{meth}{Odds-ratio et intervalle de confiance}
+Le \emph{odds-ratio} de la variable $x_j$ est
+\[
+OR_j = e^{\beta_j},
+\]
+avec intervalle de confiance à 95\,\% $\big[e^{\beta_j - 1{,}96\,\mathrm{SE}_j},\,
+e^{\beta_j + 1{,}96\,\mathrm{SE}_j}\big]$.
+\begin{itemize}[leftmargin=2em]
+  \item $OR>1$ : le facteur \emph{augmente} la probabilité d'exclusion ;
+  \item $OR<1$ : il la \emph{réduit} ;
+  \item tous les effets sont \emph{ajustés} : « toutes choses égales par ailleurs ».
+\end{itemize}
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/logit.py} : \txt{sm.Logit(...)} de
+\texttt{statsmodels}, avec variables binaires (références : garçon,
+10--14 ans, urbain, non pauvre, Nouakchott). Résultats : \txt{odds\_ratio},
+IC, \txt{pvalue}, \txt{pseudo\_r2}, \txt{aic}. Endpoint \txt{/api/logit},
+affiché sur \txt{/} (Home) et \txt{/rapport}. Exemple de lecture : un enfant en milieu rural a
+un $OR>1$ par rapport à l'urbain, \emph{à sexe, âge, pauvreté et wilaya
+égaux}.
+\end{where}
+
+\begin{meth}{Séparation complète et pseudo-R²}
+Le facteur « chef de ménage sans éducation » est \emph{parfaitement
+prédictif} (tout enfant concerné est hors école) : la vraisemblance n'a pas
+de maximum fini, le coefficient n'est pas estimable. Le code le détecte et le
+traite par les règles d'association (confiance 100\,\%, lift 3{,}02, cf.\
+§~\ref{sec:apriori}).
+\[
+\text{pseudo-}R^2_{\text{McFadden}} = 1 - \frac{\ln L(\text{modèle complet})}
+{\ln L(\text{modèle constant})}, \qquad
+\text{AIC} = 2p - 2\ln L.
+\]
+\end{meth}
+
+% ======================================================================
+\section{Data mining : règles d'association (Apriori)}
+\label{sec:apriori}
+
+\textbf{Idée.} Trouver des \emph{combinaisons de facteurs} fréquemment
+associées au hors-école, sans hypothèse a priori : milieu rural, pauvreté,
+absence d'éducation du chef de ménage, région $\to$ hors école.
+
+\begin{meth}{Support, confiance, lift}
+Pour une règle $A \Rightarrow B$ (ici $B=\{\text{hors école}\}$) :
+\[
+\text{support}(A\Rightarrow B) = \frac{\text{freq}(A\cup B)}{N},
+\qquad
+\text{confiance}(A\Rightarrow B) = \frac{\text{support}(A\cup B)}{\text{support}(A)},
+\]
+\[
+\text{lift}(A\Rightarrow B) = \frac{\text{confiance}(A\Rightarrow B)}{\text{support}(B)}.
+\]
+\begin{itemize}[leftmargin=2em]
+  \item \emph{Support} : fréquence de la combinaison dans la population ;
+  \item \emph{Confiance} : probabilité de $B$ sachant $A$ ;
+  \item \emph{Lift} : rapport à l'indépendance. $\text{lift}>1$ : $A$ rend
+        $B$ \emph{plus probable} qu'au hasard ; c'est le critère de
+        pertinence utilisé ici (seuil $>1{,}05$).
+\end{itemize}
+\end{meth}
+
+\begin{meth}{Algorithme Apriori}
+\begin{enumerate}[leftmargin=2em]
+  \item générer les \emph{itemsets} de taille $1$ dont le support dépasse
+        $\min\_support$ ;
+  \item construire itérativement les itemsets de taille $k+1$ par
+        \emph{jointure} d'itemsets de taille $k$ (propriété d'anti-monotonie :
+        tout sur-ensemble d'un itemset non fréquent est non fréquent) ;
+  \item produire les règles et ne garder que celles satisfaisant
+        $\min\_confidence$ et un lift $>1$.
+\end{enumerate}
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/rules.py} : \txt{apriori()} et
+\txt{association\_rules()} de \texttt{mlxtend} sur les 16\,451 enfants.
+Filtres : conséquence = exactement \{\txt{hors\_ecole}\}, lift $>1{,}05$.
+Endpoints : \txt{/api/rules}.
+\textbf{Page utilisée} : \txt{/regles} (page dédiée du frontend), qui
+affiche les règles triées par lift, les règles sans la variable « chef de
+ménage » (\emph{sans\_cm}) et les règles par région (\emph{par\_region}).
+Résultat : la variable « chef de ménage sans éducation » produit une règle
+à confiance 100\,\% et lift 3{,}02 -- c'est le facteur individuel le plus
+fort, là où la régression logistique ne pouvait pas l'estimer.
+\end{where}
+
+% ======================================================================
+\section{Analyse de graphes et détection de communautés}
+\label{sec:graphs}
+
+% ----------------------------------------------------------------------
+\subsection{Représentation en graphe}
+
+\textbf{Idée.} Un \emph{graphe} $G=(V,E)$ est un ensemble de nœuds $V$
+(wilayas ou indicateurs) reliés par des arêtes $E$ pondérées (par $|r|$).
+La structure du graphe révèle des groupes, des hubs et des isolés invisibles
+dans un tableau.
+
+\begin{meth}{Degré et matrice d'adjacence}
+Le \emph{degré} $\deg(v)$ d'un nœud est le nombre de ses voisins.
+La \emph{matrice d'adjacence} $A$ vaut $A_{uv}=1$ si $(u,v)\in E$, et la
+matrice \emph{pondérée} $W_{uv}=|r_{uv}|$ sinon $0$. Le degré (pondéré) est
+$\deg(v)=\sum_u W_{uv}$. Dans EduFocus, le degré des indicateurs détermine
+la \emph{taille des nœuds} du graphe.
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/graph.py} :
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Réseau de similarité des wilayas} : nœuds = wilayas, arêtes =
+        paires dont $|r|\ge0{,}85$ (top-2 voisins), poids = $|r|$.
+  \item \textbf{Graphe de corrélations des indicateurs} : nœuds =
+        indicateurs, arêtes si $|r|\ge0{,}75$, taille des nœuds $\propto$
+        degré. Endpoints \txt{/api/graph/similarite} et
+        \txt{/api/graph/correlations} ; page \txt{/reseau}.
+\end{itemize}
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Détection de communautés : Louvain}
+
+\textbf{Idée.} Regrouper les wilayas qui partagent le même profil
+d'exclusion. La méthode de \emph{Louvain} maximise la \emph{modularité} $Q$.
+
+\begin{meth}{Modularité de Newman--Girvan}
+\[
+Q \;=\; \frac{1}{2m}\sum_{u,v}
+\Big[\,W_{uv} - \frac{d_u d_v}{2m}\Big]\,\delta(c_u,c_v),
+\]
+avec $m=\frac12\sum_{u,v}W_{uv}$ (poids total des arêtes), $d_u$ le degré
+pondéré de $u$, et $\delta(c_u,c_v)=1$ si $u$ et $v$ sont dans la même
+communauté. $Q\in[-1,1]$ ; $Q>0{,}3$ indique une structure communautaire
+réelle (meilleure que le hasard).
+\end{meth}
+
+\begin{meth}{Algorithme de Louvain}
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Phase locale} : chaque nœud est déplacé vers la communauté
+        voisine qui augmente le plus $Q$ (gain de modularité), jusqu'à
+        stabilisation ;
+  \item \textbf{Agrégation} : les communautés deviennent des super-nœuds ;
+  \item on répète 1--2 jusqu'à convergence.
+\end{enumerate}
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/graph.py} :
+\txt{community\_louvain.best\_partition(G, random\_state=42)} (python-louvain).
+Résultat : \textbf{3 communautés} de wilayas au profil proche, exposées sur
+\txt{/reseau} (couleurs des nœuds) et dans le rapport PDF \txt{/rapport}.
+\end{where}
+
+% ----------------------------------------------------------------------
+\subsection{Layout « force-directed » (carte du graphe)}
+
+\textbf{Idée.} Positionner les nœuds dans le plan en simulant un système de
+forces physique : les arêtes tirent les nœuds (ressorts), les nœuds se
+repoussent (répulsion de Coulomb).
+
+\begin{meth}{Force dirigée (modèle ressort)}
+Force de ressort entre nœuds reliés : $F_s = k_s\,(d - l_0)$ (Hooke) ;
+répulsion entre tous les nœuds : $F_r = \dfrac{k_r}{d^2}$ ; amortissement
+$\eta$ : on itère $v \mathrel{+}= (F_s+F_r)/m$, $x \mathrel{+}= \eta\,v$.
+La position finale est une lecture visuelle de la structure : wilayas
+connectées se rapprochent, communautés forment des groupes visibles.
+\end{meth}
+
+\begin{where}
+Frontend : \txt{frontend/src/lib/charts.ts} (\txt{forceGraph()}) avec
+ECharts (layout \emph{force}). Taille des nœuds wilayas $\propto$ nombre
+d'enfants hors école ; page \txt{/reseau}.
+\end{where}
+
+% ======================================================================
+\section{Indicateur composite : l'Indice de Priorité Éducative (IPE)}
+\label{sec:ipe}
+
+\textbf{Idée.} Combiner trois dimensions en \emph{une} note 0--100 pour
+classer les wilayas : volume du problème, intensité de l'exclusion,
+vulnérabilité du territoire.
+
+\begin{meth}{Formule}
+\[
+\boxed{\;\text{IPE} \;=\; 0{,}40\,\text{Volume} + 0{,}35\,\text{Intensité}
++ 0{,}25\,\text{Vulnérabilité}\;}
+\]
+avec (toutes normalisées en 0--100, voir §~\ref{sec:minmax}) :
+\begin{itemize}[leftmargin=2em]
+  \item $\text{Volume} = \log(1+\text{enfants hors école})$ normalisé ;
+  \item $\text{Intensité} = \text{taux hors école (\%)}$ normalisé ;
+  \item $\text{Vulnérabilité} = 0{,}75\,\text{pauvreté} + 0{,}25\,\text{dépendance jeunes}$.
+\end{itemize}
+Le rang est la \emph{position décroissante} de l'IPE sur les 13 wilayas
+(méthode \txt{min} pour les ex æquo).
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/index.py} (\txt{build\_index()}) : classe les wilayas
+et dérive un \emph{levier d'action} dominant par règles de seuil (construire
+des écoles / passerelles mahadra / rétention). Endpoints \txt{/api/summary}
+et \txt{/api/wilayas} ; utilisé sur \txt{/}, \txt{/wilayas}, \txt{/carte}
+(choroplèthe) et \txt{/rapport}.
+\end{where}
+
+% ======================================================================
+\section{Scénarios prospectifs à 2030}
+\label{sec:scenarios}
+
+\textbf{Idée.} Traduire les leviers en trajectoires chiffrées : tendance
+« laisser-faire », passerelles mahadra $\to$ formel (25\,\% et 50\,\%),
+construction d'écoles de proximité.
+
+\begin{meth}{Projection}
+Avec $\tau_0=33{,}1\,\%$ (2022), pente annuelle $\beta$ (§~\ref{sec:ols}) et
+$n_y = 2030-2022$ :
+\[
+\tau_{2030} = \max\big(\tau_0 + \beta\,n_y,\;0\big)
+\]
+puis, si l'on convertit une part $s$ des $M_0$ enfants mahadra (199\,493)
+vers le formel :
+\[
+\tau_{2030} \leftarrow \tau_{2030} - \frac{s\,M_0}{P_{6-14}} \times 100
+\]
+où $P_{6-14}=1\,135\,657$. Besoin en écoles : on cible une densité de 1
+établissement pour 1\,000 enfants,
+$\text{besoin}_w = \max\big(1 - d_w,\,0\big)\times \frac{\text{pop}_{6-14}^{(w)}}{1000}$,
+et coût estimé à 25\,M\,MRO par établissement.
+\end{meth}
+
+\begin{where}
+\txt{backend/analytics/scenarios.py} : 4 scénarios comparés (taux et
+effectifs 2030, réduction vs 2022, coûts). Endpoint \txt{/api/scenarios},
+page \txt{/strategies} et rapport \txt{/rapport}.
+\end{where}
+
+% ======================================================================
+\section{Récapitulatif : méthode $\leftrightarrow$ où c'est utilisé}
+\label{sec:resume}
+% ======================================================================
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}l l l X X@{}}
+\toprule
+\textbf{Famille} & \textbf{Méthode} & \textbf{Backend} & \textbf{Endpoint} & \textbf{Pages} \\
+\midrule
+Stat. & Normalisation min--max & \txt{index.py} & \txt{/api/wilayas} & \txt{/}, \txt{/wilayas}, \txt{/carte}, \txt{/rapport} \\
+Stat. & z-score & \txt{clustering.py} & \txt{/api/clusters} & \txt{/clusters}, \txt{/wilayas}, \txt{/rapport} \\
+Stat. & log1p & \txt{index.py}, \txt{matrice.py} & \txt{/api/wilayas}, \txt{/api/matrice} & \txt{/strategies} \\
+Stat. & Médianes (quadrants) & \txt{matrice.py} & \txt{/api/matrice} & \txt{/strategies}, \txt{/rapport} \\
+Stat. & Corrélation de Pearson & \txt{indicateurs.py}, \txt{graph.py} & \txt{/api/indicateurs}, \txt{/api/graph/*} & \txt{/indicateurs}, \txt{/reseau}, \txt{/rapport} \\
+Stat. & Pareto / Lorenz / Gini & \txt{concentration.py} & \txt{/api/concentration} & \txt{/}, \txt{/strategies}, \txt{/rapport} \\
+Stat. & OLS (tendance) & \txt{scenarios.py} & \txt{/api/scenarios} & \txt{/strategies}, \txt{/rapport} \\
+ML non sup. & K-means + silhouette & \txt{clustering.py} & \txt{/api/clusters} & \txt{/clusters}, \txt{/wilayas}, \txt{/rapport} \\
+ML sup. & Régression logistique & \txt{logit.py} & \txt{/api/logit} & \txt{/}, \txt{/rapport} \\
+DM & Apriori (règles) & \txt{rules.py} & \txt{/api/rules} & \txt{/regles} \\
+Graphe & Louvain (communautés) & \txt{graph.py} & \txt{/api/graph/similarite} & \txt{/reseau} \\
+Graphe & Force-directed (ECharts) & --- & --- & \txt{/reseau} \\
+Index & IPE composite & \txt{index.py} & \txt{/api/summary} & \txt{/}, \txt{/wilayas}, \txt{/carte}, \txt{/rapport} \\
+Prospectif & Projections 2030 & \txt{scenarios.py} & \txt{/api/scenarios} & \txt{/strategies}, \txt{/rapport} \\
+\bottomrule
+\end{tabularx}
+\caption{Correspondance complète méthode $\to$ code $\to$ API $\to$ interface.}
+\end{table}
+
+\begin{notebox}
+\textbf{Lecture croisée.} Les méthodes ne sont pas isolées : la normalisation
+alimente le clustering et l'IPE ; la corrélation alimente les graphes ; les
+règles d'association compensent la limite de la régression (séparation
+complète). L'\textbf{IPE} hiérarchise, le \textbf{clustering} regroupe,
+les \textbf{graphes} révèlent la structure, la \textbf{logistique} explique
+les causes individuelles, et les \textbf{scénarios} chiffrent les actions.
+\end{notebox}
+
+% ======================================================================
+\section{Bibliothèque logicielle}
+% ======================================================================
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}l l X@{}}
+\toprule
+\textbf{Bibliothèque} & \textbf{Rôle} & \textbf{Méthodes mobilisées} \\
+\midrule
+\texttt{numpy} / \texttt{pandas} & calcul & vecteurs, agrégats, tableaux \\
+\texttt{scipy} & statistiques & linkage (CAH), distributions \\
+\texttt{scikit-learn} & ML & \texttt{KMeans}, \texttt{StandardScaler},
+\texttt{silhouette\_score} \\
+\texttt{statsmodels} & stats & \texttt{Logit} (régression logistique, IC, p) \\
+\texttt{networkx} & graphes & \texttt{Graph}, \texttt{degree} \\
+\texttt{python-louvain} & graphes & \texttt{best\_partition} (Louvain) \\
+\texttt{mlxtend} & data mining & \texttt{apriori}, \texttt{association\_rules} \\
+\texttt{pyreadstat} & données & lecture EPCV 2019 (\texttt{.sav}) \\
+\texttt{fastapi} / \texttt{uvicorn} & API & exposition des résultats \\
+\bottomrule
+\end{tabularx}
+\caption{Bibliothèques Python utilisées par le backend (\txt{backend/requirements.txt}).}
+\end{table}
+
+\vspace{0.8cm}
+\begin{center}
+\small\color{eduMute}
+EduFocus -- Datathon IndabaX Mauritanie 2026. Données : EPCV 2019 (ONS),
+World Bank (WDI), 13 wilayas.
+\end{center}
+
+\end{document}
