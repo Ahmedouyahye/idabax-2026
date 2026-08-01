@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.svg";
+import logoSidebar from "../assets/logo-sidebar.svg";
 import { useI18n } from "../lib/i18n";
 
 export function Logo({
@@ -21,6 +22,18 @@ export function Logo({
  );
 }
 
+export function SidebarLogo({ className = "h-11 w-11" }: { className?: string }) {
+ const { t } = useI18n();
+ return (
+ <img
+ src={logoSidebar}
+ alt={t("logo.sidebar")}
+ className={className}
+ style={{ filter: "drop-shadow(0 6px 16px rgba(34,48,58,0.28))" }}
+ />
+ );
+}
+
 export type IconName =
  | "dashboard"
  | "map"
@@ -36,8 +49,10 @@ export type IconName =
  | "sun"
  | "trend"
  | "target"
- | "grid"
- | "report";
+  | "grid"
+  | "report"
+  | "menu"
+  | "close";
 
 const ICONS: Record<IconName, ReactNode> = {
  dashboard: (
@@ -147,14 +162,27 @@ const ICONS: Record<IconName, ReactNode> = {
  <line x1="9.2" y1="9.2" x2="14.8" y2="14.8" />
  </>
  ),
- report: (
- <>
- <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z" />
- <polyline points="14 2 14 7 19 7" />
- <line x1="9" y1="12" x2="15" y2="12" />
- <line x1="9" y1="16" x2="15" y2="16" />
- </>
- ),
+  report: (
+  <>
+  <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z" />
+  <polyline points="14 2 14 7 19 7" />
+  <line x1="9" y1="12" x2="15" y2="12" />
+  <line x1="9" y1="16" x2="15" y2="16" />
+  </>
+  ),
+  menu: (
+  <>
+  <line x1="4" y1="6" x2="20" y2="6" />
+  <line x1="4" y1="12" x2="20" y2="12" />
+  <line x1="4" y1="18" x2="20" y2="18" />
+  </>
+  ),
+  close: (
+  <>
+  <line x1="5" y1="5" x2="19" y2="19" />
+  <line x1="19" y1="5" x2="5" y2="19" />
+  </>
+  ),
 };
 
 export function Icon({ name, className = "h-4 w-4" }: { name: IconName; className?: string }) {
@@ -229,7 +257,15 @@ export function Kpi({
  <div className="relative flex items-start justify-between gap-3">
  <div className="min-w-0">
  <div className="eyebrow">{label}</div>
- <div className={`font-display mt-1.5 text-3xl font-semibold leading-none tracking-tight ${accent}`}>{value}</div>
+ {/* dir="ltr" + isolation bidi : sans cela l'algorithme bidirectionnel renvoie
+ l'unité de l'autre côté du nombre en arabe (« % 60,9 » au lieu de « 60,9 % »). */}
+ <div
+ dir="ltr"
+ style={{ unicodeBidi: "isolate" }}
+ className={`font-display mt-1.5 text-3xl font-semibold leading-none tracking-tight ${accent}`}
+ >
+ {value}
+ </div>
  {sub && <div className="mt-1.5 text-[11px] leading-snug text-mut">{sub}</div>}
  </div>
  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent/25 bg-accent/10 text-accent">

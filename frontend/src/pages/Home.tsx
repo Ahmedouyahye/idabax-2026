@@ -2,7 +2,7 @@ import ReactECharts from "echarts-for-react";
 import { Link } from "react-router-dom";
 import { useConcentration, useLogit, useSimilarite, useSummary, useWilayas, fmt, pct } from "../lib/api";
 import { barRanking, ACCENT } from "../lib/charts";
-import { Badge, Card, ErrorBox, Kpi, Loading, PageHeader, Logo } from "../components/ui";
+import { Badge, Card, ErrorBox, Kpi, Loading, Logo } from "../components/ui";
 import { Choropleth } from "../components/Choropleth";
 import { useI18n } from "../lib/i18n";
 
@@ -31,23 +31,43 @@ export default function Home() {
 
  return (
  <div className="space-y-7">
- <PageHeader
- eyebrow={t("home.eyebrow")}
- title={
-  <span className="font-display text-3xl font-semibold leading-[1.12] text-fg md:text-[2.6rem] [unicode-bidi:plaintext]">
- {t("home.title.p1")} <em className="grad-text italic">{t("home.title.p2")}</em> {t("home.title.p3")}
- </span>
- }
- subtitle={t("home.subtitle", { taux: pct(n.taux_hors_ecole_national_pct) })}
- >
- <div className="relative flex items-center gap-2">
- <Logo className="h-14 w-14 sm:h-16 sm:w-16" />
- <Badge color="bg-accent2/15 text-accent2">{t("layout.team")}</Badge>
- <Badge color="bg-accent/15 text-accent">{t("home.badgeWilayas")}</Badge>
- </div>
- </PageHeader>
+  {/* Hero */}
+  <section className="relative overflow-hidden rounded-3xl border border-line bg-panel/70 p-6 md:p-9">
+   <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-accent/[0.05] via-transparent to-accent2/[0.04]" />
+   <div className="relative grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
+    <div>
+     <div className="eyebrow mb-3">{t("home.eyebrow")}</div>
+     <h1 className="font-display text-3xl font-semibold leading-[1.12] text-fg md:text-[2.6rem] [unicode-bidi:plaintext]">
+      {t("home.title.p1")} <em className="grad-text italic">{t("home.title.p2")}</em> {t("home.title.p3")}
+     </h1>
+     <p className="mt-3 max-w-xl text-sm leading-relaxed text-mut">
+      {t("home.subtitle", { taux: pct(n.taux_hors_ecole_national_pct) })}
+     </p>
+     <div className="mt-5 flex flex-wrap gap-2">
+      <Link to="/carte"><Badge color="bg-accent2/15 text-accent2 hover:bg-accent2/25">{t("home.hero.cta_carte")} →</Badge></Link>
+      <Link to="/strategies"><Badge color="bg-accent/15 text-accent hover:bg-accent/25">{t("home.hero.cta_strategies")} →</Badge></Link>
+      <Link to="/rapport"><Badge color="bg-ink/[0.06] text-mut hover:text-fg">{t("home.hero.cta_rapport")} →</Badge></Link>
+     </div>
+     <div className="mt-5 flex flex-wrap items-center gap-2">
+      <Badge color="bg-accent2/15 text-accent2">{t("layout.team")}</Badge>
+      <Badge color="bg-accent/15 text-accent">{t("home.badgeWilayas")}</Badge>
+     </div>
+    </div>
+    <div className="flex items-center justify-start gap-4 lg:justify-end">
+     <div className="hidden sm:block">
+      <Logo className="h-20 w-20" />
+     </div>
+     <div className="grid grid-cols-2 gap-3">
+      <HeroStat value={fmt(n.enfants_hors_ecole_formelle)} label={t("Hors école formelle")} accent="text-danger" />
+      <HeroStat value={pct(n.taux_hors_ecole_national_pct)} label={t("home.hero.stat_taux")} accent="text-accent" />
+      <HeroStat value={String(n.wilayas)} label={t("home.hero.stat_wilayas")} accent="text-accent2" />
+      <HeroStat value="2030" label={t("home.hero.stat_horizon")} accent="text-warn" />
+     </div>
+    </div>
+   </div>
+  </section>
 
- <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+  <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
  <Kpi icon="users" label={t("Population 2022")} value={fmt(n.population_totale_2022)} sub={t("home.kpi.popSub")} />
  <Kpi icon="child" label={t("Enfants 6-14 ans")} value={fmt(n.population_6_14_2022)} sub={t("home.kpi.childrenSub")} />
  <Kpi icon="door" label={t("Hors école formelle")} value={fmt(n.enfants_hors_ecole_formelle)} sub={t("home.kpi.horsEcoleSub", { taux: pct(n.taux_hors_ecole_national_pct) })} accent="text-warn" />
@@ -173,6 +193,21 @@ function Fact({ k, title, text }: { k: string; title: string; text: string }) {
  <div className="eyebrow !text-[10px]">{k}</div>
  <div className="mt-1 font-display text-sm font-semibold leading-snug text-fg">{title}</div>
  <p className="mt-1.5 text-xs leading-relaxed text-mut">{text}</p>
+ </div>
+ );
+}
+
+function HeroStat({ value, label, accent }: { value: string; label: string; accent: string }) {
+ return (
+ <div className="min-w-[104px] rounded-xl border border-line bg-panel p-3">
+ <div
+  dir="ltr"
+  style={{ unicodeBidi: "isolate" }}
+  className={`num font-display text-xl font-bold leading-none ${accent}`}
+ >
+  {value}
+ </div>
+ <div className="mt-1.5 text-[10px] uppercase tracking-[0.1em] text-mut">{label}</div>
  </div>
  );
 }

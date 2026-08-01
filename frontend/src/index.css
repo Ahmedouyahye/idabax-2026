@@ -25,9 +25,8 @@ body,
 
 body {
  background:
-  radial-gradient(1200px 560px at 88% -14%, rgba(181, 119, 14, 0.06), transparent 62%),
-  radial-gradient(1000px 520px at -10% 108%, rgba(20, 122, 102, 0.05), transparent 60%),
-  linear-gradient(180deg, #fbf9f4 0%, var(--color-ink) 40%);
+  radial-gradient(900px 420px at 100% -10%, rgba(181, 119, 14, 0.045), transparent 60%),
+  linear-gradient(180deg, #fbf9f4 0%, var(--color-ink) 55%);
  background-attachment: fixed;
  color: var(--color-fg);
  font-family: var(--font-sans);
@@ -85,7 +84,7 @@ body::after {
 }
 
 .grad-text {
- background: linear-gradient(100deg, #b5770e 0%, #cc6a2b 48%, #147a66 100%);
+ background: linear-gradient(95deg, #9a640c 0%, #e88f3a 55%, #b5770e 100%);
  -webkit-background-clip: text;
  background-clip: text;
  color: transparent;
