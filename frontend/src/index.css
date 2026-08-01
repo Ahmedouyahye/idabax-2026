@@ -174,13 +174,18 @@ body::after {
  padding: 0 !important;
  margin: 0 !important;
  }
- .sheet {
- box-shadow: none;
- max-width: none;
- width: 100%;
- margin: 0;
- border-radius: 0;
- }
+  .sheet {
+  box-shadow: none;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  }
+  .md\:pl-64,
+  .md\:pr-64 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  }
  .sheet-page {
  min-height: auto;
  padding: 0 0 4mm;
