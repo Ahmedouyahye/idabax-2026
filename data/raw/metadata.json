@@ -1,0 +1,514 @@
+{
+  "feature_count": 646,
+  "geometry_types": {
+    "POLYGON": 528,
+    "POINT": 118
+  },
+  "bbox": [
+    -17.0892802,
+    14.7177533,
+    -5.5202125,
+    22.7434278
+  ],
+  "columns": [
+    {
+      "name": "id",
+      "type": "VARCHAR",
+      "null_count": 0,
+      "null_percent": 0.0,
+      "distinct_count": 646,
+      "top_values": [
+        {
+          "value": "way/658532700",
+          "count": 1
+        },
+        {
+          "value": "way/264808270",
+          "count": 1
+        },
+        {
+          "value": "way/229481333",
+          "count": 1
+        },
+        {
+          "value": "way/326235878",
+          "count": 1
+        },
+        {
+          "value": "way/229228369",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "name",
+      "type": "VARCHAR",
+      "null_count": 422,
+      "null_percent": 65.33,
+      "distinct_count": 216,
+      "top_values": [
+        {
+          "value": "\u00c9cole primaire \u0645\u062f\u0631\u0633\u0629 \u0627\u0628\u062a\u062f\u0627\u0626\u064a\u0629",
+          "count": 3
+        },
+        {
+          "value": "Ecole 6",
+          "count": 2
+        },
+        {
+          "value": "Ecole 1",
+          "count": 2
+        },
+        {
+          "value": "Ecole",
+          "count": 2
+        },
+        {
+          "value": "Ecole 2",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "name_en",
+      "type": "VARCHAR",
+      "null_count": 615,
+      "null_percent": 95.2,
+      "distinct_count": 31,
+      "top_values": [
+        {
+          "value": "Shams Ad-Din",
+          "count": 1
+        },
+        {
+          "value": "Coll\u00e8ge de thid\u00e9",
+          "count": 1
+        },
+        {
+          "value": "Umm Al Kura",
+          "count": 1
+        },
+        {
+          "value": "Nouakchott University",
+          "count": 1
+        },
+        {
+          "value": "\u0645\u062f\u0631\u0633\u0629 \u062d\u0645\u0632\u0647",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "name_ar",
+      "type": "VARCHAR",
+      "null_count": 525,
+      "null_percent": 81.27,
+      "distinct_count": 110,
+      "top_values": [
+        {
+          "value": "\u0645\u062f\u0631\u0633\u0629 \u0627\u0628\u062a\u062f\u0627\u0626\u064a\u0629",
+          "count": 6
+        },
+        {
+          "value": "\u0645\u062f\u0631\u0633\u0629",
+          "count": 4
+        },
+        {
+          "value": "\u0627\u0644\u0645\u062f\u0631\u0633\u0629 \u0627\u0644\u062b\u0627\u0646\u0648\u064a\u0629 \u0643\u0648\u0643\u064a",
+          "count": 2
+        },
+        {
+          "value": "\u0645\u0631\u0643\u0632 \u0627\u0644\u062a\u062f\u0631\u064a\u0628 \u0627\u0644\u0645\u0647\u0646\u064a",
+          "count": 2
+        },
+        {
+          "value": "\u062c\u0627\u0645\u0639\u0629 \u0646\u0648\u0627\u0643\u0634\u0648\u0637",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "amenity",
+      "type": "VARCHAR",
+      "null_count": 103,
+      "null_percent": 15.94,
+      "distinct_count": 4,
+      "top_values": [
+        {
+          "value": "school",
+          "count": 497
+        },
+        {
+          "value": "university",
+          "count": 21
+        },
+        {
+          "value": "kindergarten",
+          "count": 14
+        },
+        {
+          "value": "college",
+          "count": 11
+        }
+      ]
+    },
+    {
+      "name": "building",
+      "type": "VARCHAR",
+      "null_count": 538,
+      "null_percent": 83.28,
+      "distinct_count": 5,
+      "top_values": [
+        {
+          "value": "school",
+          "count": 91
+        },
+        {
+          "value": "university",
+          "count": 5
+        },
+        {
+          "value": "yes",
+          "count": 5
+        },
+        {
+          "value": "kindergarten",
+          "count": 4
+        },
+        {
+          "value": "college",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "name": "operator_type",
+      "type": "VARCHAR",
+      "null_count": 612,
+      "null_percent": 94.74,
+      "distinct_count": 5,
+      "top_values": [
+        {
+          "value": "public",
+          "count": 18
+        },
+        {
+          "value": "religious",
+          "count": 6
+        },
+        {
+          "value": "community",
+          "count": 5
+        },
+        {
+          "value": "private",
+          "count": 3
+        },
+        {
+          "value": "ngo",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "name": "capacity_persons",
+      "type": "VARCHAR",
+      "null_count": 646,
+      "null_percent": 100.0,
+      "distinct_count": 0,
+      "top_values": []
+    },
+    {
+      "name": "addr_full",
+      "type": "VARCHAR",
+      "null_count": 646,
+      "null_percent": 100.0,
+      "distinct_count": 0,
+      "top_values": []
+    },
+    {
+      "name": "addr_city",
+      "type": "VARCHAR",
+      "null_count": 480,
+      "null_percent": 74.3,
+      "distinct_count": 50,
+      "top_values": [
+        {
+          "value": "Nouakchott \u0646\u0648\u0627\u0643\u0634\u0648\u0637",
+          "count": 65
+        },
+        {
+          "value": "\u0646\u0648\u0627\u0643\u0634\u0648\u0637",
+          "count": 14
+        },
+        {
+          "value": "Atar \u0623\u0637\u0627\u0631",
+          "count": 9
+        },
+        {
+          "value": "Tidjikja \u062a\u062c\u0643\u062c\u0629",
+          "count": 9
+        },
+        {
+          "value": "Nouakchott",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "source",
+      "type": "VARCHAR",
+      "null_count": 646,
+      "null_percent": 100.0,
+      "distinct_count": 0,
+      "top_values": []
+    },
+    {
+      "name": "adm0_pcode",
+      "type": "VARCHAR",
+      "null_count": 0,
+      "null_percent": 0.0,
+      "distinct_count": 1,
+      "top_values": [
+        {
+          "value": "MRT",
+          "count": 646
+        }
+      ]
+    },
+    {
+      "name": "adm0_name",
+      "type": "VARCHAR",
+      "null_count": 0,
+      "null_percent": 0.0,
+      "distinct_count": 1,
+      "top_values": [
+        {
+          "value": "Mauritania",
+          "count": 646
+        }
+      ]
+    },
+    {
+      "name": "adm1_pcode",
+      "type": "VARCHAR",
+      "null_count": 54,
+      "null_percent": 8.36,
+      "distinct_count": 15,
+      "top_values": [
+        {
+          "value": "MR15",
+          "count": 128
+        },
+        {
+          "value": "MR13",
+          "count": 116
+        },
+        {
+          "value": "MR14",
+          "count": 110
+        },
+        {
+          "value": "MR03",
+          "count": 43
+        },
+        {
+          "value": "MR10",
+          "count": 33
+        }
+      ]
+    },
+    {
+      "name": "adm1_name",
+      "type": "VARCHAR",
+      "null_count": 54,
+      "null_percent": 8.36,
+      "distinct_count": 15,
+      "top_values": [
+        {
+          "value": "Nouakchott Sud",
+          "count": 128
+        },
+        {
+          "value": "Nouakchott Ouest",
+          "count": 116
+        },
+        {
+          "value": "Nouakchott Nord",
+          "count": 110
+        },
+        {
+          "value": "Assaba",
+          "count": 43
+        },
+        {
+          "value": "Guidimagha",
+          "count": 33
+        }
+      ]
+    },
+    {
+      "name": "adm2_pcode",
+      "type": "VARCHAR",
+      "null_count": 54,
+      "null_percent": 8.36,
+      "distinct_count": 50,
+      "top_values": [
+        {
+          "value": "MR132",
+          "count": 78
+        },
+        {
+          "value": "MR142",
+          "count": 66
+        },
+        {
+          "value": "MR152",
+          "count": 48
+        },
+        {
+          "value": "MR151",
+          "count": 45
+        },
+        {
+          "value": "MR143",
+          "count": 39
+        }
+      ]
+    },
+    {
+      "name": "adm2_name",
+      "type": "VARCHAR",
+      "null_count": 54,
+      "null_percent": 8.36,
+      "distinct_count": 50,
+      "top_values": [
+        {
+          "value": "Tevragh Zeina",
+          "count": 78
+        },
+        {
+          "value": "Dar Na\u00efm",
+          "count": 66
+        },
+        {
+          "value": "Arafat",
+          "count": 48
+        },
+        {
+          "value": "El Mina",
+          "count": 45
+        },
+        {
+          "value": "Teyarett",
+          "count": 39
+        }
+      ]
+    },
+    {
+      "name": "adm3_pcode",
+      "type": "VARCHAR",
+      "null_count": 54,
+      "null_percent": 8.36,
+      "distinct_count": 88,
+      "top_values": [
+        {
+          "value": "MR13201",
+          "count": 78
+        },
+        {
+          "value": "MR14201",
+          "count": 66
+        },
+        {
+          "value": "MR15201",
+          "count": 48
+        },
+        {
+          "value": "MR15101",
+          "count": 45
+        },
+        {
+          "value": "MR14301",
+          "count": 39
+        }
+      ]
+    },
+    {
+      "name": "adm3_name",
+      "type": "VARCHAR",
+      "null_count": 54,
+      "null_percent": 8.36,
+      "distinct_count": 88,
+      "top_values": [
+        {
+          "value": "Tefragh Zeina",
+          "count": 78
+        },
+        {
+          "value": "Dar Naim",
+          "count": 66
+        },
+        {
+          "value": "Arafat",
+          "count": 48
+        },
+        {
+          "value": "El Mina",
+          "count": 45
+        },
+        {
+          "value": "Toujounine",
+          "count": 39
+        }
+      ]
+    },
+    {
+      "name": "adm4_pcode",
+      "type": "VARCHAR",
+      "null_count": 646,
+      "null_percent": 100.0,
+      "distinct_count": 0,
+      "top_values": []
+    },
+    {
+      "name": "adm4_name",
+      "type": "VARCHAR",
+      "null_count": 646,
+      "null_percent": 100.0,
+      "distinct_count": 0,
+      "top_values": []
+    },
+    {
+      "name": "name_latin",
+      "type": "VARCHAR",
+      "null_count": 409,
+      "null_percent": 63.31,
+      "distinct_count": 229,
+      "top_values": [
+        {
+          "value": "Ecole primaire mdrs@ btdy'y@",
+          "count": 3
+        },
+        {
+          "value": "Ecole coranique",
+          "count": 2
+        },
+        {
+          "value": "ecole coranique",
+          "count": 2
+        },
+        {
+          "value": "Ecole 1",
+          "count": 2
+        },
+        {
+          "value": "Ecole 6",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "summary": "646 features. geometry types: 528 POLYGON, 118 POINT. 12 of 22 columns are >=50% null (name, name_en, name_ar, building, operator_type, capacity_persons, addr_full, addr_city, source, adm4_pcode, adm4_name, name_latin).",
+  "temporal": null
+}

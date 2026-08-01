@@ -1,0 +1,178 @@
+{
+  "n_rules": 33,
+  "rules": [
+    {
+      "antecedents_str": "cm_sans_education",
+      "consequents_str": "hors_ecole",
+      "support": 0.164,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_education_traditionnelle",
+      "consequents_str": "hors_ecole",
+      "support": 0.167,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_sans_education & sexe_feminin",
+      "consequents_str": "hors_ecole",
+      "support": 0.082,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_education_traditionnelle & sexe_feminin",
+      "consequents_str": "hors_ecole",
+      "support": 0.076,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_sans_education & milieu_rural",
+      "consequents_str": "hors_ecole",
+      "support": 0.123,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_education_traditionnelle & milieu_rural",
+      "consequents_str": "hors_ecole",
+      "support": 0.121,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_sans_education & pauvre",
+      "consequents_str": "hors_ecole",
+      "support": 0.086,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_education_traditionnelle & pauvre",
+      "consequents_str": "hors_ecole",
+      "support": 0.064,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "age_6_9 & cm_sans_education",
+      "consequents_str": "hors_ecole",
+      "support": 0.111,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_education_traditionnelle & region_Est",
+      "consequents_str": "hors_ecole",
+      "support": 0.074,
+      "confidence": 1.0,
+      "lift": 3.02
+    }
+  ],
+  "sans_cm": [
+    {
+      "antecedents_str": "age_6_9 & milieu_rural & pauvre",
+      "consequents_str": "hors_ecole",
+      "support": 0.076,
+      "confidence": 0.581,
+      "lift": 1.76
+    },
+    {
+      "antecedents_str": "age_6_9 & milieu_rural & region_Est",
+      "consequents_str": "hors_ecole",
+      "support": 0.053,
+      "confidence": 0.57,
+      "lift": 1.72
+    },
+    {
+      "antecedents_str": "age_6_9 & pauvre",
+      "consequents_str": "hors_ecole",
+      "support": 0.09,
+      "confidence": 0.555,
+      "lift": 1.68
+    },
+    {
+      "antecedents_str": "age_6_9 & milieu_rural & sexe_feminin",
+      "consequents_str": "hors_ecole",
+      "support": 0.076,
+      "confidence": 0.537,
+      "lift": 1.62
+    },
+    {
+      "antecedents_str": "age_6_9 & region_Est",
+      "consequents_str": "hors_ecole",
+      "support": 0.059,
+      "confidence": 0.53,
+      "lift": 1.6
+    },
+    {
+      "antecedents_str": "age_6_9 & milieu_rural",
+      "consequents_str": "hors_ecole",
+      "support": 0.151,
+      "confidence": 0.527,
+      "lift": 1.59
+    }
+  ],
+  "par_region": [
+    {
+      "antecedents_str": "cm_education_traditionnelle & region_Est",
+      "consequents_str": "hors_ecole",
+      "support": 0.074,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_sans_education & region_Sud",
+      "consequents_str": "hors_ecole",
+      "support": 0.088,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_sans_education & pauvre & region_Sud",
+      "consequents_str": "hors_ecole",
+      "support": 0.052,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_sans_education & milieu_rural & region_Sud",
+      "consequents_str": "hors_ecole",
+      "support": 0.079,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "age_6_9 & cm_sans_education & region_Sud",
+      "consequents_str": "hors_ecole",
+      "support": 0.055,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "cm_education_traditionnelle & milieu_rural & region_Est",
+      "consequents_str": "hors_ecole",
+      "support": 0.067,
+      "confidence": 1.0,
+      "lift": 3.02
+    },
+    {
+      "antecedents_str": "age_6_9 & milieu_rural & region_Est",
+      "consequents_str": "hors_ecole",
+      "support": 0.053,
+      "confidence": 0.57,
+      "lift": 1.72
+    },
+    {
+      "antecedents_str": "age_6_9 & region_Est",
+      "consequents_str": "hors_ecole",
+      "support": 0.059,
+      "confidence": 0.53,
+      "lift": 1.6
+    }
+  ],
+  "n_children_6_14": 16451
+}

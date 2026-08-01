@@ -1,0 +1,2 @@
+source,status,error
+UIS,error,"HTTPSConnectionPool(host='api.data.uis.unesco.org', port=443): Max retries exceeded with url: /v1/data/EDU_OUT_OF_SCHOOL?startPeriod=2013&endPeriod=2024&format=json-stat (Caused by NameResolutionError(""HTTPSConnection(host='api.data.uis.unesco.org', port=443): Failed to resolve 'api.data.uis.unesco.org' ([Errno -2] Name or service not known)""))"

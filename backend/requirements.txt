@@ -1,0 +1,12 @@
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13
+scikit-learn>=1.5
+networkx>=3.3
+python-louvain>=0.16
+mlxtend>=0.23
+pyreadstat>=1.2
+fastapi>=0.115
+uvicorn>=0.30
+requests>=2.32
+openpyxl>=3.1

@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+/* ─── EduFocus+ · Sable & Safran (desert dusk) ─────────────────────────── */
+@theme {
+ --color-ink: #15110a;
+ --color-panel: #1d1810;
+ --color-panel2: #282014;
+ --color-line: rgba(226, 199, 150, 0.13);
+ --color-accent: #eeb74f;
+ --color-accent2: #4ec3a3;
+ --color-warn: #ef9460;
+ --color-danger: #ef6f5f;
+ --color-fg: #f4edde;
+ --color-mut: #a19077;
+ --font-display: "Fraunces", "Georgia", serif;
+ --font-sans: "Inter", "SF Pro Text", system-ui, -apple-system, sans-serif;
+ --font-grotesk: "Space Grotesk", "Inter", ui-monospace, monospace;
+}
+
+html,
+body,
+#root {
+ height: 100%;
+}
+
+body {
+ background:
+ radial-gradient(1100px 520px at 85% -12%, rgba(238, 183, 79, 0.09), transparent 62%),
+ radial-gradient(900px 480px at -8% 108%, rgba(78, 195, 163, 0.07), transparent 60%),
+ var(--color-ink);
+ color: var(--color-fg);
+ font-family: var(--font-sans);
+ -webkit-font-smoothing: antialiased;
+ text-rendering: optimizeLegibility;
+}
+
+button:not(:disabled) {
+ cursor: pointer;
+}
+
+/* Film grain warm paper texture over everything */
+body::after {
+ content: "";
+ position: fixed;
+ inset: 0;
+ z-index: 60;
+ pointer-events: none;
+ opacity: 0.05;
+ mix-blend-mode: overlay;
+ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::selection {
+ background: rgba(238, 183, 79, 0.3);
+ color: #fff;
+}
+
+:focus-visible {
+ outline: 2px solid rgba(238, 183, 79, 0.55);
+ outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+ width: 8px;
+ height: 8px;
+}
+::-webkit-scrollbar-track {
+ background: transparent;
+}
+::-webkit-scrollbar-thumb {
+ background: rgba(226, 199, 150, 0.2);
+ border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+ background: rgba(226, 199, 150, 0.35);
+}
+
+/* ─── Utilities ───────────────────────────────────────────────────────── */
+
+.font-display {
+ font-family: var(--font-display);
+ font-optical-sizing: auto;
+}
+
+.grad-text {
+ background: linear-gradient(105deg, #f4c95d 0%, #f0a14a 48%, #4ec3a3 100%);
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+}
+
+.glass {
+ background: linear-gradient(165deg, rgba(40, 32, 20, 0.78), rgba(29, 24, 16, 0.55));
+ backdrop-filter: blur(14px);
+ border: 1px solid var(--color-line);
+ box-shadow:
+ inset 0 1px 0 rgba(255, 235, 205, 0.035),
+ 0 10px 30px -18px rgba(0, 0, 0, 0.7);
+}
+
+.eyebrow {
+ font-family: var(--font-grotesk);
+ font-size: 11px;
+ font-weight: 600;
+ letter-spacing: 0.18em;
+ text-transform: uppercase;
+ color: var(--color-accent);
+}
+
+.num {
+ font-family: var(--font-grotesk);
+ font-variant-numeric: tabular-nums;
+ font-feature-settings: "tnum";
+}
+
+/* Card hover hairline highlight + gentle lift */
+.glass {
+ transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.glass:hover {
+ transform: translateY(-2px);
+ border-color: rgba(226, 199, 150, 0.28);
+ box-shadow:
+ inset 0 1px 0 rgba(255, 235, 205, 0.045),
+ inset 0 1px 0 rgba(238, 183, 79, 0.18),
+ 0 18px 40px -20px rgba(0, 0, 0, 0.8);
+}
+
+/* ─── Rapport · feuille de papier A4 ──────────────────────────────────── */
+.sheet {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  background: #f7f1e3;
+  color: #221b12;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(226, 199, 150, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sheet-page {
+  padding: 44px 48px;
+  min-height: 80vh;
+}
+.sheet .font-inter {
+  font-family: var(--font-sans);
+}
+.chart-print {
+  width: 100%;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+@media print {
+ @page {
+ size: A4;
+ margin: 13mm 11mm;
+ }
+ html,
+ body {
+ background: #fff !important;
+ height: auto !important;
+ }
+ body::after,
+ .no-print {
+ display: none !important;
+ }
+ aside,
+ header,
+ footer {
+ display: none !important;
+ }
+ main,
+ #root {
+ padding: 0 !important;
+ margin: 0 !important;
+ }
+ .sheet {
+ box-shadow: none;
+ max-width: none;
+ width: 100%;
+ margin: 0;
+ border-radius: 0;
+ }
+ .sheet-page {
+ min-height: auto;
+ padding: 0 0 6mm;
+ page-break-after: always;
+ }
+ .sheet-page:last-child {
+ page-break-after: auto;
+ }
+ h1,
+ h2,
+ h3,
+ .sheet tr {
+ break-inside: avoid;
+ break-after: avoid;
+ }
+ .sheet table {
+ page-break-inside: auto;
+ }
+ .sheet-page {
+ break-inside: auto;
+ }
+}
+
+@media (prefers-reduced-motion: reduce) {
+ *,
+ *::before,
+ *::after {
+ animation-duration: 0.01ms !important;
+ animation-iteration-count: 1 !important;
+ transition-duration: 0.01ms !important;
+ scroll-behavior: auto !important;
+ }
+}
+
+/* ─── Leaflet ─────────────────────────────────────────────────────────── */
+
+.leaflet-container {
+ background: #171209 !important;
+ font-family: var(--font-sans);
+}
+.leaflet-tooltip {
+ background: #211b11 !important;
+ border: 1px solid rgba(226, 199, 150, 0.22) !important;
+ color: #f4edde !important;
+ border-radius: 12px !important;
+ box-shadow: 0 12px 34px rgba(0, 0, 0, 0.55) !important;
+ font-family: var(--font-sans);
+}
+.leaflet-tooltip-top:before {
+ border-top-color: rgba(226, 199, 150, 0.22) !important;
+}

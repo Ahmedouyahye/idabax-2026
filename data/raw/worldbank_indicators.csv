@@ -1,0 +1,599 @@
+indicator,label,year,value
+SP.POP.TOTL,Population totale,2025,5315065.0
+SP.POP.TOTL,Population totale,2024,5169395.0
+SP.POP.TOTL,Population totale,2023,5022441.0
+SP.POP.TOTL,Population totale,2022,4875637.0
+SP.POP.TOTL,Population totale,2021,4734874.0
+SP.POP.TOTL,Population totale,2020,4600131.0
+SP.POP.TOTL,Population totale,2019,4467708.0
+SP.POP.TOTL,Population totale,2018,4337685.0
+SP.POP.TOTL,Population totale,2017,4210600.0
+SP.POP.TOTL,Population totale,2016,4086657.0
+SP.POP.TOTL,Population totale,2015,3965959.0
+SP.POP.TOTL,Population totale,2014,3848514.0
+SP.POP.TOTL,Population totale,2013,3734318.0
+SP.POP.TOTL,Population totale,2012,3619034.0
+SP.POP.TOTL,Population totale,2011,3502811.0
+SP.POP.TOTL,Population totale,2010,3390965.0
+SP.POP.TOTL,Population totale,2009,3284448.0
+SP.POP.TOTL,Population totale,2008,3183269.0
+SP.POP.TOTL,Population totale,2007,3093059.0
+SP.POP.TOTL,Population totale,2006,3013660.0
+SP.POP.TOTL,Population totale,2005,2939059.0
+SP.POP.TOTL,Population totale,2004,2868664.0
+SP.POP.TOTL,Population totale,2003,2802046.0
+SP.POP.TOTL,Population totale,2002,2738655.0
+SP.POP.TOTL,Population totale,2001,2678760.0
+SP.POP.TOTL,Population totale,2000,2613441.0
+SP.POP.TOTL.FE.ZS,Part femmes (%),2025,50.9168280946382
+SP.POP.TOTL.FE.ZS,Part femmes (%),2024,50.9473352297512
+SP.POP.TOTL.FE.ZS,Part femmes (%),2023,50.9806982340463
+SP.POP.TOTL.FE.ZS,Part femmes (%),2022,51.0161646570489
+SP.POP.TOTL.FE.ZS,Part femmes (%),2021,51.0522453074263
+SP.POP.TOTL.FE.ZS,Part femmes (%),2020,51.0857842961429
+SP.POP.TOTL.FE.ZS,Part femmes (%),2019,51.1205969593357
+SP.POP.TOTL.FE.ZS,Part femmes (%),2018,51.1596854082304
+SP.POP.TOTL.FE.ZS,Part femmes (%),2017,51.1994490096423
+SP.POP.TOTL.FE.ZS,Part femmes (%),2016,51.2388123688414
+SP.POP.TOTL.FE.ZS,Part femmes (%),2015,51.2762868391445
+SP.POP.TOTL.FE.ZS,Part femmes (%),2014,51.3118569920754
+SP.POP.TOTL.FE.ZS,Part femmes (%),2013,51.3458414628856
+SP.POP.TOTL.FE.ZS,Part femmes (%),2012,51.3141075767732
+SP.POP.TOTL.FE.ZS,Part femmes (%),2011,51.2082863710642
+SP.POP.TOTL.FE.ZS,Part femmes (%),2010,51.0871684019151
+SP.POP.TOTL.FE.ZS,Part femmes (%),2009,50.9513318524148
+SP.POP.TOTL.FE.ZS,Part femmes (%),2008,50.803152356901
+SP.POP.TOTL.FE.ZS,Part femmes (%),2007,50.6953631678661
+SP.POP.TOTL.FE.ZS,Part femmes (%),2006,50.6302303511345
+SP.POP.TOTL.FE.ZS,Part femmes (%),2005,50.5554328783464
+SP.POP.TOTL.FE.ZS,Part femmes (%),2004,50.4730949574767
+SP.POP.TOTL.FE.ZS,Part femmes (%),2003,50.3841301620781
+SP.POP.TOTL.FE.ZS,Part femmes (%),2002,50.2897225097721
+SP.POP.TOTL.FE.ZS,Part femmes (%),2001,50.1846376681748
+SP.POP.TOTL.FE.ZS,Part femmes (%),2000,50.1310341423434
+SP.POP.GROW,Croissance démographique (%),2025,2.77895808619534
+SP.POP.GROW,Croissance démographique (%),2024,2.88395898961435
+SP.POP.GROW,Croissance démographique (%),2023,2.96653079197429
+SP.POP.GROW,Croissance démographique (%),2022,2.92956466448208
+SP.POP.GROW,Croissance démographique (%),2021,2.88703345850902
+SP.POP.GROW,Croissance démographique (%),2020,2.92092559048913
+SP.POP.GROW,Croissance démographique (%),2019,2.95347297852629
+SP.POP.GROW,Croissance démographique (%),2018,2.97356403059489
+SP.POP.GROW,Croissance démographique (%),2017,2.98778789331469
+SP.POP.GROW,Croissance démographique (%),2016,2.99795842489143
+SP.POP.GROW,Croissance démographique (%),2015,3.00605924056849
+SP.POP.GROW,Croissance démographique (%),2014,3.01218949095495
+SP.POP.GROW,Croissance démographique (%),2013,3.135806545909
+SP.POP.GROW,Croissance démographique (%),2012,3.26413503920642
+SP.POP.GROW,Croissance démographique (%),2011,3.24512473547367
+SP.POP.GROW,Croissance démographique (%),2010,3.19159403639576
+SP.POP.GROW,Croissance démographique (%),2009,3.12899450909418
+SP.POP.GROW,Croissance démographique (%),2008,2.87480873438379
+SP.POP.GROW,Croissance démographique (%),2007,2.60052819123955
+SP.POP.GROW,Croissance démographique (%),2006,2.50658248493226
+SP.POP.GROW,Croissance démographique (%),2005,2.42430459268211
+SP.POP.GROW,Croissance démographique (%),2004,2.34965515386841
+SP.POP.GROW,Croissance démographique (%),2003,2.28829406566231
+SP.POP.GROW,Croissance démographique (%),2002,2.2112923085405
+SP.POP.GROW,Croissance démographique (%),2001,2.46862570579989
+SP.POP.GROW,Croissance démographique (%),2000,2.78353822069134
+SP.DYN.LE00.IN,Espérance de vie,2025,
+SP.DYN.LE00.IN,Espérance de vie,2024,68.713
+SP.DYN.LE00.IN,Espérance de vie,2023,68.484
+SP.DYN.LE00.IN,Espérance de vie,2022,68.281
+SP.DYN.LE00.IN,Espérance de vie,2021,66.762
+SP.DYN.LE00.IN,Espérance de vie,2020,66.794
+SP.DYN.LE00.IN,Espérance de vie,2019,67.64
+SP.DYN.LE00.IN,Espérance de vie,2018,67.419
+SP.DYN.LE00.IN,Espérance de vie,2017,67.088
+SP.DYN.LE00.IN,Espérance de vie,2016,66.823
+SP.DYN.LE00.IN,Espérance de vie,2015,66.498
+SP.DYN.LE00.IN,Espérance de vie,2014,66.207
+SP.DYN.LE00.IN,Espérance de vie,2013,65.89
+SP.DYN.LE00.IN,Espérance de vie,2012,65.808
+SP.DYN.LE00.IN,Espérance de vie,2011,65.754
+SP.DYN.LE00.IN,Espérance de vie,2010,65.661
+SP.DYN.LE00.IN,Espérance de vie,2009,65.485
+SP.DYN.LE00.IN,Espérance de vie,2008,65.233
+SP.DYN.LE00.IN,Espérance de vie,2007,64.885
+SP.DYN.LE00.IN,Espérance de vie,2006,64.493
+SP.DYN.LE00.IN,Espérance de vie,2005,63.92
+SP.DYN.LE00.IN,Espérance de vie,2004,63.369
+SP.DYN.LE00.IN,Espérance de vie,2003,62.805
+SP.DYN.LE00.IN,Espérance de vie,2002,62.249
+SP.DYN.LE00.IN,Espérance de vie,2001,61.662
+SP.DYN.LE00.IN,Espérance de vie,2000,61.044
+SP.POP.1564.TO.ZS,Population 15-64 (%),2025,54.368691104313
+SP.POP.1564.TO.ZS,Population 15-64 (%),2024,54.0603732099817
+SP.POP.1564.TO.ZS,Population 15-64 (%),2023,53.7485902025937
+SP.POP.1564.TO.ZS,Population 15-64 (%),2022,53.4391759026384
+SP.POP.1564.TO.ZS,Population 15-64 (%),2021,53.1643552537665
+SP.POP.1564.TO.ZS,Population 15-64 (%),2020,52.9241015092831
+SP.POP.1564.TO.ZS,Population 15-64 (%),2019,52.7171314687531
+SP.POP.1564.TO.ZS,Population 15-64 (%),2018,52.5508076312595
+SP.POP.1564.TO.ZS,Population 15-64 (%),2017,52.4143770976081
+SP.POP.1564.TO.ZS,Population 15-64 (%),2016,52.3037720444574
+SP.POP.1564.TO.ZS,Population 15-64 (%),2015,52.2134686986765
+SP.POP.1564.TO.ZS,Population 15-64 (%),2014,52.1390271854315
+SP.POP.1564.TO.ZS,Population 15-64 (%),2013,52.0748966645454
+SP.POP.1564.TO.ZS,Population 15-64 (%),2012,52.1745719990473
+SP.POP.1564.TO.ZS,Population 15-64 (%),2011,52.4182788597103
+SP.POP.1564.TO.ZS,Population 15-64 (%),2010,52.5898310053084
+SP.POP.1564.TO.ZS,Population 15-64 (%),2009,52.6541670542254
+SP.POP.1564.TO.ZS,Population 15-64 (%),2008,52.6120558162153
+SP.POP.1564.TO.ZS,Population 15-64 (%),2007,52.5827259385085
+SP.POP.1564.TO.ZS,Population 15-64 (%),2006,52.6191906187161
+SP.POP.1564.TO.ZS,Population 15-64 (%),2005,52.6574751744479
+SP.POP.1564.TO.ZS,Population 15-64 (%),2004,52.6876191648132
+SP.POP.1564.TO.ZS,Population 15-64 (%),2003,52.7103944760364
+SP.POP.1564.TO.ZS,Population 15-64 (%),2002,52.7341254619741
+SP.POP.1564.TO.ZS,Population 15-64 (%),2001,52.7753797979998
+SP.POP.1564.TO.ZS,Population 15-64 (%),2000,52.7032841561596
+SP.POP.DPND,Ratio de dépendance,2025,83.9294038095587
+SP.POP.DPND,Ratio de dépendance,2024,84.978354637561
+SP.POP.DPND,Ratio de dépendance,2023,86.0514074690377
+SP.POP.DPND,Ratio de dépendance,2022,87.1286509307235
+SP.POP.DPND,Ratio de dépendance,2021,88.0959295107984
+SP.POP.DPND,Ratio de dépendance,2020,88.9498303196694
+SP.POP.DPND,Ratio de dépendance,2019,89.6916163393409
+SP.POP.DPND,Ratio de dépendance,2018,90.2920743605582
+SP.POP.DPND,Ratio de dépendance,2017,90.7873726755356
+SP.POP.DPND,Ratio de dépendance,2016,91.1907782824228
+SP.POP.DPND,Ratio de dépendance,2015,91.5214425586679
+SP.POP.DPND,Ratio de dépendance,2014,91.7948866179137
+SP.POP.DPND,Ratio de dépendance,2013,92.031078213882
+SP.POP.DPND,Ratio de dépendance,2012,91.664195198007
+SP.POP.DPND,Ratio de dépendance,2011,90.7731713679931
+SP.POP.DPND,Ratio de dépendance,2010,90.1508605099638
+SP.POP.DPND,Ratio de dépendance,2009,89.9184630036215
+SP.POP.DPND,Ratio de dépendance,2008,90.0705345110381
+SP.POP.DPND,Ratio de dépendance,2007,90.1764924696341
+SP.POP.DPND,Ratio de dépendance,2006,90.0447923176414
+SP.POP.DPND,Ratio de dépendance,2005,89.9065929024563
+SP.POP.DPND,Ratio de dépendance,2004,89.7979464494244
+SP.POP.DPND,Ratio de dépendance,2003,89.7159656025279
+SP.POP.DPND,Ratio de dépendance,2002,89.6304959264814
+SP.POP.DPND,Ratio de dépendance,2001,89.4823325029037
+SP.POP.DPND,Ratio de dépendance,2000,89.7415289584708
+SP.POP.DPND.YG,Ratio dépendance jeunes,2025,77.9577060979032
+SP.POP.DPND.YG,Ratio dépendance jeunes,2024,79.0065032702425
+SP.POP.DPND.YG,Ratio dépendance jeunes,2023,80.0692426831577
+SP.POP.DPND.YG,Ratio dépendance jeunes,2022,81.124620994051
+SP.POP.DPND.YG,Ratio dépendance jeunes,2021,82.0364959589078
+SP.POP.DPND.YG,Ratio dépendance jeunes,2020,82.7898715917091
+SP.POP.DPND.YG,Ratio dépendance jeunes,2019,83.4334643315693
+SP.POP.DPND.YG,Ratio dépendance jeunes,2018,83.9450350254092
+SP.POP.DPND.YG,Ratio dépendance jeunes,2017,84.3283521223765
+SP.POP.DPND.YG,Ratio dépendance jeunes,2016,84.5928562472748
+SP.POP.DPND.YG,Ratio dépendance jeunes,2015,84.7541850475549
+SP.POP.DPND.YG,Ratio dépendance jeunes,2014,84.826555459095
+SP.POP.DPND.YG,Ratio dépendance jeunes,2013,84.8292384922263
+SP.POP.DPND.YG,Ratio dépendance jeunes,2012,84.4418223338855
+SP.POP.DPND.YG,Ratio dépendance jeunes,2011,83.7799743261989
+SP.POP.DPND.YG,Ratio dépendance jeunes,2010,83.4092131286719
+SP.POP.DPND.YG,Ratio dépendance jeunes,2009,83.446503669772
+SP.POP.DPND.YG,Ratio dépendance jeunes,2008,83.884777908541
+SP.POP.DPND.YG,Ratio dépendance jeunes,2007,84.1544132340147
+SP.POP.DPND.YG,Ratio dépendance jeunes,2006,84.0530394516709
+SP.POP.DPND.YG,Ratio dépendance jeunes,2005,83.9506627535968
+SP.POP.DPND.YG,Ratio dépendance jeunes,2004,83.8691941610302
+SP.POP.DPND.YG,Ratio dépendance jeunes,2003,83.8070399581846
+SP.POP.DPND.YG,Ratio dépendance jeunes,2002,83.7467092644678
+SP.POP.DPND.YG,Ratio dépendance jeunes,2001,83.625115474993
+SP.POP.DPND.YG,Ratio dépendance jeunes,2000,83.892406464789
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2025,
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2024,291098.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2023,
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2022,
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2021,
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2020,195919.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2019,231944.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2018,199495.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2017,202542.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2016,221903.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2015,160765.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2014,176825.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2013,177772.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2012,180028.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2011,161822.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2010,155403.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2009,152362.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2008,148662.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2007,132521.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2006,139256.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2005,152660.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2004,144380.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2003,173525.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2002,181243.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2001,170763.0
+SE.PRM.UNER,"Enfants hors école, primaire (n)",2000,176382.0
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2025,
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2024,11.2562378007474
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2023,
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2022,
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2021,
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2020,25.3996261081279
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2019,30.9051396196951
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2018,27.4673756502152
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2017,28.8442066497387
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2016,32.7170404969266
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2015,24.5683180028089
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2014,28.0360866015015
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2013,29.2575348372561
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2012,30.8624895641009
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2011,28.8140482329312
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2010,28.6183395385742
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2009,28.8192691802979
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2008,28.6169109344482
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2007,25.8888206481934
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2006,27.5692195892334
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2005,30.653450012207
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2004,29.5826091766357
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2003,36.3771095275879
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2002,39.0946083068848
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2001,38.0263404846191
+SE.PRM.UNER.ZS,Taux hors école primaire (%),2000,40.6455993652344
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2025,
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2024,10.2978817140709
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2023,
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2022,
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2021,
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2020,23.2485155353396
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2019,29.4050565341874
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2018,26.8853633543736
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2017,27.5887537967816
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2016,31.8005003440973
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2015,24.1447992508701
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2014,27.8632920490116
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2013,29.3797499706691
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2012,30.2386240906405
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2011,28.5995058202218
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2010,28.57546043396
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2009,28.5091800689697
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2008,27.5494709014893
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2007,25.2533702850342
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2006,27.2897491455078
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2005,30.2541599273682
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2004,29.6463108062744
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2003,36.9257583618164
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2002,39.9752082824707
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2001,39.835620880127
+SE.PRM.UNER.FE.ZS,Hors école primaire filles (%),2000,42.1438789367676
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2025,
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2024,12.1909752873644
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2023,
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2022,
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2021,
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2020,27.4968059420999
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2019,32.3710340721382
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2018,28.039705621322
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2017,30.0869407510683
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2016,33.6305721233389
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2015,24.9935683833979
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2014,28.2109521044808
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2013,29.1328503459489
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2012,31.4983470931339
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2011,29.0318066842473
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2010,28.6615295410156
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2009,29.1284103393555
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2008,29.6672096252441
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2007,26.5140895843506
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2006,27.8442001342773
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2005,31.0462493896484
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2004,29.5199508666992
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2003,35.8373794555664
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2002,38.2280693054199
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2001,36.2452087402344
+SE.PRM.UNER.MA.ZS,Hors école primaire garçons (%),2000,39.1698913574219
+SE.PRM.NENR,Taux net scolarisation primaire (%),2025,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2024,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2023,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2022,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2021,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2020,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2019,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2018,79.5744
+SE.PRM.NENR,Taux net scolarisation primaire (%),2017,77.82357
+SE.PRM.NENR,Taux net scolarisation primaire (%),2016,73.11291
+SE.PRM.NENR,Taux net scolarisation primaire (%),2015,
+SE.PRM.NENR,Taux net scolarisation primaire (%),2014,76.29421
+SE.PRM.NENR,Taux net scolarisation primaire (%),2013,74.54884
+SE.PRM.NENR,Taux net scolarisation primaire (%),2012,71.15951
+SE.PRM.NENR,Taux net scolarisation primaire (%),2011,72.44657
+SE.PRM.NENR,Taux net scolarisation primaire (%),2010,72.37404
+SE.PRM.NENR,Taux net scolarisation primaire (%),2009,72.05813
+SE.PRM.NENR,Taux net scolarisation primaire (%),2008,72.67765
+SE.PRM.NENR,Taux net scolarisation primaire (%),2007,76.04504
+SE.PRM.NENR,Taux net scolarisation primaire (%),2006,75.21723
+SE.PRM.NENR,Taux net scolarisation primaire (%),2005,72.5486
+SE.PRM.NENR,Taux net scolarisation primaire (%),2004,74.01182
+SE.PRM.NENR,Taux net scolarisation primaire (%),2003,66.71767
+SE.PRM.NENR,Taux net scolarisation primaire (%),2002,63.36953
+SE.PRM.NENR,Taux net scolarisation primaire (%),2001,63.82603
+SE.PRM.NENR,Taux net scolarisation primaire (%),2000,60.0675
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2025,
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2024,105.434763333022
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2023,104.015072968957
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2022,
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2021,
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2020,93.8044664780786
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2019,90.2671941351334
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2018,90.2193039220816
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2017,87.8173094861384
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2016,88.6641926490124
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2015,96.699365333097
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2014,93.9026961891851
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2013,93.6377057031555
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2012,94.9017954032329
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2011,95.4359624506773
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2010,97.8571652188966
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2009,97.033561706543
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2008,91.1832809448242
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2007,94.5087280273438
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2006,92.2504577636719
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2005,89.0759201049805
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2004,88.9611282348633
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2003,82.6807022094727
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2002,81.0384368896484
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2001,80.3173294067383
+SE.PRM.ENRR,Taux brut scolarisation primaire (%),2000,81.9958877563477
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2025,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2024,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2023,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2022,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2021,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2020,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2019,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2018,30.97658
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2017,28.18691
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2016,27.46113
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2015,24.98002
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2014,23.70334
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2013,22.0598
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2012,22.44263
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2011,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2010,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2009,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2008,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2007,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2006,14.52714
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2005,14.25672
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2004,13.08816
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2003,
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2002,13.61746
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2001,13.53068
+SE.SEC.NENR,Taux net scolarisation secondaire (%),2000,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2025,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2024,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2023,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2022,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2021,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2020,73.4478403637282
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2019,66.3788295981318
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2018,69.8224371582727
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2017,64.6629350206863
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2016,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2015,67.0313779818184
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2014,67.2214045416316
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2013,70.863058228069
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2012,69.462112909968
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2011,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2010,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2009,67.6704025268555
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2008,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2007,52.3315315246582
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2006,41.5340881347656
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2005,40.9556503295898
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2004,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2003,
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2002,42.6541786193848
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2001,44.9728698730469
+SE.PRM.CMPT.ZS,Taux achèvement primaire (%),2000,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2025,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2024,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2023,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2022,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2021,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2020,59.5299987792969
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2019,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2018,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2017,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2016,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2015,65.1100006103516
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2014,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2013,62.0699996948242
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2012,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2011,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2010,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2009,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2008,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2007,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2006,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2005,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2004,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2003,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2002,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2001,
+SE.ADT.LITR.ZS,Alphabétisation adultes (%),2000,51.2099990844727
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2025,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2024,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2023,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2022,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2021,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2020,70.8600006103516
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2019,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2018,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2017,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2016,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2015,81.4199981689453
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2014,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2013,71.0299987792969
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2012,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2011,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2010,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2009,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2008,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2007,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2006,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2005,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2004,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2003,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2002,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2001,
+SE.ADT.1524.LT.ZS,Alphabétisation jeunes 15-24 (%),2000,61.3400001525879
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2025,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2024,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2023,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2022,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2021,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2020,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2019,96.8550811785929
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2018,91.195856873823
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2017,87.2023107757604
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2016,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2015,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2014,91.2172752075231
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2013,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2012,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2011,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2010,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2009,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2008,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2007,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2006,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2005,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2004,100.0
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2003,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2002,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2001,
+SE.PRM.TCAQ.ZS,Enseignants formés primaire (%),2000,
+SI.POV.NAHC,Pauvreté nationale (%),2025,
+SI.POV.NAHC,Pauvreté nationale (%),2024,
+SI.POV.NAHC,Pauvreté nationale (%),2023,
+SI.POV.NAHC,Pauvreté nationale (%),2022,
+SI.POV.NAHC,Pauvreté nationale (%),2021,
+SI.POV.NAHC,Pauvreté nationale (%),2020,
+SI.POV.NAHC,Pauvreté nationale (%),2019,31.8
+SI.POV.NAHC,Pauvreté nationale (%),2018,
+SI.POV.NAHC,Pauvreté nationale (%),2017,
+SI.POV.NAHC,Pauvreté nationale (%),2016,
+SI.POV.NAHC,Pauvreté nationale (%),2015,
+SI.POV.NAHC,Pauvreté nationale (%),2014,34.3
+SI.POV.NAHC,Pauvreté nationale (%),2013,
+SI.POV.NAHC,Pauvreté nationale (%),2012,
+SI.POV.NAHC,Pauvreté nationale (%),2011,
+SI.POV.NAHC,Pauvreté nationale (%),2010,
+SI.POV.NAHC,Pauvreté nationale (%),2009,
+SI.POV.NAHC,Pauvreté nationale (%),2008,
+SI.POV.NAHC,Pauvreté nationale (%),2007,
+SI.POV.NAHC,Pauvreté nationale (%),2006,
+SI.POV.NAHC,Pauvreté nationale (%),2005,
+SI.POV.NAHC,Pauvreté nationale (%),2004,
+SI.POV.NAHC,Pauvreté nationale (%),2003,
+SI.POV.NAHC,Pauvreté nationale (%),2002,
+SI.POV.NAHC,Pauvreté nationale (%),2001,
+SI.POV.NAHC,Pauvreté nationale (%),2000,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2025,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2024,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2023,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2022,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2021,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2020,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2019,10.2
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2018,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2017,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2016,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2015,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2014,11.7
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2013,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2012,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2011,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2010,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2009,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2008,19.2
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2007,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2006,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2005,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2004,28.5
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2003,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2002,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2001,
+SI.POV.DDAY,Pauvreté $2.15/jour (%),2000,30.7
+SL.UEM.TOTL.ZS,Chômage total (%),2025,10.319
+SL.UEM.TOTL.ZS,Chômage total (%),2024,10.257
+SL.UEM.TOTL.ZS,Chômage total (%),2023,10.37
+SL.UEM.TOTL.ZS,Chômage total (%),2022,10.52
+SL.UEM.TOTL.ZS,Chômage total (%),2021,11.131
+SL.UEM.TOTL.ZS,Chômage total (%),2020,11.051
+SL.UEM.TOTL.ZS,Chômage total (%),2019,10.416
+SL.UEM.TOTL.ZS,Chômage total (%),2018,10.411
+SL.UEM.TOTL.ZS,Chômage total (%),2017,10.336
+SL.UEM.TOTL.ZS,Chômage total (%),2016,10.287
+SL.UEM.TOTL.ZS,Chômage total (%),2015,10.104
+SL.UEM.TOTL.ZS,Chômage total (%),2014,10.026
+SL.UEM.TOTL.ZS,Chômage total (%),2013,9.926
+SL.UEM.TOTL.ZS,Chômage total (%),2012,9.864
+SL.UEM.TOTL.ZS,Chômage total (%),2011,9.976
+SL.UEM.TOTL.ZS,Chômage total (%),2010,10.093
+SL.UEM.TOTL.ZS,Chômage total (%),2009,10.214
+SL.UEM.TOTL.ZS,Chômage total (%),2008,9.715
+SL.UEM.TOTL.ZS,Chômage total (%),2007,9.482
+SL.UEM.TOTL.ZS,Chômage total (%),2006,9.313
+SL.UEM.TOTL.ZS,Chômage total (%),2005,9.59
+SL.UEM.TOTL.ZS,Chômage total (%),2004,9.77
+SL.UEM.TOTL.ZS,Chômage total (%),2003,9.911
+SL.UEM.TOTL.ZS,Chômage total (%),2002,10.201
+SL.UEM.TOTL.ZS,Chômage total (%),2001,10.132
+SL.UEM.TOTL.ZS,Chômage total (%),2000,10.03
+SL.UEM.1524.ZS,Chômage jeunes (%),2025,22.921
+SL.UEM.1524.ZS,Chômage jeunes (%),2024,23.038
+SL.UEM.1524.ZS,Chômage jeunes (%),2023,23.24
+SL.UEM.1524.ZS,Chômage jeunes (%),2022,23.509
+SL.UEM.1524.ZS,Chômage jeunes (%),2021,24.854
+SL.UEM.1524.ZS,Chômage jeunes (%),2020,25.518
+SL.UEM.1524.ZS,Chômage jeunes (%),2019,23.371
+SL.UEM.1524.ZS,Chômage jeunes (%),2018,22.196
+SL.UEM.1524.ZS,Chômage jeunes (%),2017,20.967
+SL.UEM.1524.ZS,Chômage jeunes (%),2016,19.825
+SL.UEM.1524.ZS,Chômage jeunes (%),2015,18.503
+SL.UEM.1524.ZS,Chômage jeunes (%),2014,17.358
+SL.UEM.1524.ZS,Chômage jeunes (%),2013,16.199
+SL.UEM.1524.ZS,Chômage jeunes (%),2012,15.087
+SL.UEM.1524.ZS,Chômage jeunes (%),2011,15.22
+SL.UEM.1524.ZS,Chômage jeunes (%),2010,15.351
+SL.UEM.1524.ZS,Chômage jeunes (%),2009,15.477
+SL.UEM.1524.ZS,Chômage jeunes (%),2008,14.854
+SL.UEM.1524.ZS,Chômage jeunes (%),2007,14.563
+SL.UEM.1524.ZS,Chômage jeunes (%),2006,14.368
+SL.UEM.1524.ZS,Chômage jeunes (%),2005,14.721
+SL.UEM.1524.ZS,Chômage jeunes (%),2004,14.952
+SL.UEM.1524.ZS,Chômage jeunes (%),2003,15.134
+SL.UEM.1524.ZS,Chômage jeunes (%),2002,15.49
+SL.UEM.1524.ZS,Chômage jeunes (%),2001,15.419
+SL.UEM.1524.ZS,Chômage jeunes (%),2000,15.297
+NY.GDP.PCAP.CD,PIB/habitant (US$),2025,2197.51046251309
+NY.GDP.PCAP.CD,PIB/habitant (US$),2024,2104.54260769051
+NY.GDP.PCAP.CD,PIB/habitant (US$),2023,2127.9576285973
+NY.GDP.PCAP.CD,PIB/habitant (US$),2022,1961.28166648869
+NY.GDP.PCAP.CD,PIB/habitant (US$),2021,1947.47413907209
+NY.GDP.PCAP.CD,PIB/habitant (US$),2020,1795.72437324423
+NY.GDP.PCAP.CD,PIB/habitant (US$),2019,1767.072710621
+NY.GDP.PCAP.CD,PIB/habitant (US$),2018,1723.37809442655
+NY.GDP.PCAP.CD,PIB/habitant (US$),2017,1617.93401542267
+NY.GDP.PCAP.CD,PIB/habitant (US$),2016,1568.00551190332
+NY.GDP.PCAP.CD,PIB/habitant (US$),2015,1558.84205473416
+NY.GDP.PCAP.CD,PIB/habitant (US$),2014,1718.97089374709
+NY.GDP.PCAP.CD,PIB/habitant (US$),2013,1936.26950446101
+NY.GDP.PCAP.CD,PIB/habitant (US$),2012,1859.11733247641
+NY.GDP.PCAP.CD,PIB/habitant (US$),2011,1931.19975525465
+NY.GDP.PCAP.CD,PIB/habitant (US$),2010,1659.96369705455
+NY.GDP.PCAP.CD,PIB/habitant (US$),2009,1435.43010811893
+NY.GDP.PCAP.CD,PIB/habitant (US$),2008,1635.5630623124
+NY.GDP.PCAP.CD,PIB/habitant (US$),2007,1405.15016203368
+NY.GDP.PCAP.CD,PIB/habitant (US$),2006,1300.60367988659
+NY.GDP.PCAP.CD,PIB/habitant (US$),2005,998.96583416747
+NY.GDP.PCAP.CD,PIB/habitant (US$),2004,823.554457141893
+NY.GDP.PCAP.CD,PIB/habitant (US$),2003,732.017820812675
+NY.GDP.PCAP.CD,PIB/habitant (US$),2002,648.879643934862
+NY.GDP.PCAP.CD,PIB/habitant (US$),2001,651.817840199777
+NY.GDP.PCAP.CD,PIB/habitant (US$),2000,680.911061879778

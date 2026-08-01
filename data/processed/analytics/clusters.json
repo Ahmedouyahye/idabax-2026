@@ -1,0 +1,68 @@
+{
+  "k": 3,
+  "inertias": [
+    55.88411015275547,
+    38.23463263543185,
+    26.83461378690881,
+    19.689327723357316,
+    14.858653918477106
+  ],
+  "silhouette": 0.331,
+  "profiles": [
+    {
+      "cluster": 0,
+      "wilayas": [
+        "Adrar",
+        "Dakhlet Nouadhibou",
+        "Inchiri",
+        "Nouakchott",
+        "Tiris Zemmour"
+      ],
+      "taille": 5,
+      "hors_ecole_moyen_pct": 17.07,
+      "pauvrete_moyen_pct": 18.89,
+      "ruralite_moyen_pct": 15.02,
+      "dependance_jeunes_moyen": 51.52,
+      "mahadra_moyen_pct": 9.24,
+      "aucune_instruction_moyen_pct": 7.83,
+      "label": "Scolarisation proche de l'universel",
+      "levier": "Consolider et suivre"
+    },
+    {
+      "cluster": 1,
+      "wilayas": [
+        "Assaba",
+        "Hodh Ech Chargui",
+        "Hodh El Gharbi",
+        "Trarza"
+      ],
+      "taille": 4,
+      "hors_ecole_moyen_pct": 40.28,
+      "pauvrete_moyen_pct": 29.72,
+      "ruralite_moyen_pct": 73.83,
+      "dependance_jeunes_moyen": 79.92,
+      "mahadra_moyen_pct": 28.66,
+      "aucune_instruction_moyen_pct": 11.62,
+      "label": "Exclusion à dominante traditionnelle",
+      "levier": "Passerelles mahadra → formel"
+    },
+    {
+      "cluster": 2,
+      "wilayas": [
+        "Brakna",
+        "Gorgol",
+        "Guidimakha",
+        "Tagant"
+      ],
+      "taille": 4,
+      "hors_ecole_moyen_pct": 33.4,
+      "pauvrete_moyen_pct": 41.88,
+      "ruralite_moyen_pct": 73.73,
+      "dependance_jeunes_moyen": 84.95,
+      "mahadra_moyen_pct": 6.6,
+      "aucune_instruction_moyen_pct": 26.8,
+      "label": "Exclusion à dominante 'aucune instruction'",
+      "levier": "Construire des écoles"
+    }
+  ]
+}

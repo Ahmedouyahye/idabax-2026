@@ -1,0 +1,322 @@
+{
+  "n_children_6_14": 16451,
+  "prevalence_hors_ecole_pct": 33.1,
+  "pseudo_r2": 0.117,
+  "aic": 18484.78885156771,
+  "features": [
+    {
+      "name": "wilaya_Adrar",
+      "label": "Adrar",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.1,
+      "ci_lo": 0.07,
+      "ci_hi": 0.14,
+      "coef": -2.295,
+      "pvalue": 4.407676646509253e-36,
+      "wilaya": true
+    },
+    {
+      "name": "age_6_9",
+      "label": "Âge 6-9 ans (réf. 10-14)",
+      "categorie": "Âge",
+      "odds_ratio": 2.82,
+      "ci_lo": 2.62,
+      "ci_hi": 3.02,
+      "coef": 1.036,
+      "pvalue": 2.7078462597762214e-180,
+      "wilaya": false
+    },
+    {
+      "name": "wilaya_Inchiri",
+      "label": "Inchiri",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.38,
+      "ci_lo": 0.27,
+      "ci_hi": 0.54,
+      "coef": -0.96,
+      "pvalue": 8.441911742873795e-08,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Brakna",
+      "label": "Brakna",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.41,
+      "ci_lo": 0.34,
+      "ci_hi": 0.49,
+      "coef": -0.902,
+      "pvalue": 4.33891195867922e-23,
+      "wilaya": true
+    },
+    {
+      "name": "milieu_rural",
+      "label": "Milieu rural (réf. urbain)",
+      "categorie": "Milieu",
+      "odds_ratio": 2.41,
+      "ci_lo": 2.17,
+      "ci_hi": 2.67,
+      "coef": 0.88,
+      "pvalue": 1.3596730668651443e-61,
+      "wilaya": false
+    },
+    {
+      "name": "wilaya_Tiris Zemmour",
+      "label": "Tiris Zemmour",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.51,
+      "ci_lo": 0.39,
+      "ci_hi": 0.66,
+      "coef": -0.675,
+      "pvalue": 6.527978263571708e-07,
+      "wilaya": true
+    },
+    {
+      "name": "pauvre",
+      "label": "Ménage pauvre (réf. non pauvre)",
+      "categorie": "Pauvreté",
+      "odds_ratio": 1.91,
+      "ci_lo": 1.77,
+      "ci_hi": 2.06,
+      "coef": 0.646,
+      "pvalue": 8.970649218574471e-62,
+      "wilaya": false
+    },
+    {
+      "name": "wilaya_Tagant",
+      "label": "Tagant",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.57,
+      "ci_lo": 0.45,
+      "ci_hi": 0.73,
+      "coef": -0.555,
+      "pvalue": 4.800109601990284e-06,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Trarza",
+      "label": "Trarza",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.7,
+      "ci_lo": 0.59,
+      "ci_hi": 0.84,
+      "coef": -0.354,
+      "pvalue": 8.445131636194365e-05,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Gorgol",
+      "label": "Gorgol",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.71,
+      "ci_lo": 0.6,
+      "ci_hi": 0.83,
+      "coef": -0.347,
+      "pvalue": 2.046049173869851e-05,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Dakhlet Nouadhibou",
+      "label": "Dakhlet Nouadhibou",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.8,
+      "ci_lo": 0.64,
+      "ci_hi": 1.0,
+      "coef": -0.228,
+      "pvalue": 0.04525317072510086,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Hodh El Gharbi",
+      "label": "Hodh El Gharbi",
+      "categorie": "Wilaya",
+      "odds_ratio": 1.18,
+      "ci_lo": 1.0,
+      "ci_hi": 1.39,
+      "coef": 0.164,
+      "pvalue": 0.05465451316179187,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Guidimakha",
+      "label": "Guidimakha",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.9,
+      "ci_lo": 0.76,
+      "ci_hi": 1.06,
+      "coef": -0.108,
+      "pvalue": 0.19127896383075693,
+      "wilaya": true
+    },
+    {
+      "name": "sexe_feminin",
+      "label": "Sexe féminin",
+      "categorie": "Sexe",
+      "odds_ratio": 0.91,
+      "ci_lo": 0.85,
+      "ci_hi": 0.98,
+      "coef": -0.095,
+      "pvalue": 0.008095597229414317,
+      "wilaya": false
+    },
+    {
+      "name": "wilaya_Hodh Ech Chargui",
+      "label": "Hodh Ech Chargui",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.92,
+      "ci_lo": 0.79,
+      "ci_hi": 1.07,
+      "coef": -0.085,
+      "pvalue": 0.28434942562673227,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Assaba",
+      "label": "Assaba",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.96,
+      "ci_lo": 0.81,
+      "ci_hi": 1.13,
+      "coef": -0.041,
+      "pvalue": 0.6284239605029818,
+      "wilaya": true
+    }
+  ],
+  "wilayas": [
+    {
+      "name": "wilaya_Hodh El Gharbi",
+      "label": "Hodh El Gharbi",
+      "categorie": "Wilaya",
+      "odds_ratio": 1.18,
+      "ci_lo": 1.0,
+      "ci_hi": 1.39,
+      "coef": 0.164,
+      "pvalue": 0.05465451316179187,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Assaba",
+      "label": "Assaba",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.96,
+      "ci_lo": 0.81,
+      "ci_hi": 1.13,
+      "coef": -0.041,
+      "pvalue": 0.6284239605029818,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Hodh Ech Chargui",
+      "label": "Hodh Ech Chargui",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.92,
+      "ci_lo": 0.79,
+      "ci_hi": 1.07,
+      "coef": -0.085,
+      "pvalue": 0.28434942562673227,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Guidimakha",
+      "label": "Guidimakha",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.9,
+      "ci_lo": 0.76,
+      "ci_hi": 1.06,
+      "coef": -0.108,
+      "pvalue": 0.19127896383075693,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Dakhlet Nouadhibou",
+      "label": "Dakhlet Nouadhibou",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.8,
+      "ci_lo": 0.64,
+      "ci_hi": 1.0,
+      "coef": -0.228,
+      "pvalue": 0.04525317072510086,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Gorgol",
+      "label": "Gorgol",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.71,
+      "ci_lo": 0.6,
+      "ci_hi": 0.83,
+      "coef": -0.347,
+      "pvalue": 2.046049173869851e-05,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Trarza",
+      "label": "Trarza",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.7,
+      "ci_lo": 0.59,
+      "ci_hi": 0.84,
+      "coef": -0.354,
+      "pvalue": 8.445131636194365e-05,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Tagant",
+      "label": "Tagant",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.57,
+      "ci_lo": 0.45,
+      "ci_hi": 0.73,
+      "coef": -0.555,
+      "pvalue": 4.800109601990284e-06,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Tiris Zemmour",
+      "label": "Tiris Zemmour",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.51,
+      "ci_lo": 0.39,
+      "ci_hi": 0.66,
+      "coef": -0.675,
+      "pvalue": 6.527978263571708e-07,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Brakna",
+      "label": "Brakna",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.41,
+      "ci_lo": 0.34,
+      "ci_hi": 0.49,
+      "coef": -0.902,
+      "pvalue": 4.33891195867922e-23,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Inchiri",
+      "label": "Inchiri",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.38,
+      "ci_lo": 0.27,
+      "ci_hi": 0.54,
+      "coef": -0.96,
+      "pvalue": 8.441911742873795e-08,
+      "wilaya": true
+    },
+    {
+      "name": "wilaya_Adrar",
+      "label": "Adrar",
+      "categorie": "Wilaya",
+      "odds_ratio": 0.1,
+      "ci_lo": 0.07,
+      "ci_hi": 0.14,
+      "coef": -2.295,
+      "pvalue": 4.407676646509253e-36,
+      "wilaya": true
+    }
+  ],
+  "reference_wilaya": "Nouakchott",
+  "facteur_determinant": "cm_sans_education",
+  "facteur_determinant_note": "Un chef de ménage sans éducation est un facteur parfaitement prédictif du hors-école (séparation complète) : son effet n'est pas estimable par le modèle et est présenté via les règles d'association (confiance 100 %, lift 3,02).",
+  "interpretation": "Un odds-ratio > 1 augmente la probabilité d'exclusion, < 1 la réduit. Tous les effets sont ajustés sur les autres facteurs (toutes choses égales par ailleurs). Références : garçon, 10-14 ans, urbain, ménage non pauvre, wilaya de Nouakchott."
+}

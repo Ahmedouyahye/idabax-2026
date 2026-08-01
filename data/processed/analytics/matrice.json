@@ -1,0 +1,204 @@
+{
+  "median_volume_log": 10.144235237798695,
+  "median_intensite": 30.23,
+  "quadrants": [
+    {
+      "id": "massif",
+      "label": "Effort massif",
+      "description": "Beaucoup d'enfants et un taux élevé : le double fardeau. Priorité absolue de construction et de recrutement.",
+      "color": "#ef6f5f",
+      "key": "11",
+      "wilayas": [
+        "Assaba",
+        "Gorgol",
+        "Guidimakha",
+        "Hodh Ech Chargui",
+        "Hodh El Gharbi",
+        "Trarza"
+      ],
+      "enfants_hors_ecole": 256746
+    },
+    {
+      "id": "viviers",
+      "label": "Ciblage des effectifs",
+      "description": "De grands viviers d'enfants avec un taux modéré : l'effort se porte sur la conversion des effectifs (passerelles, rétention).",
+      "color": "#eeb74f",
+      "key": "10",
+      "wilayas": [
+        "Nouakchott"
+      ],
+      "enfants_hors_ecole": 77296
+    },
+    {
+      "id": "vigilance",
+      "label": "Consolidation",
+      "description": "Effectifs et taux contenus : maintenir, suivre les flux et prévenir tout recul de la scolarisation.",
+      "color": "#4ec3a3",
+      "key": "00",
+      "wilayas": [
+        "Adrar",
+        "Brakna",
+        "Dakhlet Nouadhibou",
+        "Inchiri",
+        "Tiris Zemmour"
+      ],
+      "enfants_hors_ecole": 34597
+    },
+    {
+      "id": "intensif",
+      "label": "Traitement local",
+      "description": "Petits effectifs mais forte exclusion : solutions de proximité, mahadra à intégrer, suivi ciblé des zones à risque.",
+      "color": "#ef9460",
+      "key": "01",
+      "wilayas": [
+        "Tagant"
+      ],
+      "enfants_hors_ecole": 6927
+    }
+  ],
+  "scatter": [
+    {
+      "wilaya": "Adrar",
+      "scol_Hors_ecole_formelle": 6.19,
+      "volume_log": 6.82001636467413,
+      "enfants_hors_ecole": 915,
+      "quadrant": [
+        0,
+        0
+      ],
+      "quadrant_id": "vigilance"
+    },
+    {
+      "wilaya": "Assaba",
+      "scol_Hors_ecole_formelle": 41.55,
+      "volume_log": 10.757051454501978,
+      "enfants_hors_ecole": 46959,
+      "quadrant": [
+        1,
+        1
+      ],
+      "quadrant_id": "massif"
+    },
+    {
+      "wilaya": "Brakna",
+      "scol_Hors_ecole_formelle": 25.46,
+      "volume_log": 10.072766084358127,
+      "enfants_hors_ecole": 23688,
+      "quadrant": [
+        0,
+        0
+      ],
+      "quadrant_id": "vigilance"
+    },
+    {
+      "wilaya": "Dakhlet Nouadhibou",
+      "scol_Hors_ecole_formelle": 21.21,
+      "volume_log": 8.868131713503033,
+      "enfants_hors_ecole": 7101,
+      "quadrant": [
+        0,
+        0
+      ],
+      "quadrant_id": "vigilance"
+    },
+    {
+      "wilaya": "Gorgol",
+      "scol_Hors_ecole_formelle": 33.46,
+      "volume_log": 10.537176618145875,
+      "enfants_hors_ecole": 37690,
+      "quadrant": [
+        1,
+        1
+      ],
+      "quadrant_id": "massif"
+    },
+    {
+      "wilaya": "Guidimakha",
+      "scol_Hors_ecole_formelle": 44.44,
+      "volume_log": 10.665530933243835,
+      "enfants_hors_ecole": 42852,
+      "quadrant": [
+        1,
+        1
+      ],
+      "quadrant_id": "massif"
+    },
+    {
+      "wilaya": "Hodh Ech Chargui",
+      "scol_Hors_ecole_formelle": 40.73,
+      "volume_log": 10.991190550696201,
+      "enfants_hors_ecole": 59348,
+      "quadrant": [
+        1,
+        1
+      ],
+      "quadrant_id": "massif"
+    },
+    {
+      "wilaya": "Hodh El Gharbi",
+      "scol_Hors_ecole_formelle": 47.25,
+      "volume_log": 10.702232720555239,
+      "enfants_hors_ecole": 44454,
+      "quadrant": [
+        1,
+        1
+      ],
+      "quadrant_id": "massif"
+    },
+    {
+      "wilaya": "Inchiri",
+      "scol_Hors_ecole_formelle": 16.85,
+      "volume_log": 6.78897174299217,
+      "enfants_hors_ecole": 887,
+      "quadrant": [
+        0,
+        0
+      ],
+      "quadrant_id": "vigilance"
+    },
+    {
+      "wilaya": "Nouakchott",
+      "scol_Hors_ecole_formelle": 24.82,
+      "volume_log": 11.255410423990568,
+      "enfants_hors_ecole": 77296,
+      "quadrant": [
+        1,
+        0
+      ],
+      "quadrant_id": "viviers"
+    },
+    {
+      "wilaya": "Tagant",
+      "scol_Hors_ecole_formelle": 30.23,
+      "volume_log": 8.843326450242271,
+      "enfants_hors_ecole": 6927,
+      "quadrant": [
+        0,
+        1
+      ],
+      "quadrant_id": "intensif"
+    },
+    {
+      "wilaya": "Tiris Zemmour",
+      "scol_Hors_ecole_formelle": 16.28,
+      "volume_log": 7.604396348796338,
+      "enfants_hors_ecole": 2006,
+      "quadrant": [
+        0,
+        0
+      ],
+      "quadrant_id": "vigilance"
+    },
+    {
+      "wilaya": "Trarza",
+      "scol_Hors_ecole_formelle": 31.59,
+      "volume_log": 10.144235237798695,
+      "enfants_hors_ecole": 25443,
+      "quadrant": [
+        1,
+        1
+      ],
+      "quadrant_id": "massif"
+    }
+  ]
+}

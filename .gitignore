@@ -1,0 +1,32 @@
+# Claude
+.claude/
+
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environnement
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Logs / temporaire
+*.log
+
+# Artefacts locaux (sorties shell/outils, rapports hors projet)
+info:*
+mele3bak-platform-report.pdf
