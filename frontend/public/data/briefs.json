@@ -1,0 +1,1 @@
+{"disponible": false, "briefs": {}, "note": "Aucune note générée. Lancer `ANTHROPIC_API_KEY=... python -m backend.analytics.briefs` pour les produire ; le tableau de bord fonctionne sans."}

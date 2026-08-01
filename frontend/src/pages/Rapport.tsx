@@ -29,6 +29,15 @@ export default function Rapport() {
 
   const ready = !loading && !errored;
   const n = ready ? summary.data!.national : null;
+  const locale = LOCALES[lang] ?? "fr-FR";
+  const num = (v: number, d = 1) => v.toLocaleString(locale, { maximumFractionDigits: d });
+  const part6_14 = ready ? Math.round((100 * n!.population_6_14_2022) / n!.population_totale_2022) : 0;
+  const top3 = ready
+    ? wilayas.data!.slice().sort((a, b) => a.rang_ipe - b.rang_ipe).slice(0, 3)
+    : [];
+  const referenceScenario = ready
+    ? scen.data!.scenarios.find((s) => s.id === "reference") ?? scen.data!.scenarios[0]
+    : null;
   const series = trends.data ? parseTrendSeries(trends.data!.series) : [];
   const horsEcole = series.find((s) => s.code === "SE.PRM.UNER.ZS");
   const nette = series.find((s) => s.code === "SE.PRM.NENR");
@@ -118,12 +127,12 @@ export default function Rapport() {
     <span className="italic text-[#b96a1f]">{t("home.title.p2")}</span> {t("home.title.p3")}.
   </h1>
   <p className="mt-6 max-w-lg font-inter text-sm leading-relaxed text-[#3d3323]">
-    {t("rapport.cover.lead", { n: "375 566" })}
+    {t("rapport.cover.lead", { n: fmt(n!.enfants_hors_ecole_formelle) })}
   </p>
  <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4">
-  <CoverStat value="33,1 %" label={t("rapport.cover.stat1")} />
-  <CoverStat value="72,1 %" label={t("rapport.cover.stat2")} />
-  <CoverStat value="2030" label={t("rapport.cover.stat3")} />
+  <CoverStat value={`${num(n!.taux_hors_ecole_national_pct)} %`} label={t("rapport.cover.stat1")} />
+  <CoverStat value={`${num(conc.data!.top5_share)} %`} label={t("rapport.cover.stat2")} />
+  <CoverStat value={String(scen.data!.horizon)} label={t("rapport.cover.stat3")} />
  </div>
  </div>
 
@@ -136,16 +145,16 @@ export default function Rapport() {
  <section className="sheet-page">
   <SectionTitle n="01" title={t("rapport.s1.title")} />
   <p className="mt-3 font-inter text-sm leading-relaxed text-[#3d3323]">
-    {t("rapport.s1.lead1")} <b>4,37 millions</b> {t("rapport.s1.lead2")} <b>1 135 657 {t("Enfants 6-14 ans")}</b>{" "}
-    {t("rapport.s1.lead3")} <b className="text-[#a3402f]">375 566 {t("Hors école formelle")}</b>{" "}
-    {t("rapport.s1.lead4")} <b>{t("Aucune instruction")}</b>
+    {t("rapport.s1.lead1")} <b>{num(n!.population_totale_2022 / 1e6, 2)} millions</b> {t("rapport.s1.lead2")} <b>{fmt(n!.population_6_14_2022)} {t("Enfants 6-14 ans")}</b>{" "}
+    {t("rapport.s1.lead3", { pct: String(part6_14) })} <b className="text-[#a3402f]">{fmt(n!.enfants_hors_ecole_formelle)} {t("Hors école formelle")}</b>{" "}
+    {t("rapport.s1.lead4", { taux: num(n!.taux_hors_ecole_national_pct) })} <b>{t("Aucune instruction")}</b>
     {t("rapport.s1.lead5")}
   </p>
             <div className="mt-4 grid grid-cols-4 gap-2">
-              <BoxStat value="4 372 038" label={t("Population 2022")} />
-              <BoxStat value="1 135 657" label={t("Enfants 6-14 ans")} />
-              <BoxStat value="375 566" label={t("Hors école formelle")} />
-              <BoxStat value="199 493" label={t("rapport.s1.box_mahadra")} />
+              <BoxStat value={fmt(n!.population_totale_2022)} label={t("Population 2022")} />
+              <BoxStat value={fmt(n!.population_6_14_2022)} label={t("Enfants 6-14 ans")} />
+              <BoxStat value={fmt(n!.enfants_hors_ecole_formelle)} label={t("Hors école formelle")} />
+              <BoxStat value={fmt(n!.enfants_mahadra)} label={t("rapport.s1.box_mahadra")} />
             </div>
             <div className="mt-4 grid grid-cols-5 gap-5">
               <div className="col-span-2">
@@ -178,11 +187,17 @@ export default function Rapport() {
   <Message k="M3" title={t("rapport.s1.m3.title")} text={t("rapport.s1.m3.text")} />
  </div>
   <div className="mt-4 grid grid-cols-3 gap-3">
-  <Message k="P1" title="Hodh El Gharbi" text={t("rapport.s1.p1.text", { ipe: "92,2" })} color="text-[#a3402f]" />
-  <Message k="P2" title="Hodh Ech Chargui" text={t("rapport.s1.p2.text", { ipe: "86,7", n: "48 740" })} color="text-[#a3402f]" />
-  <Message k="P3" title="Assaba" text={t("rapport.s1.p3.text", { ipe: "81,6" })} color="text-[#a3402f]" />
- </div>
- </section>
+    {top3.map((w, i) => (
+      <Message
+        key={w.wilaya}
+        k={`P${i + 1}`}
+        title={w.wilaya}
+        text={t(`rapport.s1.p${i + 1}.text`, { ipe: num(w.ipe), n: fmt(w.enfants_hors_ecole) })}
+        color="text-[#a3402f]"
+      />
+    ))}
+  </div>
+  </section>
 
  {/* ================= CLASSEMENT ================= */}
  <section className="sheet-page">
@@ -281,7 +296,7 @@ export default function Rapport() {
                     { value: dec.data!.national.filles_hors_ecole, color: PAPER.red },
                     { value: dec.data!.national.garcons_hors_ecole, color: "rgba(163,64,47,0.4)" },
                   ],
-                  33.1
+                  n!.taux_hors_ecole_national_pct
                 )}
                 h={240}
               />
@@ -342,7 +357,7 @@ export default function Rapport() {
  <section className="sheet-page">
             <SectionTitle n="06" title={t("rapport.s6.title")} />
   <p className="mt-3 font-inter text-sm leading-relaxed text-[#3d3323]">
-    {t("rapport.s6.lead1")} ~<b>{t("rapport.s6.lead_bold", { n: "318 000" })}</b>{" "}
+    {t("rapport.s6.lead1")} ~<b>{t("rapport.s6.lead_bold", { n: fmt(referenceScenario?.enfants_hors_ecole_2030 ?? 0) })}</b>{" "}
     {t("rapport.s6.lead2")}
   </p>
             <div className="mt-5">
