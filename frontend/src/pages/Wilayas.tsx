@@ -49,8 +49,8 @@ export default function Wilayas() {
  onClick={() => setParams({ w: x.wilaya })}
  className={`rounded-xl px-3 py-2 text-xs font-semibold transition-all ${
  selected === x.wilaya
- ? "bg-accent/15 text-accent shadow-[inset_0_0_0_1px_rgba(45,212,191,0.3)]"
- : "bg-white/5 text-mut hover:bg-white/10 hover:text-fg"
+ ? "bg-accent/15 text-accent shadow-[inset_0_0_0_1px_rgba(20,122,102,0.30)]"
+ : "bg-ink/[0.05] text-mut hover:bg-ink/10 hover:text-fg"
  }`}
  >
  <span className="num mr-1.5 text-[10px] opacity-70">#{x.rang_ipe}</span>
@@ -153,7 +153,7 @@ export default function Wilayas() {
  )}
  style={{ height: 300 }}
  />
- <div className="mt-2 rounded-xl bg-white/[0.03] p-3 text-xs leading-relaxed text-mut">
+ <div className="mt-2 rounded-xl bg-ink/[0.045] p-3 text-xs leading-relaxed text-mut">
  {t("wilayas.ecart_genre")}{" "}
  <span className={w.ecart_genre_hors_ecole > 0 ? "font-semibold text-accent" : "font-semibold text-warn"}>
  {w.ecart_genre_hors_ecole > 0 ? t("wilayas.garcons_exclus") : t("wilayas.filles_exclues")} {t("wilayas.de_pts", { n: Math.abs(w.ecart_genre_hors_ecole) })}
@@ -221,7 +221,7 @@ function BarPart({ label, value, color, hint }: { label: string; value: number; 
  <span className="text-xs font-semibold text-fg">{label}</span>
  <span className="num text-xs" style={{ color }}>{value.toLocaleString("fr-FR", { maximumFractionDigits: 1 })}</span>
  </div>
- <div className="h-2 overflow-hidden rounded-full bg-white/5">
+ <div className="h-2 overflow-hidden rounded-full bg-ink/[0.05]">
  <div className="h-full rounded-full" style={{ width: `${value}%`, background: color, opacity: 0.85 }} />
  </div>
  <div className="mt-0.5 text-[10px] text-mut">{hint}</div>
@@ -231,7 +231,7 @@ function BarPart({ label, value, color, hint }: { label: string; value: number; 
 
 function MiniStat({ label, value, accent = "text-fg" }: { label: string; value: string; accent?: string }) {
  return (
- <div className="rounded-xl bg-white/[0.03] p-3">
+ <div className="rounded-xl bg-ink/[0.045] p-3">
  <div className="text-[10px] uppercase tracking-wider text-mut">{label}</div>
  <div className={`num mt-1 text-lg font-bold ${accent}`}>{value}</div>
  </div>

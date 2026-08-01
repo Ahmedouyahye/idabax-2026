@@ -34,28 +34,28 @@ export default function Tendances() {
  : null;
 
  const decompositionOption: EChartsOption = {
- tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, backgroundColor: "#211b11", borderColor: "rgba(226,199,150,0.22)", textStyle: { color: "#f4edde" } },
+ tooltip: { trigger: "axis", axisPointer: { type: "shadow" }, backgroundColor: "#ffffff", borderColor: "rgba(37,50,58,0.14)", textStyle: { color: "#22303a" } },
  grid: { left: 8, right: 24, top: 8, bottom: 8, containLabel: true },
  xAxis: {
  type: "value",
- axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } },
- axisLabel: { color: "#a19077", fontSize: 11, formatter: "{value} %" },
- splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } },
+ axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } },
+ axisLabel: { color: "#66737d", fontSize: 11, formatter: "{value} %" },
+ splitLine: { lineStyle: { color: "rgba(37,50,58,0.07)" } },
  },
- yAxis: { type: "category", inverse: true, axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } }, axisLabel: { color: "#d8cbb0", fontSize: 12, fontWeight: 600 } },
+ yAxis: { type: "category", inverse: true, axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } }, axisLabel: { color: "#55636d", fontSize: 12, fontWeight: 600 } },
  series: [
  {
  type: "bar",
  data: [
  { value: n.age_6_9_hors_ecole, itemStyle: { color: ACCENT, borderRadius: [0, 6, 6, 0] }, label: { show: true, position: "right" } },
- { value: n.age_10_14_hors_ecole, itemStyle: { color: "rgba(238,183,79,0.32)", borderRadius: [0, 6, 6, 0] } },
+ { value: n.age_10_14_hors_ecole, itemStyle: { color: "rgba(181,119,14,0.30)", borderRadius: [0, 6, 6, 0] } },
  { value: n.rural_hors_ecole, itemStyle: { color: ACCENT2, borderRadius: [0, 6, 6, 0] }, label: { show: true, position: "right" } },
  { value: n.urbain_hors_ecole, itemStyle: { color: "rgba(78,195,163,0.32)", borderRadius: [0, 6, 6, 0] } },
  { value: n.garcons_hors_ecole, itemStyle: { color: CORAL, borderRadius: [0, 6, 6, 0] } },
  { value: n.filles_hors_ecole, itemStyle: { color: "rgba(239,111,95,0.45)", borderRadius: [0, 6, 6, 0] } },
  ],
  barWidth: 18,
- label: { show: true, position: "right", color: "#f4edde", fontSize: 11, fontWeight: 600, formatter: "{c} %" },
+ label: { show: true, position: "right", color: "#22303a", fontSize: 11, fontWeight: 600, formatter: "{c} %" },
  itemStyle: { borderRadius: [0, 6, 6, 0] },
  },
  ],

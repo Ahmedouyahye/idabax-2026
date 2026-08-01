@@ -20,14 +20,14 @@ export default function Strategies() {
  const c = conc.data!;
  const s = scen.data!;
 
- const quadrantColor = (id: string) => m.quadrants.find((q) => q.id === id)?.color ?? "#a19077";
+ const quadrantColor = (id: string) => m.quadrants.find((q) => q.id === id)?.color ?? "#66737d";
 
  const scatterOption: EChartsOption = {
  tooltip: {
  trigger: "item",
- backgroundColor: "#211b11",
- borderColor: "rgba(226,199,150,0.22)",
- textStyle: { color: "#f4edde" },
+ backgroundColor: "#ffffff",
+ borderColor: "rgba(37,50,58,0.14)",
+ textStyle: { color: "#22303a" },
  formatter: (p: any) =>
  t("strategies.scatterTooltip", { wilaya: p.data.name, enfants: fmt(p.data.value[2]), volume: p.data.value[0].toFixed(1), taux: p.data.value[1].toFixed(1) }),
  },
@@ -35,18 +35,18 @@ export default function Strategies() {
  xAxis: {
  type: "value",
  name: t("strategies.volume"),
- nameTextStyle: { color: "#a19077", fontSize: 10 },
- axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } },
- axisLabel: { color: "#a19077", fontSize: 11 },
- splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } },
+ nameTextStyle: { color: "#66737d", fontSize: 10 },
+ axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } },
+ axisLabel: { color: "#66737d", fontSize: 11 },
+ splitLine: { lineStyle: { color: "rgba(37,50,58,0.07)" } },
  },
  yAxis: {
  type: "value",
  name: t("strategies.taux"),
- nameTextStyle: { color: "#a19077", fontSize: 10 },
- axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } },
- axisLabel: { color: "#a19077", fontSize: 11 },
- splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } },
+ nameTextStyle: { color: "#66737d", fontSize: 10 },
+ axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } },
+ axisLabel: { color: "#66737d", fontSize: 11 },
+ splitLine: { lineStyle: { color: "rgba(37,50,58,0.07)" } },
  },
  series: [
  {
@@ -55,14 +55,14 @@ export default function Strategies() {
  data: m.scatter.map((p) => ({
  name: p.wilaya,
  value: [p.volume_log, p.scol_Hors_ecole_formelle, p.enfants_hors_ecole],
- itemStyle: { color: quadrantColor(p.quadrant_id), opacity: 0.92, borderColor: "#15110a", borderWidth: 1.5 },
- label: { show: true, formatter: p.wilaya, position: "top", color: "#d8cbb0", fontSize: 10, fontWeight: 600 },
+ itemStyle: { color: quadrantColor(p.quadrant_id), opacity: 0.92, borderColor: "#ffffff", borderWidth: 1.5 },
+ label: { show: true, formatter: p.wilaya, position: "top", color: "#55636d", fontSize: 10, fontWeight: 600 },
  })),
  markLine: {
  symbol: "none",
  silent: true,
  label: { show: false },
- lineStyle: { color: "rgba(226,199,150,0.4)", type: "dashed" },
+ lineStyle: { color: "rgba(37,50,58,0.22)", type: "dashed" },
  data: [{ xAxis: m.median_volume_log }, { yAxis: m.median_intensite }],
  },
  },
@@ -70,21 +70,21 @@ export default function Strategies() {
  };
 
  const paretoOption: EChartsOption = {
- tooltip: { trigger: "axis", backgroundColor: "#211b11", borderColor: "rgba(226,199,150,0.22)", textStyle: { color: "#f4edde" } },
+ tooltip: { trigger: "axis", backgroundColor: "#ffffff", borderColor: "rgba(37,50,58,0.14)", textStyle: { color: "#22303a" } },
  grid: { left: 10, right: 40, top: 12, bottom: 10, containLabel: true },
- legend: { textStyle: { color: "#a19077", fontSize: 11 }, top: 0 },
- xAxis: { type: "category", data: c.top5.map((t) => t.wilaya), axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } }, axisLabel: { color: "#d8cbb0", fontSize: 10, fontWeight: 600 } },
+ legend: { textStyle: { color: "#66737d", fontSize: 11 }, top: 0 },
+ xAxis: { type: "category", data: c.top5.map((t) => t.wilaya), axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } }, axisLabel: { color: "#55636d", fontSize: 10, fontWeight: 600 } },
  yAxis: [
  {
  type: "value",
- axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } },
- axisLabel: { color: "#a19077", fontSize: 11 },
- splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } },
+ axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } },
+ axisLabel: { color: "#66737d", fontSize: 11 },
+ splitLine: { lineStyle: { color: "rgba(37,50,58,0.07)" } },
  },
  {
  type: "value",
  max: 100,
- axisLabel: { color: "#a19077", fontSize: 11, formatter: "{value} %" },
+ axisLabel: { color: "#66737d", fontSize: 11, formatter: "{value} %" },
  splitLine: { show: false },
  },
  ],
@@ -111,14 +111,14 @@ export default function Strategies() {
  const lorenzOption: EChartsOption = {
  tooltip: {
  trigger: "axis",
- backgroundColor: "#211b11",
- borderColor: "rgba(226,199,150,0.22)",
- textStyle: { color: "#f4edde" },
+ backgroundColor: "#ffffff",
+ borderColor: "rgba(37,50,58,0.14)",
+ textStyle: { color: "#22303a" },
  formatter: (p: any) => t("strategies.lorenzTooltip", { w: p[0].data[0].toFixed(1), e: p[0].data[1].toFixed(1) }),
  },
  grid: { left: 10, right: 16, top: 12, bottom: 10, containLabel: true },
- xAxis: { type: "value", min: 0, max: 100, axisLabel: { color: "#a19077", fontSize: 11, formatter: "{value} %" }, axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } }, splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } } },
- yAxis: { type: "value", min: 0, max: 100, axisLabel: { color: "#a19077", fontSize: 11, formatter: "{value} %" }, axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } }, splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } } },
+ xAxis: { type: "value", min: 0, max: 100, axisLabel: { color: "#66737d", fontSize: 11, formatter: "{value} %" }, axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } }, splitLine: { lineStyle: { color: "rgba(37,50,58,0.07)" } } },
+ yAxis: { type: "value", min: 0, max: 100, axisLabel: { color: "#66737d", fontSize: 11, formatter: "{value} %" }, axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } }, splitLine: { lineStyle: { color: "rgba(37,50,58,0.07)" } } },
  series: [
  {
  type: "line",
@@ -135,7 +135,7 @@ export default function Strategies() {
  type: "line",
  name: t("strategies.egaliteParfaite"),
  symbol: "none",
- lineStyle: { color: "rgba(226,199,150,0.35)", type: "dashed" },
+ lineStyle: { color: "rgba(37,50,58,0.25)", type: "dashed" },
  data: [
  [0, 0],
  [100, 100],
@@ -145,10 +145,10 @@ export default function Strategies() {
  };
 
  const scenarioBars: EChartsOption = {
- tooltip: { trigger: "axis", backgroundColor: "#211b11", borderColor: "rgba(226,199,150,0.22)", textStyle: { color: "#f4edde" }, formatter: (p: any) => `${t(p[0].name)}<br/>${t("strategies.scenarioTooltip", { n: fmt(p[0].value) })}` },
+ tooltip: { trigger: "axis", backgroundColor: "#ffffff", borderColor: "rgba(37,50,58,0.14)", textStyle: { color: "#22303a" }, formatter: (p: any) => `${t(p[0].name)}<br/>${t("strategies.scenarioTooltip", { n: fmt(p[0].value) })}` },
  grid: { left: 10, right: 16, top: 12, bottom: 10, containLabel: true },
- xAxis: { type: "category", data: s.scenarios.map((x) => x.label), axisLabel: { color: "#d8cbb0", fontSize: 10, fontWeight: 600, interval: 0 }, axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } } },
- yAxis: { type: "value", axisLabel: { color: "#a19077", fontSize: 11 }, axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } }, splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } } },
+ xAxis: { type: "category", data: s.scenarios.map((x) => x.label), axisLabel: { color: "#55636d", fontSize: 10, fontWeight: 600, interval: 0 }, axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } } },
+ yAxis: { type: "value", axisLabel: { color: "#66737d", fontSize: 11 }, axisLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } }, splitLine: { lineStyle: { color: "rgba(37,50,58,0.07)" } } },
  series: [
  {
  type: "bar",
@@ -156,7 +156,7 @@ export default function Strategies() {
  data: s.scenarios.map((x) => ({
  value: x.enfants_hors_ecole_2030,
  itemStyle: { color: x.color, borderRadius: [8, 8, 0, 0] },
- label: { show: true, position: "top", color: "#f4edde", fontSize: 11, fontWeight: 700, formatter: (p: any) => `${Math.round(p.value / 1000)} k` },
+ label: { show: true, position: "top", color: "#22303a", fontSize: 11, fontWeight: 700, formatter: (p: any) => `${Math.round(p.value / 1000)} k` },
  })),
  },
  ],
@@ -193,12 +193,12 @@ export default function Strategies() {
  <div key={q.id} className="glass rounded-2xl p-4" style={{ borderLeft: `3px solid ${q.color}` }}>
  <div className="flex items-center justify-between gap-2">
  <h3 className="font-display text-sm font-semibold" style={{ color: q.color }}>{t(q.label)}</h3>
- <Badge color="bg-white/5 text-mut">{fmt(q.enfants_hors_ecole)} {t("strategies.enfants")}</Badge>
+ <Badge color="bg-ink/[0.05] text-mut">{fmt(q.enfants_hors_ecole)} {t("strategies.enfants")}</Badge>
  </div>
  <p className="mt-1.5 text-xs leading-relaxed text-mut">{t(q.description)}</p>
  <div className="mt-2 flex flex-wrap gap-1.5">
  {q.wilayas.map((w) => (
- <span key={w} className="rounded-md bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-fg/80">{w}</span>
+ <span key={w} className="rounded-md bg-ink/[0.05] px-2 py-0.5 text-[10px] font-semibold text-fg/80">{w}</span>
  ))}
  </div>
  </div>
@@ -233,7 +233,7 @@ export default function Strategies() {
  <ReactECharts option={scenarioBars} style={{ height: 320 }} />
  <div className="space-y-3">
  {s.scenarios.map((x) => (
- <div key={x.id} className="rounded-xl border border-white/5 bg-white/[0.03] p-3">
+ <div key={x.id} className="rounded-xl border border-line bg-ink/[0.045] p-3">
  <div className="flex items-center justify-between gap-2">
  <span className="text-xs font-bold text-fg">{t(x.label)}</span>
  <span className="num text-xs font-semibold" style={{ color: x.color }}>

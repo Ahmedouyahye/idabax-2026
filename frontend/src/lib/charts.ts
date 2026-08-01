@@ -1,21 +1,28 @@
 import type { EChartsOption } from "echarts";
 import { getT } from "./i18n";
 
-export const ACCENT = "#eeb74f";
-export const ACCENT2 = "#4ec3a3";
-export const TERRACOTTA = "#ef9460";
-export const CORAL = "#ef6f5f";
+export const ACCENT = "#b5770e";
+export const ACCENT2 = "#147a66";
+export const TERRACOTTA = "#cc6a2b";
+export const CORAL = "#c03d3a";
+
+export const INK = "#22303a";
+export const MUT = "#66737d";
+export const AXIS_LINE = "rgba(37,50,58,0.14)";
+export const SPLIT_LINE = "rgba(37,50,58,0.07)";
 
 const TOOLTIP = {
-  backgroundColor: "#211b11",
-  borderColor: "rgba(226,199,150,0.22)",
-  textStyle: { color: "#f4edde" },
+  backgroundColor: "#ffffff",
+  borderColor: "rgba(37,50,58,0.12)",
+  borderWidth: 1,
+  textStyle: { color: INK },
+  extraCssText: "border-radius:12px;box-shadow:0 12px 32px -14px rgba(32,44,52,0.28);",
 };
 
 const AXIS = {
-  axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } },
-  axisLabel: { color: "#a19077", fontSize: 11 },
-  splitLine: { lineStyle: { color: "rgba(226,199,150,0.09)" } },
+  axisLine: { lineStyle: { color: AXIS_LINE } },
+  axisLabel: { color: MUT, fontSize: 11 },
+  splitLine: { lineStyle: { color: SPLIT_LINE } },
 };
 
 export function barRanking(
@@ -37,12 +44,12 @@ export function barRanking(
         data: wilayas.map((w) => ({
           value: w.value,
           itemStyle: {
-            color: w.rang <= 3 ? color : "rgba(238,183,79,0.28)",
+            color: w.rang <= 3 ? color : "rgba(181,119,14,0.25)",
             borderRadius: [0, 6, 6, 0],
           },
         })),
         barWidth: 16,
-        label: { show: true, position: "right", color: "#f4edde", fontSize: 11, fontWeight: 600 },
+        label: { show: true, position: "right", color: INK, fontSize: 11, fontWeight: 600 },
       },
     ],
   };
@@ -65,9 +72,9 @@ export function donut(
         radius: ["62%", "85%"],
         center: ["50%", "50%"],
         avoidLabelOverlap: true,
-        itemStyle: { borderRadius: 6, borderColor: "#15110a", borderWidth: 3 },
+        itemStyle: { borderRadius: 6, borderColor: "#ffffff", borderWidth: 3 },
         label: { show: false },
-        emphasis: { label: { show: true, color: "#f4edde", fontSize: 13, fontWeight: 700 } },
+        emphasis: { label: { show: true, color: INK, fontSize: 13, fontWeight: 700 } },
         data,
       },
     ],
@@ -76,13 +83,13 @@ export function donut(
         type: "text",
         left: "center",
         top: "41%",
-        style: { text: centerLabel, fill: "#a19077", fontSize: 11, fontWeight: 600, align: "center" },
+        style: { text: centerLabel, fill: MUT, fontSize: 11, fontWeight: 600, align: "center" },
       },
       {
         type: "text",
         left: "center",
         top: "51%",
-        style: { text: centerValue, fill: "#f4edde", fontSize: 22, fontWeight: 700, align: "center", fontFamily: "Fraunces" },
+        style: { text: centerValue, fill: INK, fontSize: 22, fontWeight: 700, align: "center", fontFamily: "Fraunces" },
       },
     ],
   };
@@ -98,10 +105,10 @@ export function radar(
     radar: {
       indicator: indicators.map((i) => ({ name: i.name, max: i.max })),
       radius: "68%",
-      axisName: { color: "#a19077", fontSize: 11 },
-      splitLine: { lineStyle: { color: "rgba(226,199,150,0.15)" } },
-      splitArea: { areaStyle: { color: ["rgba(238,183,79,0.03)", "rgba(238,183,79,0.06)"] } },
-      axisLine: { lineStyle: { color: "rgba(226,199,150,0.22)" } },
+      axisName: { color: MUT, fontSize: 11 },
+      splitLine: { lineStyle: { color: "rgba(37,50,58,0.14)" } },
+      splitArea: { areaStyle: { color: ["rgba(181,119,14,0.02)", "rgba(181,119,14,0.05)"] } },
+      axisLine: { lineStyle: { color: AXIS_LINE } },
     },
     series: [
       {
@@ -111,7 +118,7 @@ export function radar(
         symbolSize: 5,
         lineStyle: { color, width: 2 },
         itemStyle: { color },
-        areaStyle: { color: "rgba(238,183,79,0.16)" },
+        areaStyle: { color: "rgba(181,119,14,0.12)" },
       },
     ],
   };
@@ -122,7 +129,7 @@ export function lineChart(
 ): EChartsOption {
   return {
     tooltip: { trigger: "axis", ...TOOLTIP },
-    legend: { textStyle: { color: "#a19077", fontSize: 11 }, top: 0 },
+    legend: { textStyle: { color: MUT, fontSize: 11 }, top: 0 },
     grid: { left: 8, right: 8, top: 32, bottom: 8, containLabel: true },
     xAxis: { type: "category", ...AXIS },
     yAxis: { type: "value", ...AXIS },
@@ -155,15 +162,15 @@ export function forceGraph(
         draggable: true,
         categories,
         force: { repulsion: 420, edgeLength: [60, 140], gravity: 0.12 },
-        label: { show: true, position: "right", color: "#d8cbb0", fontSize: 11, fontWeight: 600 },
-        lineStyle: { color: "source", opacity: 0.5, width: 1.2, curveness: 0.08 },
+        label: { show: true, position: "right", color: "#55636d", fontSize: 11, fontWeight: 600 },
+        lineStyle: { color: "source", opacity: 0.45, width: 1.2, curveness: 0.08 },
         emphasis: { focus: "adjacency", lineStyle: { width: 4, opacity: 0.9 } },
         data: nodes.map((n) => ({
           name: n.label,
           value: n.value,
           category: n.category,
           symbolSize: 18 + n.value * 3,
-          itemStyle: { borderColor: "#15110a", borderWidth: 2 },
+          itemStyle: { borderColor: "#ffffff", borderWidth: 2 },
         })),
         links: links.map((l) => ({ source: l.source, target: l.target, value: l.weight })),
       },

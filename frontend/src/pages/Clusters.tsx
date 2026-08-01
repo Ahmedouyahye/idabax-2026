@@ -85,7 +85,7 @@ export default function Clusters() {
  </div>
  <div className="mt-3 flex flex-wrap gap-1.5">
  {p.wilayas.map((w) => (
- <span key={w} className="rounded-full bg-white/5 px-2.5 py-1 text-[11px] font-semibold text-fg">
+ <span key={w} className="rounded-full bg-ink/[0.05] px-2.5 py-1 text-[11px] font-semibold text-fg">
  {w}
  </span>
  ))}
@@ -113,7 +113,7 @@ export default function Clusters() {
  <h3 className="mt-6 mb-2 font-display text-base font-semibold text-fg">{t("clusters.affectation")}</h3>
  <div className="space-y-1.5">
  {[...wl].sort((a, b) => a.cluster - b.cluster || a.rang_ipe - b.rang_ipe).map((w) => (
- <div key={w.wilaya} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2 text-xs">
+ <div key={w.wilaya} className="flex items-center gap-3 rounded-lg bg-ink/[0.045] px-3 py-2 text-xs">
  <span className="h-2.5 w-2.5 rounded-full" style={{ background: COLORS[w.cluster] }} />
  <span className="font-semibold text-fg">{w.wilaya}</span>
  <span className="ml-auto text-mut">
@@ -131,7 +131,7 @@ export default function Clusters() {
 
 function MStat({ label, v }: { label: string; v: string }) {
  return (
- <div className="rounded-xl bg-white/[0.03] p-2.5">
+ <div className="rounded-xl bg-ink/[0.045] p-2.5">
  <div className="text-[10px] uppercase tracking-wider text-mut">{label}</div>
  <div className="num mt-0.5 text-sm font-bold text-fg">{v}</div>
  </div>

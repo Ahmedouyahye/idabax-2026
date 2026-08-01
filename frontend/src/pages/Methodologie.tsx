@@ -82,7 +82,7 @@ export default function Methodologie() {
 
 function P({ k, children }: { k: string; children: React.ReactNode }) {
  return (
- <div className="rounded-xl bg-white/[0.03] p-3">
+ <div className="rounded-xl bg-ink/[0.045] p-3">
  <div className="text-xs font-bold text-accent">{k}</div>
  <div className="mt-1 text-xs leading-relaxed text-mut">{children}</div>
  </div>
@@ -91,7 +91,7 @@ function P({ k, children }: { k: string; children: React.ReactNode }) {
 
 function Src({ name, org, type, link }: { name: string; org: string; type: string; link: string }) {
  return (
- <div className="flex items-start justify-between gap-3 rounded-xl bg-white/[0.03] p-3">
+ <div className="flex items-start justify-between gap-3 rounded-xl bg-ink/[0.045] p-3">
  <div>
  <div className="text-xs font-bold text-fg">{name}</div>
  <div className="text-[11px] text-mut">{org}</div>

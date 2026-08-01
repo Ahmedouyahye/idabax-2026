@@ -16,9 +16,9 @@ export default function Indicateurs() {
  const heatmap: EChartsOption = {
  tooltip: {
  position: "top",
- backgroundColor: "#211b11",
- borderColor: "rgba(226,199,150,0.22)",
- textStyle: { color: "#f4edde" },
+ backgroundColor: "#ffffff",
+ borderColor: "rgba(37,50,58,0.14)",
+ textStyle: { color: "#22303a" },
  formatter: (p: any) =>
  `<b>${t(p.data[1])}</b> × <b>${t(p.data[0])}</b><br/>r = ${p.data[2].toFixed(3)}`,
  },
@@ -26,7 +26,7 @@ export default function Indicateurs() {
  xAxis: {
  type: "category",
  data: d.indicators.map((i) => t(i.label)),
- axisLabel: { color: "#a19077", fontSize: 9, rotate: 45 },
+ axisLabel: { color: "#66737d", fontSize: 9, rotate: 45 },
  axisLine: { show: false },
  splitArea: { show: false },
  splitLine: { show: false },
@@ -34,7 +34,7 @@ export default function Indicateurs() {
  yAxis: {
  type: "category",
  data: d.indicators.map((i) => t(i.label)),
- axisLabel: { color: "#d8cbb0", fontSize: 9, fontWeight: 600 },
+ axisLabel: { color: "#55636d", fontSize: 9, fontWeight: 600 },
  axisLine: { show: false },
  splitArea: { show: false },
  splitLine: { show: false },
@@ -46,8 +46,8 @@ export default function Indicateurs() {
  orient: "horizontal",
  left: "center",
  bottom: 0,
- inRange: { color: ["#2f9b82", "#15110a", "#e88f3a"] },
- textStyle: { color: "#a19077", fontSize: 10 },
+ inRange: { color: ["#147a66", "#f6f3ec", "#c03d3a"] },
+ textStyle: { color: "#66737d", fontSize: 10 },
  },
  series: [
  {
@@ -57,12 +57,12 @@ export default function Indicateurs() {
  .map((cell) => [t(cell.x), t(cell.y), cell.value]),
  label: {
  show: true,
- color: "#f4edde",
+ color: "#22303a",
  fontSize: 8,
  formatter: (p: any) => p.data[2].toFixed(1).replace(".", ","),
  },
- itemStyle: { borderColor: "#15110a", borderWidth: 2, borderRadius: 3 },
- emphasis: { itemStyle: { shadowBlur: 10, shadowColor: "rgba(238,183,79,0.5)" } },
+ itemStyle: { borderColor: "#ffffff", borderWidth: 2, borderRadius: 3 },
+ emphasis: { itemStyle: { shadowBlur: 10, shadowColor: "rgba(181,119,14,0.45)" } },
  },
  ],
  };
@@ -95,7 +95,7 @@ export default function Indicateurs() {
  {top.map((c, i) => {
  const positive = c.r > 0;
  return (
- <div key={i} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2 text-xs">
+ <div key={i} className="flex items-center gap-3 rounded-lg bg-ink/[0.045] px-3 py-2 text-xs">
  <span className="font-semibold text-fg">{t(c.a)}</span>
  <span className="text-mut">↔</span>
  <span className="font-semibold text-fg">{t(c.b)}</span>

@@ -74,7 +74,7 @@ function RuleRow({ r, accent, columns }: { r: Rule; accent: string; columns?: st
   const ants = r.antecedents_str.split(" & ");
   const conds = ants.filter((a) => !(columns ?? []).some((c) => a.startsWith(c.toLowerCase().split(" ")[0])));
   return (
-    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-white/[0.03] px-3 py-2.5 text-xs">
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-ink/[0.045] px-3 py-2.5 text-xs">
       {ants.map((a) => (
         <Chip key={a} accent={a === "cm_sans_education" || a === "cm_education_traditionnelle" ? accent : "mut"} label={t(a)} />
       ))}
@@ -97,10 +97,10 @@ function RuleRow({ r, accent, columns }: { r: Rule; accent: string; columns?: st
 
 function Chip({ label, accent }: { label: string; accent: string }) {
   const map: Record<string, string> = {
-    accent: "bg-accent/15 text-accent shadow-[inset_0_0_0_1px_rgba(45,212,191,0.3)]",
+    accent: "bg-accent/15 text-accent shadow-[inset_0_0_0_1px_rgba(20,122,102,0.30)]",
     warn: "bg-warn/15 text-warn shadow-[inset_0_0_0_1px_rgba(251,191,36,0.3)]",
     danger: "bg-danger/15 text-danger shadow-[inset_0_0_0_1px_rgba(248,113,113,0.3)]",
-    mut: "bg-white/5 text-mut",
+    mut: "bg-ink/[0.05] text-mut",
   };
   return <span className={`rounded-md px-2 py-0.5 font-semibold ${map[accent] ?? map.mut}`}>{label}</span>;
 }

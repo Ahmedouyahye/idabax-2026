@@ -29,7 +29,7 @@ function colorScale(v: number, min: number, max: number) {
 }
 
 const CENTER: [number, number] = [19.5, -11.5];
-const DARK_TILES = "https://{s}.basemaps.cartocdn.com/dark_matter/{z}/{x}/{y}{r}.png";
+const TILES = "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png";
 
 function toRings(geometry: any): [number, number][][] {
  const coords = geometry?.coordinates ?? [];
@@ -90,8 +90,8 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  onClick={() => setMetric(key)}
  className={`rounded-full px-3 py-1 text-[11px] font-semibold transition-colors ${
  metric === key
- ? "bg-accent/15 text-accent shadow-[inset_0_0_0_1px_rgba(45,212,191,0.3)]"
- : "bg-white/5 text-mut hover:text-fg"
+ ? "bg-accent/15 text-accent shadow-[inset_0_0_0_1px_rgba(20,122,102,0.30)]"
+ : "bg-ink/[0.05] text-mut hover:text-fg"
  }`}
  >
  {t(mm.labelKey)}
@@ -102,7 +102,7 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  <div className="relative overflow-hidden rounded-2xl border border-line">
  <MapContainer center={CENTER} zoom={5} minZoom={4} maxZoom={9} style={{ height, width: "100%" }} zoomControl={false} attributionControl={false}>
  {bounds && <FitBounds bounds={bounds} />}
- <TileLayer url={DARK_TILES} subdomains="abcd" />
+  <TileLayer url={TILES} subdomains="abcd" />
  {features.map((f: any, idx: number) => {
  const p = f.properties;
  const v = m.accessor(p);
@@ -111,7 +111,7 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  <Polygon
  key={`${p.wilaya}-${idx}`}
  positions={toRings(f.geometry)}
- pathOptions={{ color: "rgba(21,17,10,0.95)", weight: 1.4, fillColor: color, fillOpacity: 0.74 }}
+  pathOptions={{ color: "rgba(34,48,58,0.85)", weight: 1.4, fillColor: color, fillOpacity: 0.74 }}
  >
  <Tooltip direction="top" sticky>
  <div className="text-xs">

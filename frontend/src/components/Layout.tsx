@@ -44,8 +44,8 @@ export default function Layout() {
               className={({ isActive }) =>
                 `group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
                   isActive
-                    ? "bg-accent/10 text-accent shadow-[inset_0_0_0_1px_rgba(238,183,79,0.22)]"
-                    : "text-mut hover:bg-white/5 hover:text-fg"
+                    ? "bg-accent/10 text-accent shadow-[inset_0_0_0_1px_rgba(181,119,14,0.25)]"
+                    : "text-mut hover:bg-ink/[0.05] hover:text-fg"
                 }`
               }
             >

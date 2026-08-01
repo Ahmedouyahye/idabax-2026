@@ -157,7 +157,7 @@ export default function Home() {
  .slice(0, 8)
  .map((nd) => (
  <Link key={nd.id} to={`/wilayas?w=${encodeURIComponent(nd.wilaya)}`}>
- <Badge color="bg-white/5 text-mut hover:text-accent">{nd.wilaya}</Badge>
+ <Badge color="bg-ink/[0.05] text-mut hover:text-accent">{nd.wilaya}</Badge>
  </Link>
  ))}
  </div>

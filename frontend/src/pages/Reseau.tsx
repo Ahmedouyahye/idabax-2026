@@ -150,13 +150,13 @@ export default function Reseau() {
  <div className="space-y-1.5">
  {[...similarite.edges].sort((a, b) => b.weight - a.weight).slice(0, 8).map((e, i) => (
  <Link key={i} to={`/wilayas?w=${encodeURIComponent(e.source)}`} className="block">
- <div className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2 text-xs transition-colors hover:bg-white/[0.06]">
+ <div className="flex items-center gap-3 rounded-lg bg-ink/[0.045] px-3 py-2 text-xs transition-colors hover:bg-ink/[0.08]">
  <span className="font-semibold text-fg">{e.source}</span>
  <span className="text-mut">↔</span>
  <span className="font-semibold text-fg">{e.target}</span>
  <span className="ml-auto num text-mut">{t("reseau.r")} {e.weight.toFixed(2)}</span>
  </div>
- <div className="mx-3 -mt-1 h-0.5 overflow-hidden rounded-full bg-white/5">
+ <div className="mx-3 -mt-1 h-0.5 overflow-hidden rounded-full bg-ink/[0.05]">
  <div className="h-full rounded-full bg-accent/60" style={{ width: `${Math.round(e.weight * 100)}%` }} />
  </div>
  </Link>
@@ -201,7 +201,7 @@ export default function Reseau() {
  .sort((a, b) => b.enfants_hors_ecole - a.enfants_hors_ecole)
  .map((n) => (
  <Link key={n.id} to={`/wilayas?w=${encodeURIComponent(n.wilaya)}`}>
- <Badge color="bg-white/5 text-mut hover:text-accent">{n.wilaya}</Badge>
+ <Badge color="bg-ink/[0.05] text-mut hover:text-accent">{n.wilaya}</Badge>
  </Link>
  ))}
  </div>

@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
-/* ─── EduFocus🌙 · Sable & Safran (desert dusk) ─────────────────────────── */
+/* ─── EduFocus🌙 · Sable & Safran — lumière (professional light) ───────── */
 @theme {
- --color-ink: #15110a;
- --color-panel: #1d1810;
- --color-panel2: #282014;
- --color-line: rgba(226, 199, 150, 0.13);
- --color-accent: #eeb74f;
- --color-accent2: #4ec3a3;
- --color-warn: #ef9460;
- --color-danger: #ef6f5f;
- --color-fg: #f4edde;
- --color-mut: #a19077;
+ --color-ink: #f6f3ec;
+ --color-panel: #ffffff;
+ --color-panel2: #f2efe8;
+ --color-line: rgba(37, 50, 58, 0.1);
+ --color-accent: #b5770e;
+ --color-accent2: #147a66;
+ --color-warn: #cc6a2b;
+ --color-danger: #c03d3a;
+ --color-fg: #22303a;
+ --color-mut: #66737d;
  --font-display: "Fraunces", "Georgia", serif;
  --font-sans: "Inter", "SF Pro Text", system-ui, -apple-system, sans-serif;
  --font-grotesk: "Space Grotesk", "Inter", ui-monospace, monospace;
@@ -25,9 +25,10 @@ body,
 
 body {
  background:
- radial-gradient(1100px 520px at 85% -12%, rgba(238, 183, 79, 0.09), transparent 62%),
- radial-gradient(900px 480px at -8% 108%, rgba(78, 195, 163, 0.07), transparent 60%),
- var(--color-ink);
+  radial-gradient(1200px 560px at 88% -14%, rgba(181, 119, 14, 0.06), transparent 62%),
+  radial-gradient(1000px 520px at -10% 108%, rgba(20, 122, 102, 0.05), transparent 60%),
+  linear-gradient(180deg, #fbf9f4 0%, var(--color-ink) 40%);
+ background-attachment: fixed;
  color: var(--color-fg);
  font-family: var(--font-sans);
  -webkit-font-smoothing: antialiased;
@@ -38,41 +39,42 @@ button:not(:disabled) {
  cursor: pointer;
 }
 
-/* Film grain warm paper texture over everything */
+/* Grain papier très discret (multiply sur fond clair) */
 body::after {
  content: "";
  position: fixed;
  inset: 0;
  z-index: 60;
  pointer-events: none;
- opacity: 0.05;
- mix-blend-mode: overlay;
+ opacity: 0.03;
+ mix-blend-mode: multiply;
  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection {
- background: rgba(238, 183, 79, 0.3);
- color: #fff;
+ background: rgba(181, 119, 14, 0.22);
+ color: inherit;
 }
 
 :focus-visible {
- outline: 2px solid rgba(238, 183, 79, 0.55);
+ outline: 2px solid rgba(20, 122, 102, 0.5);
  outline-offset: 2px;
 }
 
 ::-webkit-scrollbar {
- width: 8px;
- height: 8px;
+ width: 10px;
+ height: 10px;
 }
 ::-webkit-scrollbar-track {
  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
- background: rgba(226, 199, 150, 0.2);
- border-radius: 8px;
+ background: rgba(37, 50, 58, 0.16);
+ border-radius: 10px;
+ border: 2px solid var(--color-ink);
 }
 ::-webkit-scrollbar-thumb:hover {
- background: rgba(226, 199, 150, 0.35);
+ background: rgba(37, 50, 58, 0.3);
 }
 
 /* ─── Utilities ───────────────────────────────────────────────────────── */
@@ -83,19 +85,19 @@ body::after {
 }
 
 .grad-text {
- background: linear-gradient(105deg, #f4c95d 0%, #f0a14a 48%, #4ec3a3 100%);
+ background: linear-gradient(100deg, #b5770e 0%, #cc6a2b 48%, #147a66 100%);
  -webkit-background-clip: text;
  background-clip: text;
  color: transparent;
 }
 
+/* Carte claire : blanc « papier » + ombres douces + fine ligne de séparation */
 .glass {
- background: linear-gradient(165deg, rgba(40, 32, 20, 0.78), rgba(29, 24, 16, 0.55));
- backdrop-filter: blur(14px);
+ background: linear-gradient(180deg, #ffffff 0%, #fdfbf6 100%);
  border: 1px solid var(--color-line);
  box-shadow:
- inset 0 1px 0 rgba(255, 235, 205, 0.035),
- 0 10px 30px -18px rgba(0, 0, 0, 0.7);
+  0 1px 2px rgba(32, 44, 52, 0.05),
+  0 14px 34px -22px rgba(32, 44, 52, 0.24);
 }
 
 .eyebrow {
@@ -113,17 +115,21 @@ body::after {
  font-feature-settings: "tnum";
 }
 
-/* Card hover hairline highlight + gentle lift */
+/* Card hover : élévation douce + liseré safran */
 .glass {
  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .glass:hover {
  transform: translateY(-2px);
- border-color: rgba(226, 199, 150, 0.28);
+ border-color: rgba(181, 119, 14, 0.3);
  box-shadow:
- inset 0 1px 0 rgba(255, 235, 205, 0.045),
- inset 0 1px 0 rgba(238, 183, 79, 0.18),
- 0 18px 40px -20px rgba(0, 0, 0, 0.8);
+  0 2px 4px rgba(32, 44, 52, 0.05),
+  0 24px 46px -26px rgba(32, 44, 52, 0.3);
+}
+
+/* ─── Sidebar · fond translucide clair ─────────────────────────────────── */
+aside.fixed {
+ background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(250, 248, 242, 0.92));
 }
 
 /* ─── Rapport · feuille de papier A4 ──────────────────────────────────── */
@@ -133,7 +139,7 @@ body::after {
   margin: 0 auto;
   background: #f7f1e3;
   color: #221b12;
-  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(226, 199, 150, 0.2);
+  box-shadow: 0 30px 80px -30px rgba(32, 44, 52, 0.5), 0 0 0 1px rgba(37, 50, 58, 0.12);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -220,22 +226,22 @@ body::after {
  }
 }
 
-/* ─── Leaflet ─────────────────────────────────────────────────────────── */
+/* ─── Leaflet (fond cartographique clair) ─────────────────────────────── */
 
 .leaflet-container {
- background: #171209 !important;
+ background: #e8ece8 !important;
  font-family: var(--font-sans);
 }
 .leaflet-tooltip {
- background: #211b11 !important;
- border: 1px solid rgba(226, 199, 150, 0.22) !important;
- color: #f4edde !important;
+ background: #ffffff !important;
+ border: 1px solid rgba(37, 50, 58, 0.14) !important;
+ color: #22303a !important;
  border-radius: 12px !important;
- box-shadow: 0 12px 34px rgba(0, 0, 0, 0.55) !important;
+ box-shadow: 0 14px 36px -16px rgba(32, 44, 52, 0.35) !important;
  font-family: var(--font-sans);
 }
 .leaflet-tooltip-top:before {
- border-top-color: rgba(226, 199, 150, 0.22) !important;
+ border-top-color: rgba(37, 50, 58, 0.14) !important;
 }
 
 /* ─── RTL (arabe) ──────────────────────────────────────────────────────── */
