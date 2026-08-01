@@ -54,6 +54,16 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  const { t } = useI18n();
  const geo = useGeojson();
  const [metric, setMetric] = useState("ipe");
+ const [isMobile, setIsMobile] = useState(() => typeof window !== "undefined" && window.innerWidth < 640);
+
+ useEffect(() => {
+ const mq = window.matchMedia("(max-width: 639px)");
+ const onChange = () => setIsMobile(mq.matches);
+ mq.addEventListener("change", onChange);
+ onChange();
+ return () => mq.removeEventListener("change", onChange);
+ }, []);
+ const effHeight = isMobile ? Math.max(360, Math.round(window.innerHeight * 0.52)) : height;
 
  const features = useMemo(() => geo.data?.features ?? [], [geo.data]);
 
@@ -99,8 +109,8 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  ))}
  </div>
  )}
- <div className="relative overflow-hidden rounded-2xl border border-line">
- <MapContainer center={CENTER} zoom={5} minZoom={4} maxZoom={9} style={{ height, width: "100%" }} zoomControl={false} attributionControl={false}>
+ <div className="relative overflow-hidden rounded-2xl border border-line z-0">
+ <MapContainer center={CENTER} zoom={5} minZoom={4} maxZoom={9} style={{ height: effHeight, width: "100%" }} zoomControl={false} attributionControl={false}>
  {bounds && <FitBounds bounds={bounds} />}
   <TileLayer url={TILES} subdomains="abcd" />
  {features.map((f: any, idx: number) => {
