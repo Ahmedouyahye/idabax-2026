@@ -1,16 +1,20 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EduFocus🌙">
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EduFocus EF">
   <defs>
-    <linearGradient id="bg" x1="0" y1="64" x2="64" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#E88F3A"/>
-      <stop offset="1" stop-color="#2F9B82"/>
+    <linearGradient id="ef-field" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22303a"/>
+      <stop offset="1" stop-color="#141c23"/>
+    </linearGradient>
+    <linearGradient id="ef-gold" x1="16" y1="19" x2="48" y2="46" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e9b157"/>
+      <stop offset="1" stop-color="#b5770e"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
-  <circle cx="32" cy="30" r="15" stroke="#F4EDDE" stroke-width="2.5" fill="none" opacity="0.9"/>
-  <circle cx="32" cy="21.5" r="4.5" fill="#F4EDDE"/>
-  <circle cx="34.2" cy="19.8" r="4.5" fill="#E88F3A"/>
-  <g fill="#F4EDDE">
-    <path d="M32 39 L25 36.8 L23.2 41 L32 43.6 Z"/>
-    <path d="M32 39 L39 36.8 L40.8 41 L32 43.6 Z"/>
-  </g>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#ef-field)"/>
+  <rect x="2" y="2" width="60" height="60" rx="15" stroke="url(#ef-gold)" stroke-opacity="0.55" stroke-width="2.2"/>
+  <text x="32" y="37.5" text-anchor="middle" fill="url(#ef-gold)"
+        font-family="Fraunces, Georgia, serif" font-size="25" font-weight="700" letter-spacing="-0.5">
+    EF
+  </text>
+  <circle cx="32" cy="50" r="2.3" fill="#4ec3a3"/>
+  <circle cx="50" cy="16.7" r="1.9" fill="#e88f3a" fill-opacity="0.85"/>
 </svg>
