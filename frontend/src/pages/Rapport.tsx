@@ -113,9 +113,8 @@ export default function Rapport() {
   <div className="mb-3 text-[11px] font-bold uppercase tracking-[0.3em] text-[#1f7a63]">
     {t("rapport.cover.theme")}
   </div>
-  <h1 className="font-display text-5xl font-bold leading-[1.05] tracking-tight text-[#15110a]">
-    {t("home.title.p1")}
-    <br />
+  <h1 className="font-display text-5xl font-bold leading-[1.1] text-[#15110a] [unicode-bidi:plaintext]">
+    {t("home.title.p1")} <br />
     <span className="italic text-[#b96a1f]">{t("home.title.p2")}</span> {t("home.title.p3")}.
   </h1>
   <p className="mt-6 max-w-lg font-inter text-sm leading-relaxed text-[#3d3323]">

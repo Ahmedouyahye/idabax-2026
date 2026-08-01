@@ -34,7 +34,7 @@ export default function Home() {
  <PageHeader
  eyebrow={t("home.eyebrow")}
  title={
- <span className="font-display text-3xl font-semibold leading-[1.12] tracking-tight text-fg md:text-[2.6rem]">
+  <span className="font-display text-3xl font-semibold leading-[1.12] text-fg md:text-[2.6rem] [unicode-bidi:plaintext]">
  {t("home.title.p1")} <em className="grad-text italic">{t("home.title.p2")}</em> {t("home.title.p3")}
  </span>
  }
