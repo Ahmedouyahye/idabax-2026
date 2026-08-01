@@ -23,8 +23,16 @@ function lookup(d: Dict, key: string, vars?: Record<string, string | number>): s
   return s;
 }
 
+let activeT: (key: string, vars?: Record<string, string | number>) => string = (k) => k;
+
+export function getT() {
+  return activeT;
+}
+
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
+    const url = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
+    if (url === "en" || url === "ar" || url === "fr") return url;
     const saved = typeof localStorage !== "undefined" ? (localStorage.getItem(LS_KEY) as Lang | null) : null;
     return saved === "en" || saved === "ar" || saved === "fr" ? saved : "fr";
   });
@@ -40,6 +48,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, [lang]);
 
   const t = (key: string, vars?: Record<string, string | number>) => lookup(DICTS[lang], key, vars);
+  activeT = t;
 
   return <Ctx.Provider value={{ lang, setLang, t }}>{children}</Ctx.Provider>;
 }

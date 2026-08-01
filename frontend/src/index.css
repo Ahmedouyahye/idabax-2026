@@ -153,7 +153,7 @@ body::after {
 @media print {
  @page {
  size: A4;
- margin: 13mm 11mm;
+ margin: 11mm 10mm;
  }
  html,
  body {
@@ -183,7 +183,7 @@ body::after {
  }
  .sheet-page {
  min-height: auto;
- padding: 0 0 6mm;
+ padding: 0 0 4mm;
  page-break-after: always;
  }
  .sheet-page:last-child {

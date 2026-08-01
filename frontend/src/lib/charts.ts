@@ -1,4 +1,5 @@
 import type { EChartsOption } from "echarts";
+import { getT } from "./i18n";
 
 export const ACCENT = "#eeb74f";
 export const ACCENT2 = "#4ec3a3";
@@ -105,7 +106,7 @@ export function radar(
     series: [
       {
         type: "radar",
-        data: [{ value: values, name: "Wilaya" }],
+        data: [{ value: values, name: getT()("charts.wilaya") }],
         symbol: "circle",
         symbolSize: 5,
         lineStyle: { color, width: 2 },

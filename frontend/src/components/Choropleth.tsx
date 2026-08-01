@@ -2,22 +2,23 @@ import { useEffect, useMemo, useState } from "react";
 import { MapContainer, Polygon, TileLayer, Tooltip, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useGeojson, fmt, pct } from "../lib/api";
+import { useI18n } from "../lib/i18n";
 
-const METRICS: Record<string, { label: string; accessor: (p: any) => number; fmt: (v: number) => string }> = {
+const METRICS: Record<string, { labelKey: string; accessor: (p: any) => number; fmt: (v: number) => string }> = {
  ipe: {
- label: "Indice de priorité éducative",
- accessor: (p) => p.ipe ?? 0,
- fmt: (v) => v.toLocaleString("fr-FR", { maximumFractionDigits: 1 }),
+  labelKey: "choropleth.metric.ipe",
+  accessor: (p) => p.ipe ?? 0,
+  fmt: (v) => v.toLocaleString("fr-FR", { maximumFractionDigits: 1 }),
  },
  scol_Hors_ecole_formelle: {
- label: "Taux hors école formelle",
- accessor: (p) => p.scol_Hors_ecole_formelle ?? 0,
- fmt: pct,
+  labelKey: "Taux hors école formelle",
+  accessor: (p) => p.scol_Hors_ecole_formelle ?? 0,
+  fmt: pct,
  },
- taux_pauvrete: { label: "Taux de pauvreté", accessor: (p) => p.taux_pauvrete ?? 0, fmt: pct },
- population_2022: { label: "Population 2022", accessor: (p) => p.population_2022 ?? 0, fmt: fmt },
- enfants_hors_ecole: { label: "Enfants hors école (n)", accessor: (p) => p.enfants_hors_ecole ?? 0, fmt: fmt },
- ratio_dependance_jeunes: { label: "Dépendance jeunes", accessor: (p) => p.ratio_dependance_jeunes ?? 0, fmt: fmt },
+ taux_pauvrete: { labelKey: "Taux de pauvreté", accessor: (p) => p.taux_pauvrete ?? 0, fmt: pct },
+ population_2022: { labelKey: "Population 2022", accessor: (p) => p.population_2022 ?? 0, fmt: fmt },
+ enfants_hors_ecole: { labelKey: "choropleth.metric.enfantsHorsEcole", accessor: (p) => p.enfants_hors_ecole ?? 0, fmt: fmt },
+ ratio_dependance_jeunes: { labelKey: "Dépendance jeunes", accessor: (p) => p.ratio_dependance_jeunes ?? 0, fmt: fmt },
 };
 
 function colorScale(v: number, min: number, max: number) {
@@ -50,6 +51,7 @@ function FitBounds({ bounds }: { bounds: [[number, number], [number, number]] })
 }
 
 export function Choropleth({ height = 460, selector = true }: { height?: number; selector?: boolean }) {
+ const { t } = useI18n();
  const geo = useGeojson();
  const [metric, setMetric] = useState("ipe");
 
@@ -74,8 +76,8 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  ];
  }, [features]);
 
- if (geo.loading) return <div className="flex h-64 items-center justify-center text-sm text-mut">Chargement de la carte…</div>;
- if (!geo.data || features.length === 0) return <div className="flex h-64 items-center justify-center text-sm text-danger">Carte indisponible</div>;
+ if (geo.loading) return <div className="flex h-64 items-center justify-center text-sm text-mut">{t("choropleth.loading")}</div>;
+ if (!geo.data || features.length === 0) return <div className="flex h-64 items-center justify-center text-sm text-danger">{t("choropleth.unavailable")}</div>;
 
  const m = METRICS[metric];
  return (
@@ -92,7 +94,7 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  : "bg-white/5 text-mut hover:text-fg"
  }`}
  >
- {mm.label}
+ {t(mm.labelKey)}
  </button>
  ))}
  </div>
@@ -115,10 +117,10 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  <div className="text-xs">
  <div className="font-bold text-fg">{p.wilaya}</div>
  <div className="text-mut">
- {m.label} : <span className="num font-semibold text-accent">{m.fmt(v)}</span>
+ {t(m.labelKey)} : <span className="num font-semibold text-accent">{m.fmt(v)}</span>
  </div>
- <div className="text-mut">Population : {fmt(p.population_2022)}</div>
- <div className="text-mut">Rang IPE : #{p.rang_ipe ?? ""}</div>
+ <div className="text-mut">{t("choropleth.tooltip.population")} : {fmt(p.population_2022)}</div>
+ <div className="text-mut">{t("choropleth.tooltip.rangIpe")} : #{p.rang_ipe ?? ""}</div>
  </div>
  </Tooltip>
  </Polygon>
@@ -126,7 +128,7 @@ export function Choropleth({ height = 460, selector = true }: { height?: number;
  })}
  </MapContainer>
  <div className="absolute bottom-4 left-4 z-[1000] rounded-xl border border-line bg-panel/90 p-3 backdrop-blur">
- <div className="text-[11px] font-semibold text-fg">{m.label}</div>
+ <div className="text-[11px] font-semibold text-fg">{t(m.labelKey)}</div>
  <div className="mt-2 flex items-center gap-2">
  <div className="h-2 w-28 rounded-full" style={{ background: "linear-gradient(90deg, hsl(160 78% 55%), hsl(35 92% 55%))" }} />
  <span className="num text-[11px] text-mut">

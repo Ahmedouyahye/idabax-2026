@@ -1,4 +1,5 @@
 import type { EChartsOption } from "echarts";
+import { getT } from "./i18n";
 
 export const PAPER = {
   ink: "#221b12",
@@ -40,7 +41,7 @@ export function reportDonut(
     tooltip: {
       trigger: "item",
       ...tooltip(),
-      formatter: "{b}<br/>{c} enfants ({d} %)",
+      formatter: (p: any) => getT()("charts.enfants", { b: p.name, c: p.value, d: p.percent }),
     },
     legend: {
       bottom: 0,
@@ -95,7 +96,7 @@ export function reportBars(
     tooltip: {
       trigger: "axis",
       ...tooltip(),
-      formatter: (ps: any) => `${ps[0].name} : ${ps[0].value.toFixed(1)} %`,
+      formatter: (ps: any) => getT()("charts.taux_pct", { name: ps[0].name, v: ps[0].value.toFixed(1) }),
     },
     grid: { left: 6, right: 14, top: 14, bottom: 6, containLabel: true },
     xAxis: { type: "category", data: categories, ...axis(false) },
@@ -127,7 +128,7 @@ export function reportBars(
               silent: true,
               lineStyle: { type: "dashed", color: PAPER.red, width: 1.4 },
               label: {
-                formatter: `National ${markLineValue.toFixed(1)} %`,
+                formatter: getT()("charts.national", { v: markLineValue.toFixed(1) }),
                 color: PAPER.red,
                 fontSize: 10,
                 fontWeight: 700,
@@ -147,7 +148,7 @@ export function reportHbar(items: { label: string; value: number; top?: boolean 
     tooltip: {
       trigger: "axis",
       ...tooltip(),
-      formatter: (ps: any) => `${ps[0].name} : IPE ${ps[0].value.toFixed(1)}`,
+      formatter: (ps: any) => getT()("charts.ipe_value", { name: ps[0].name, v: ps[0].value.toFixed(1) }),
     },
     grid: { left: 8, right: 42, top: 6, bottom: 6, containLabel: true },
     xAxis: { type: "value", max, ...axis(false), axisLabel: { color: PAPER.muted, fontSize: 10 } },
@@ -182,7 +183,8 @@ export function reportLorenz(lorenz: { x: number; y: number }[], gini: number): 
     tooltip: {
       trigger: "axis",
       ...tooltip(),
-      formatter: (ps: any) => `${ps[0].axisValue} % des wilayas<br/>${ps[0].value} % du hors école`,
+      formatter: (ps: any) =>
+        `${getT()("charts.lorenz_x", { v: ps[0].axisValue })}<br/>${getT()("charts.lorenz_y", { v: ps[0].value })}`,
     },
     legend: {
       bottom: 0,
@@ -191,12 +193,12 @@ export function reportLorenz(lorenz: { x: number; y: number }[], gini: number): 
       itemHeight: 2,
       itemGap: 14,
       textStyle: { color: PAPER.muted, fontSize: 11 },
-      data: ["Lorenz", "Égalité"],
+      data: [getT()("charts.lorenz"), getT()("charts.equity")],
     },
     grid: { left: 8, right: 16, top: 10, bottom: 24, containLabel: true },
     xAxis: {
       type: "value",
-      name: "Wilayas (cumul %)",
+      name: getT()("charts.wilayas_cum"),
       nameTextStyle: { color: PAPER.muted, fontSize: 10 },
       min: 0,
       max: 100,
@@ -205,7 +207,7 @@ export function reportLorenz(lorenz: { x: number; y: number }[], gini: number): 
     },
     yAxis: {
       type: "value",
-      name: "Hors école (cumul %)",
+      name: getT()("charts.hors_ecole_cum"),
       nameTextStyle: { color: PAPER.muted, fontSize: 10 },
       min: 0,
       max: 100,
@@ -214,7 +216,7 @@ export function reportLorenz(lorenz: { x: number; y: number }[], gini: number): 
     },
     series: [
       {
-        name: "Lorenz",
+        name: getT()("charts.lorenz"),
         type: "line",
         smooth: true,
         symbol: "none",
@@ -223,7 +225,7 @@ export function reportLorenz(lorenz: { x: number; y: number }[], gini: number): 
         data: lorenz.map((p) => [p.x, p.y]),
       },
       {
-        name: "Égalité",
+        name: getT()("charts.equity"),
         type: "line",
         symbol: "none",
         lineStyle: { type: "dashed", color: PAPER.hairline, width: 1.4 },
@@ -236,7 +238,7 @@ export function reportLorenz(lorenz: { x: number; y: number }[], gini: number): 
         left: "6%",
         top: "10%",
         style: {
-          text: `Gini = ${gini.toFixed(2)}`,
+          text: getT()("charts.gini", { v: gini.toFixed(2) }),
           fill: PAPER.gold,
           fontSize: 13,
           fontWeight: 800,
@@ -256,7 +258,7 @@ export function reportScenarios(
     tooltip: {
       trigger: "axis",
       ...tooltip(),
-      formatter: (ps: any) => `${ps[0].name}<br/>${fr(ps[0].value)} enfants`,
+      formatter: (ps: any) => `${ps[0].name}<br/>${getT()("charts.n_enfants", { v: fr(ps[0].value) })}`,
     },
     grid: { left: 8, right: 14, top: 14, bottom: 6, containLabel: true },
     xAxis: { type: "category", ...axis(false), axisLabel: { color: PAPER.ink, fontSize: 11, fontWeight: 600 } },
@@ -285,7 +287,7 @@ export function reportScenarios(
           symbol: "none",
           silent: true,
           lineStyle: { type: "dashed", color: PAPER.red, width: 1.4 },
-          label: { formatter: `2022 : ${fr(base2022)}`, color: PAPER.red, fontSize: 10, fontWeight: 700, position: "insideEndTop" },
+          label: { formatter: getT()("charts.annee_2022", { v: fr(base2022) }), color: PAPER.red, fontSize: 10, fontWeight: 700, position: "insideEndTop" },
           data: [{ yAxis: base2022 }],
         },
       },
@@ -303,19 +305,19 @@ export function reportScatter(
     tooltip: {
       trigger: "item",
       ...tooltip(),
-      formatter: (p: any) => `${p.name}<br/>Taux : ${p.value[1].toFixed(1)} %`,
+      formatter: (p: any) => `${p.name}<br/>${getT()("charts.taux_colon", { v: p.value[1].toFixed(1) })}`,
     },
     grid: { left: 8, right: 12, top: 12, bottom: 6, containLabel: true },
     xAxis: {
       type: "value",
-      name: "Volume (log enfants hors école)",
+      name: getT()("charts.volume"),
       nameTextStyle: { color: PAPER.muted, fontSize: 10 },
       ...axis(false),
       axisLabel: { color: PAPER.muted, fontSize: 10 },
     },
     yAxis: {
       type: "value",
-      name: "Intensité (% hors école)",
+      name: getT()("charts.intensite"),
       nameTextStyle: { color: PAPER.muted, fontSize: 10 },
       ...axis(false),
       axisLabel: { color: PAPER.muted, fontSize: 10, formatter: "{value} %" },
