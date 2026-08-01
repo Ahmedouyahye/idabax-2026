@@ -30,3 +30,4 @@ Thumbs.db
 # Artefacts locaux (sorties shell/outils, rapports hors projet)
 info:*
 mele3bak-platform-report.pdf
+*.tsbuildinfo

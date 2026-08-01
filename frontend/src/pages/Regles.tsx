@@ -2,13 +2,15 @@ import React from "react";
 import { fmt, useRules } from "../lib/api";
 import type { Rule } from "../lib/types";
 import { Card, ErrorBox, Loading, PageHeader } from "../components/ui";
+import { useI18n } from "../lib/i18n";
 
 export default function Regles() {
+  const { t } = useI18n();
   return (
     <div>
       <PageHeader
-        title="Règles d'association"
-        subtitle="Datamining sur les 16 451 enfants de 6-14 ans de l'EPCV 2019 : quelles combinaisons de facteurs conduisent le plus sûrement à l'exclusion scolaire ?"
+        title={t("regles.title")}
+        subtitle={t("regles.subtitle")}
       />
       <RulesContent />
     </div>
@@ -16,35 +18,36 @@ export default function Regles() {
 }
 
 function RulesContent() {
+  const { t } = useI18n();
   const { data, loading, error } = useRules();
   if (error) return <ErrorBox message={error} />;
-  if (loading || !data) return <Loading label="Extraction des règles…" />;
+  if (loading || !data) return <Loading label={t("regles.loading")} />;
 
   return (
     <div className="space-y-6">
       <div className="grid gap-3 lg:grid-cols-4">
-        <KpiStat label="Règles extraites" value={`${data.n_rules}`} hint="algorithme Apriori" />
-        <KpiStat label="Enfants 6-14 ans analysés" value={fmt(data.n_children_6_14)} hint="microdonnées EPCV 2019" />
-        <KpiStat label="Meilleur lift" value={maxLift(data.rules).toFixed(2)} hint="cm_sans_education → hors_ecole" />
-        <KpiStat label="Règles à confiance 100 %" value={`${data.rules.filter((r) => r.confidence >= 1).length}`} hint="règles déterministes" />
+        <KpiStat label={t("regles.regles_extraites")} value={`${data.n_rules}`} hint={t("regles.algo_apriori")} />
+        <KpiStat label={t("regles.enfants_analyses")} value={fmt(data.n_children_6_14)} hint={t("regles.microdonnees")} />
+        <KpiStat label={t("regles.meilleur_lift")} value={maxLift(data.rules).toFixed(2)} hint={t("regles.hint_lift")} />
+        <KpiStat label={t("regles.regles_confiance_100")} value={`${data.rules.filter((r) => r.confidence >= 1).length}`} hint={t("regles.regles_deterministes")} />
       </div>
 
       <RuleSection
-        title="Règles générales (top 10 par lift)"
-        subtitle="La variable déterminante saute aux yeux : être sans instruction, ou en éducation traditionnelle, conduit systématiquement à l'exclusion formelle (confiance 100 %)."
+        title={t("regles.generales.title")}
+        subtitle={t("regles.generales.subtitle")}
         accent="accent"
         rules={data.rules}
       />
       <RuleSection
-        title="Sans éducation moderne : qui est concerné ?"
-        subtitle="Règles sur les enfants sans instruction moderne. Le noyau dur de l'exclusion."
+        title={t("regles.sans_cm.title")}
+        subtitle={t("regles.sans_cm.subtitle")}
         accent="warn"
         rules={data.sans_cm}
         columns={["Ruralité", "Pauvreté", "Âge"]}
       />
       <RuleSection
-        title="Par région"
-        subtitle="Les contextes régionaux les plus à risque d'exclusion."
+        title={t("regles.par_region.title")}
+        subtitle={t("regles.par_region.subtitle")}
         accent="danger"
         rules={data.par_region}
         columns={["Région"]}
@@ -67,24 +70,25 @@ function RuleSection({ title, subtitle, accent, rules, columns }: { title: strin
 }
 
 function RuleRow({ r, accent, columns }: { r: Rule; accent: string; columns?: string[] }) {
+  const { t } = useI18n();
   const ants = r.antecedents_str.split(" & ");
   const conds = ants.filter((a) => !(columns ?? []).some((c) => a.startsWith(c.toLowerCase().split(" ")[0])));
   return (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-white/[0.03] px-3 py-2.5 text-xs">
       {ants.map((a) => (
-        <Chip key={a} accent={a === "cm_sans_education" || a === "cm_education_traditionnelle" ? accent : "mut"} label={a} />
+        <Chip key={a} accent={a === "cm_sans_education" || a === "cm_education_traditionnelle" ? accent : "mut"} label={t(a)} />
       ))}
       <span className="font-bold text-mut">⟶</span>
-      <Chip accent={accent} label="hors_ecole" />
+      <Chip accent={accent} label={t("hors_ecole")} />
       <span className="ml-auto flex items-center gap-3 num text-[11px] text-mut">
         <span>
-          conf <b className="text-fg">{Math.round(r.confidence * 100)} %</b>
+          {t("regles.conf")} <b className="text-fg">{Math.round(r.confidence * 100)} %</b>
         </span>
         <span>
-          lift <b className={accentClass(accent)}>{r.lift.toFixed(2)}</b>
+          {t("regles.lift")} <b className={accentClass(accent)}>{r.lift.toFixed(2)}</b>
         </span>
         <span>
-          supp <b className="text-fg">{(r.support * 100).toFixed(1)} %</b>
+          {t("regles.supp")} <b className="text-fg">{(r.support * 100).toFixed(1)} %</b>
         </span>
       </span>
     </div>

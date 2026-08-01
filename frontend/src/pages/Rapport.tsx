@@ -347,7 +347,7 @@ export default function Rapport() {
  <p className="mt-4 font-inter text-sm leading-relaxed text-[#3d3323]">
  La tendance mondiale du hors école primaire (−0,64 pt/an) appliquée à 2022-2030 laisse ~<b>318 000 enfants</b> hors
  école formelle en 2030. Les scénarios testent des réponses politiques. Hypothèses : population 6-14 constante ;
- 1 € ≈ 400 MRO ; coût indicatif de 25 M MRO par école (40 élèves).
+ 1 € ≈ 460 MRO ; coût indicatif de 25 M MRO par école (40 élèves).
  </p>
             <div className="mt-5">
               <Chart option={reportScenarios(scenarioBars, scen.data!.baseline.enfants_hors_ecole_2022)} h={260} />

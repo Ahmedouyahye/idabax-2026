@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import ReactECharts from "echarts-for-react";
 import { useSearchParams } from "react-router-dom";
+import { useI18n } from "../lib/i18n";
 import { useClusters, useWilayas, fmt, pct } from "../lib/api";
 import { donut, radar } from "../lib/charts";
 import { Badge, Card, ErrorBox, Loading, PageHeader } from "../components/ui";
@@ -12,6 +13,7 @@ const EDU_COLORS: Record<string, string> = {
 };
 
 export default function Wilayas() {
+ const { t } = useI18n();
  const wilayas = useWilayas();
  const clusters = useClusters();
  const [params, setParams] = useSearchParams();
@@ -29,15 +31,15 @@ export default function Wilayas() {
  if (!selected && sorted.length > 0) setParams({ w: sorted[0].wilaya }, { replace: true });
  }, [selected, sorted, setParams]);
 
- if (wilayas.error || clusters.error) return <ErrorBox message={wilayas.error ?? clusters.error ?? "erreur"} />;
- if (wilayas.loading || clusters.loading) return <Loading label="Chargement des wilayas…" />;
+ if (wilayas.error || clusters.error) return <ErrorBox message={wilayas.error ?? clusters.error ?? t("wilayas.erreur")} />;
+ if (wilayas.loading || clusters.loading) return <Loading label={t("wilayas.loading")} />;
 
  return (
  <div>
  <PageHeader
- eyebrow="13 wilayas · 1 Indice"
- title="Explorer les 13 wilayas"
- subtitle="Sélectionnez une wilaya : son indice, sa composition scolaire, ses facteurs de risque et le levier d'action recommandé."
+ eyebrow={t("wilayas.eyebrow")}
+ title={t("wilayas.title")}
+ subtitle={t("wilayas.subtitle")}
  />
 
  <div className="mb-5 flex flex-wrap gap-2">
@@ -63,50 +65,50 @@ export default function Wilayas() {
  <Card className="lg:col-span-1">
  <div className="flex items-start justify-between">
  <div>
- <div className="text-[11px] font-semibold uppercase tracking-wider text-mut">Rang IPE</div>
+ <div className="text-[11px] font-semibold uppercase tracking-wider text-mut">{t("wilayas.rang_ipe")}</div>
  <div className="num mt-1 text-4xl font-black grad-text">#{w.rang_ipe}</div>
- <div className="num mt-1 text-sm text-mut">Indice : {w.ipe.toLocaleString("fr-FR")}</div>
+ <div className="num mt-1 text-sm text-mut">{t("wilayas.ipe")} {w.ipe.toLocaleString("fr-FR")}</div>
  </div>
  <Badge color={w.rang_ipe <= 5 ? "bg-danger/15 text-danger" : w.rang_ipe <= 8 ? "bg-warn/15 text-warn" : "bg-accent2/15 text-accent2"}>
- {w.rang_ipe <= 5 ? "Priorité haute" : w.rang_ipe <= 8 ? "Priorité moyenne" : "Priorité maîtrisée"}
+ {w.rang_ipe <= 5 ? t("wilayas.priorite_haute") : w.rang_ipe <= 8 ? t("wilayas.priorite_moyenne") : t("wilayas.priorite_maitrisee")}
  </Badge>
  </div>
  <div className="mt-4 space-y-2 text-sm">
- <Row k="Population 2022" v={fmt(w.population_2022)} />
- <Row k="Enfants 6-14 ans" v={fmt(w.pop_6_14_2022)} />
- <Row k="Hors école formelle" v={`${fmt(w.enfants_hors_ecole)} enfants`} strong />
- <Row k="Pauvreté" v={pct(w.taux_pauvrete)} />
- <Row k="Milieu rural" v={pct(w.part_rurale)} />
- <Row k="Dépendance jeunes" v={`${w.ratio_dependance_jeunes} / 100 actifs`} />
- <Row k="Établissements" v={`${w.nb_etablissements} (${w.ecoles_pour_1000_enfants}/1000 enf.)`} />
+ <Row k={t("wilayas.pop")} v={fmt(w.population_2022)} />
+ <Row k={t("wilayas.enfants_6_14")} v={fmt(w.pop_6_14_2022)} />
+ <Row k={t("wilayas.hors_ecole_formelle")} v={`${fmt(w.enfants_hors_ecole)} ${t("wilayas.enfants")}`} strong />
+ <Row k={t("wilayas.pauvrete")} v={pct(w.taux_pauvrete)} />
+ <Row k={t("wilayas.milieu_rural")} v={pct(w.part_rurale)} />
+ <Row k={t("wilayas.dependance_jeunes")} v={`${w.ratio_dependance_jeunes} / 100 ${t("wilayas.actifs")}`} />
+ <Row k={t("wilayas.etablissements")} v={`${w.nb_etablissements} (${w.ecoles_pour_1000_enfants}/1000 ${t("wilayas.enf_abbr")})`} />
  </div>
  <div className="mt-4 rounded-xl border border-warn/25 bg-warn/10 p-3">
- <div className="text-[11px] font-semibold uppercase tracking-wider text-warn">Levier d'action</div>
- <div className="mt-1 text-sm font-bold text-fg">{w.levier_action}</div>
+ <div className="text-[11px] font-semibold uppercase tracking-wider text-warn">{t("wilayas.levier_action")}</div>
+ <div className="mt-1 text-sm font-bold text-fg">{t(w.levier_action)}</div>
  </div>
  {clusterInfo && (
  <div className="mt-3 rounded-xl border border-accent/25 bg-accent/10 p-3">
  <div className="text-[11px] font-semibold uppercase tracking-wider text-accent">
- Profil C{w.cluster} · {clusterInfo.taille} wilayas
+ {t("wilayas.profil")} C{w.cluster} · {clusterInfo.taille} {t("wilayas.wilayas")}
  </div>
- <div className="mt-1 text-sm font-bold text-fg">{clusterInfo.label}</div>
+ <div className="mt-1 text-sm font-bold text-fg">{t(clusterInfo.label)}</div>
  </div>
  )}
  </Card>
 
  <Card className="lg:col-span-1">
- <h2 className="mb-1 font-display text-base font-semibold text-fg">Situation scolaire des 6-14 ans</h2>
+ <h2 className="mb-1 font-display text-base font-semibold text-fg">{t("wilayas.situation_scolaire")}</h2>
  <p className="mb-2 text-[11px] text-mut">
- Répartition de la population en âge scolaire selon le type d'instruction.
+ {t("wilayas.situation_desc")}
  </p>
  <ReactECharts
  option={donut(
  [
- { name: "Formel", value: w.scol_Formel, color: EDU_COLORS.Formel },
- { name: "Mahadra / Coranique", value: w.scol_Mahadra_trad, color: EDU_COLORS["Mahadra / Coranique"] },
- { name: "Aucune instruction", value: w["scol_Aucune instruction"], color: EDU_COLORS["Aucune instruction"] },
+ { name: t("Formel"), value: w.scol_Formel, color: EDU_COLORS.Formel },
+ { name: t("Mahadra / Coranique"), value: w.scol_Mahadra_trad, color: EDU_COLORS["Mahadra / Coranique"] },
+ { name: t("Aucune instruction"), value: w["scol_Aucune instruction"], color: EDU_COLORS["Aucune instruction"] },
  ],
- "Hors formel",
+ t("wilayas.hors_formel"),
  pct(w.scol_Hors_ecole_formelle)
  )}
  style={{ height: 300 }}
@@ -121,7 +123,7 @@ export default function Wilayas() {
  ).map(([k, v]) => (
  <div key={k} className="flex items-center gap-2 text-xs">
  <span className="h-2.5 w-2.5 rounded-full" style={{ background: EDU_COLORS[k] }} />
- <span className="text-mut">{k}</span>
+ <span className="text-mut">{t(k)}</span>
  <span className="num ml-auto font-semibold">{pct(v)}</span>
  </div>
  ))}
@@ -129,16 +131,16 @@ export default function Wilayas() {
  </Card>
 
  <Card className="lg:col-span-1">
- <h2 className="mb-1 font-display text-base font-semibold text-fg">Profil multidimensionnel</h2>
- <p className="mb-2 text-[11px] text-mut">Position de la wilaya sur les facteurs de risque (0-100).</p>
+ <h2 className="mb-1 font-display text-base font-semibold text-fg">{t("wilayas.profil_multidim")}</h2>
+ <p className="mb-2 text-[11px] text-mut">{t("wilayas.profil_desc")}</p>
  <ReactECharts
  option={radar(
  [
- { name: "Hors école", max: 100 },
- { name: "Pauvreté", max: 100 },
- { name: "Ruralité", max: 100 },
- { name: "Dépendance jeunes", max: 130 },
- { name: "Écart de genre", max: 40 },
+ { name: t("wilayas.radar_hors_ecole"), max: 100 },
+ { name: t("wilayas.radar_pauvrete"), max: 100 },
+ { name: t("wilayas.radar_ruralite"), max: 100 },
+ { name: t("wilayas.radar_dependance"), max: 130 },
+ { name: t("wilayas.radar_ecart_genre"), max: 40 },
  ],
  [
  w.scol_Hors_ecole_formelle,
@@ -152,52 +154,52 @@ export default function Wilayas() {
  style={{ height: 300 }}
  />
  <div className="mt-2 rounded-xl bg-white/[0.03] p-3 text-xs leading-relaxed text-mut">
- Écart filles-garçons hors école :{" "}
+ {t("wilayas.ecart_genre")}{" "}
  <span className={w.ecart_genre_hors_ecole > 0 ? "font-semibold text-accent" : "font-semibold text-warn"}>
- {w.ecart_genre_hors_ecole > 0 ? "garçons plus exclus" : "filles plus exclues"} de {Math.abs(w.ecart_genre_hors_ecole)} pts
+ {w.ecart_genre_hors_ecole > 0 ? t("wilayas.garcons_exclus") : t("wilayas.filles_exclues")} {t("wilayas.de_pts", { n: Math.abs(w.ecart_genre_hors_ecole) })}
  </span>
- . La fracture mauritanienne n'est pas le genre elle est territoriale.
+ {t("wilayas.fracture")}
  </div>
  </Card>
  </div>
 
  <div className="grid gap-6 lg:grid-cols-3">
  <Card>
- <h2 className="mb-3 font-display text-base font-semibold text-fg">Composition de l'indice IPE</h2>
+ <h2 className="mb-3 font-display text-base font-semibold text-fg">{t("wilayas.ipe_composition")}</h2>
  <div className="space-y-4">
- <BarPart label="Volume (40 %)" value={w.volume_norm} color="#eeb74f" hint="Enfants hors école en effectif" />
- <BarPart label="Intensité (35 %)" value={w.intensite_norm} color="#ef9460" hint="Taux hors école formelle" />
- <BarPart label="Vulnérabilité (25 %)" value={w.vulnerabilite_norm} color="#4ec3a3" hint="Pauvreté + dépendance jeunes" />
+ <BarPart label={t("wilayas.volume")} value={w.volume_norm} color="#eeb74f" hint={t("wilayas.volume_hint")} />
+ <BarPart label={t("wilayas.intensite")} value={w.intensite_norm} color="#ef9460" hint={t("wilayas.intensite_hint")} />
+ <BarPart label={t("wilayas.vulnerabilite")} value={w.vulnerabilite_norm} color="#4ec3a3" hint={t("wilayas.vulnerabilite_hint")} />
  </div>
  </Card>
  <Card>
- <h2 className="mb-3 font-display text-base font-semibold text-fg">Composition scolaire, milieu urbain vs rural</h2>
+ <h2 className="mb-3 font-display text-base font-semibold text-fg">{t("wilayas.composition_urbain_rural")}</h2>
  <div className="grid grid-cols-2 gap-3 text-center">
- <MiniStat label="Formel urbain" value={pct(w.scol_urbain_Formel)} />
- <MiniStat label="Formel rural" value={pct(w.scol_rural_Formel)} />
- <MiniStat label="Hors école urbain" value={pct(w.scol_urbain_Hors_ecole_formelle)} accent="text-warn" />
- <MiniStat label="Hors école rural" value={pct(w.scol_rural_Hors_ecole_formelle)} accent="text-danger" />
+ <MiniStat label={t("wilayas.formel_urbain")} value={pct(w.scol_urbain_Formel)} />
+ <MiniStat label={t("wilayas.formel_rural")} value={pct(w.scol_rural_Formel)} />
+ <MiniStat label={t("wilayas.hors_ecole_urbain")} value={pct(w.scol_urbain_Hors_ecole_formelle)} accent="text-warn" />
+ <MiniStat label={t("wilayas.hors_ecole_rural")} value={pct(w.scol_rural_Hors_ecole_formelle)} accent="text-danger" />
  </div>
  <p className="mt-3 text-[11px] leading-relaxed text-mut">
- L'écart rural/urbain est le premier déterminant de l'exclusion scolaire en Mauritanie.
+ {t("wilayas.ecart_urbain_rural")}
  </p>
  </Card>
  <Card>
- <h2 className="mb-3 font-display text-base font-semibold text-fg">Traduction en effectifs</h2>
+ <h2 className="mb-3 font-display text-base font-semibold text-fg">{t("wilayas.effectifs")}</h2>
  <div className="space-y-2">
- <Row k="Enfants hors école formelle" v={fmt(w.enfants_hors_ecole)} strong />
- <Row k="Dont mahadra / coranique" v={fmt(w.enfants_mahadra)} />
- <Row k="Dont aucune instruction" v={fmt(w.enfants_aucune_instruction)} />
- <Row k="Population scolaire couverte par le formel" v={fmt(Math.round((w.scol_Formel / 100) * w.pop_6_14_2022))} />
+ <Row k={t("wilayas.enfants_hors_ecole_formelle")} v={fmt(w.enfants_hors_ecole)} strong />
+ <Row k={t("wilayas.dont_mahadra")} v={fmt(w.enfants_mahadra)} />
+ <Row k={t("wilayas.dont_aucune")} v={fmt(w.enfants_aucune_instruction)} />
+ <Row k={t("wilayas.pop_couverte")} v={fmt(Math.round((w.scol_Formel / 100) * w.pop_6_14_2022))} />
  </div>
  <p className="mt-3 rounded-xl bg-accent/10 p-3 text-[11px] leading-relaxed text-accent">
- Un pourcentage ne se budgète pas. Multiplié par la population, il devient un effectif. Ça, ça se budgète.
+ {t("wilayas.quote_effectifs")}
  </p>
  </Card>
  </div>
  </div>
  ) : (
- <Loading label="Sélectionnez une wilaya…" />
+ <Loading label={t("wilayas.select")} />
  )}
  </div>
  );

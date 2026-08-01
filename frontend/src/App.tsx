@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import { useI18n } from "./lib/i18n";
 
 const Carte = lazy(() => import("./pages/Carte"));
 const Wilayas = lazy(() => import("./pages/Wilayas"));
@@ -15,9 +16,10 @@ const Indicateurs = lazy(() => import("./pages/Indicateurs"));
 const Rapport = lazy(() => import("./pages/Rapport"));
 
 function Loading() {
+  const { t } = useI18n();
   return (
     <div className="flex items-center justify-center py-32 text-sm text-slate-400">
-      Chargement…
+      {t("app.loading")}
     </div>
   );
 }

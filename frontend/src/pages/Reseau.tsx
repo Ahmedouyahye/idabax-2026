@@ -2,15 +2,17 @@ import ReactECharts from "echarts-for-react";
 import { useCorrelations, useSimilarite } from "../lib/api";
 import { forceGraph } from "../lib/charts";
 import { Badge, Card, ErrorBox, Loading, PageHeader } from "../components/ui";
+import { useI18n } from "../lib/i18n";
 
 const CLUSTER_COLORS = ["#4ec3a3", "#eeb74f", "#ef6f5f"];
 
 export default function Reseau() {
+ const { t } = useI18n();
  const sim = useSimilarite();
  const corr = useCorrelations();
 
- if (sim.error || corr.error) return <ErrorBox message={sim.error ?? corr.error ?? "erreur"} />;
- if (sim.loading || corr.loading) return <Loading label="Construction des graphes…" />;
+ if (sim.error || corr.error) return <ErrorBox message={sim.error ?? corr.error ?? t("reseau.erreur")} />;
+ if (sim.loading || corr.loading) return <Loading label={t("reseau.loading")} />;
 
  const similarite = sim.data!;
  const correlations = corr.data!;
@@ -23,39 +25,39 @@ export default function Reseau() {
  category: n.cluster,
  })),
  similarite.edges.map((e) => ({ source: e.source, target: e.target, weight: e.weight })),
- [{ name: "C0 Universal" }, { name: "C1 Mahadra" }, { name: "C2 Aucune instruction" }]
+ [{ name: t("reseau.cat_c0") }, { name: t("reseau.cat_c1") }, { name: t("reseau.cat_c2") }]
  );
 
  const corrGraph = forceGraph(
- correlations.nodes.map((n) => ({ id: n.id, label: n.label, value: n.taille / 25, category: 0 })),
+ correlations.nodes.map((n) => ({ id: n.id, label: t(n.label), value: n.taille / 25, category: 0 })),
  correlations.edges.map((e) => ({ source: e.source, target: e.target, weight: Math.abs(e.r) })),
- [{ name: "Indicateurs" }]
+ [{ name: t("reseau.cat_indicators") }]
  );
 
  return (
  <div>
  <PageHeader
- eyebrow="Analyse de réseau"
- title="Analyse de réseau"
- subtitle="Deux graphes complémentaires : la similarité entre wilayas (qui se ressemble-t-il) et les corrélations entre indicateurs (ce qui explique l'exclusion)."
+ eyebrow={t("reseau.eyebrow")}
+ title={t("reseau.title")}
+ subtitle={t("reseau.subtitle")}
  />
 
  <div className="grid gap-6 lg:grid-cols-2">
  <Card>
  <div className="flex items-center justify-between">
- <h2 className="font-display text-base font-semibold text-fg">Similarité entre wilayas</h2>
- <Badge color="bg-accent/15 text-accent">{similarite.n_communities} communautés</Badge>
+ <h2 className="font-display text-base font-semibold text-fg">{t("reseau.similarite")}</h2>
+ <Badge color="bg-accent/15 text-accent">{similarite.n_communities} {t("reseau.communautes")}</Badge>
  </div>
  <p className="mt-1 mb-2 text-[11px] text-mut">
- Chaque wilaya est reliée à ses 2 plus proches voisines (corrélation r ≥ 0.85 sur l'ensemble des indicateurs). La couleur = profil de la typologie.
+ {t("reseau.similarite_desc")}
  </p>
  <ReactECharts option={simGraph} style={{ height: 520 }} />
  </Card>
 
  <Card>
- <h2 className="font-display text-base font-semibold text-fg">Corrélations entre indicateurs</h2>
+ <h2 className="font-display text-base font-semibold text-fg">{t("reseau.correlations")}</h2>
  <p className="mt-1 mb-2 text-[11px] text-mut">
- Arêtes |r| ≥ 0.75 entre 12 indicateurs. Le graphe révèle les déterminants structurels de l'exclusion.
+ {t("reseau.correlations_desc")}
  </p>
  <ReactECharts option={corrGraph} style={{ height: 520 }} />
  </Card>
@@ -63,36 +65,36 @@ export default function Reseau() {
 
  <div className="mt-6 grid gap-6 lg:grid-cols-2">
  <Card>
- <h3 className="mb-3 font-display text-base font-semibold text-fg">Liens les plus forts entre wilayas</h3>
+ <h3 className="mb-3 font-display text-base font-semibold text-fg">{t("reseau.liens_forts")}</h3>
  <div className="space-y-1.5">
  {[...similarite.edges].sort((a, b) => b.weight - a.weight).map((e, i) => (
  <div key={i} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2 text-xs">
  <span className="font-semibold text-fg">{e.source}</span>
  <span className="text-mut">↔</span>
  <span className="font-semibold text-fg">{e.target}</span>
- <span className="ml-auto num text-mut">r = {e.weight.toFixed(2)}</span>
+ <span className="ml-auto num text-mut">{t("reseau.r")} {e.weight.toFixed(2)}</span>
  </div>
  ))}
  </div>
  <p className="mt-3 text-[11px] leading-relaxed text-mut">
- Le graphe rapproche des wilayas éloignées géographiquement mais identiques scolairement preuve que la géographie n'est pas le facteur.
+ {t("reseau.geographie")}
  </p>
  </Card>
 
  <Card>
- <h3 className="mb-3 font-display text-base font-semibold text-fg">Lecture des corrélations</h3>
+ <h3 className="mb-3 font-display text-base font-semibold text-fg">{t("reseau.lecture")}</h3>
  <div className="space-y-3">
  <Insight
- title="Le genre n'est pas le facteur"
- text="L'écart filles-garçons n'apparaît dans aucune corrélation forte : l'exclusion est territoriale, pas sexuée."
+ title={t("reseau.insight1_title")}
+ text={t("reseau.insight1_text")}
  />
  <Insight
- title="La ruralité pilote tout"
- text="Le taux hors école corrèle à 0.76 avec la dépendance jeunes (elle-même liée à la ruralité) : la cible est la famille rurale, jeune et pauvre."
+ title={t("reseau.insight2_title")}
+ text={t("reseau.insight2_text")}
  />
  <Insight
- title="Pauvreté et tradition ne se recouvrent pas"
- text="Le niveau de pauvreté forme un groupe à part : riche ou pauvre, toutes les wilayas ont une part d'exclusion seul le type change."
+ title={t("reseau.insight3_title")}
+ text={t("reseau.insight3_text")}
  />
  </div>
  </Card>

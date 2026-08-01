@@ -1,26 +1,29 @@
 import { Card, PageHeader } from "../components/ui";
-
-const FORMULE = [
- { part: "Volume", weight: "40 %", def: "Log du nombre d'enfants 6-14 ans hors école formelle (2019) projeté sur la population 2022.", icon: "⊞" },
- { part: "Intensité", weight: "35 %", def: "Part des 6-14 ans hors école formelle (formel exclu, mahadra et aucune instruction incluses).", icon: "∿" },
- { part: "Vulnérabilité", weight: "25 %", def: "0.75 × taux de pauvreté + 0.25 × ratio de dépendance des jeunes (0-14 / 15-64).", icon: "⚠" },
-];
-
-const PIPELINE = [
- { n: "01", t: "Microdonnées EPCV 2019", d: "60 600 individus (SPSS) enquête ménages de l'ONS. Codage : situation scolaire, milieu, wilaya, pauvreté, sexe, âge." },
- { n: "02", t: "Projection démographique", d: "Échantillon pondéré et projeté sur la population wilaya par wilaya (2022, HDX / ONS) pour passer des pourcentages aux effectifs." },
- { n: "03", t: "Indice de Priorité Éducative (IPE)", d: "Score 0-100 par wilaya : prioriser là où il y a beaucoup ET une forte proportion d'enfants exclus, dans un contexte vulnérable." },
- { n: "04", t: "Typologie (clustering)", d: "k-moyennes normalisées (k=3) : trois mécanismes d'exclusion distincts, chacun avec son levier d'action." },
- { n: "05", t: "Graphes", d: "Similarité entre wilayas (top-2 voisins, r≥0.85) et réseau de corrélations entre indicateurs (|r|≥0.75)." },
- { n: "06", t: "Règles d'association", d: "Apriori sur les 16 451 enfants 6-14 ans : combinaisons de facteurs menant à l'exclusion (lift > 1.05)." },
-];
+import { useI18n } from "../lib/i18n";
 
 export default function Methodologie() {
+ const { t } = useI18n();
+
+ const FORMULE = [
+  { part: t("methodologie.volume"), weight: "40 %", def: t("methodologie.volume.def"), icon: "⊞" },
+  { part: t("methodologie.intensite"), weight: "35 %", def: t("methodologie.intensite.def"), icon: "∿" },
+  { part: t("methodologie.vulnerabilite"), weight: "25 %", def: t("methodologie.vulnerabilite.def"), icon: "⚠" },
+ ];
+
+ const PIPELINE = [
+  { n: "01", t: t("methodologie.step1.t"), d: t("methodologie.step1.d") },
+  { n: "02", t: t("methodologie.step2.t"), d: t("methodologie.step2.d") },
+  { n: "03", t: t("methodologie.step3.t"), d: t("methodologie.step3.d") },
+  { n: "04", t: t("methodologie.step4.t"), d: t("methodologie.step4.d") },
+  { n: "05", t: t("methodologie.step5.t"), d: t("methodologie.step5.d") },
+  { n: "06", t: t("methodologie.step6.t"), d: t("methodologie.step6.d") },
+ ];
+
  return (
  <div>
  <PageHeader
- title="Méthodologie"
- subtitle="De la microdonnée SPSS à la décision : un pipeline transparent, reproductible, en open data."
+ title={t("methodologie.title")}
+ subtitle={t("methodologie.subtitle")}
  />
 
  <div className="mb-6 grid gap-3 lg:grid-cols-3">
@@ -37,7 +40,7 @@ export default function Methodologie() {
  </div>
 
  <div className="mb-6">
- <h2 className="mb-4 text-sm font-bold text-fg">Le pipeline</h2>
+ <h2 className="mb-4 text-sm font-bold text-fg">{t("methodologie.pipeline")}</h2>
  <div className="space-y-3">
  {PIPELINE.map((s, i) => (
  <div key={s.n} className="relative flex gap-4 rounded-2xl border border-line bg-panel p-4">
@@ -54,22 +57,22 @@ export default function Methodologie() {
 
  <div className="grid gap-6 lg:grid-cols-2">
  <Card>
- <h2 className="mb-3 text-sm font-bold text-fg">Choix méthodologiques</h2>
+ <h2 className="mb-3 text-sm font-bold text-fg">{t("methodologie.choix")}</h2>
  <div className="space-y-3 text-xs leading-relaxed text-mut">
- <P k="Un seul type d'école formelle">La catégorie officielle « Coranique » (C4N=2) est agrégée à la mahadra conforme au référentiel EduFocus. Un enfant en mahadra est « hors école formelle » mais instruit : l'effort porte sur les passerelles, pas l'alphabétisation.</P>
- <P k="Pondération 2019 → 2022">Les parts de l'EPCV 2019 sont appliquées aux pyramides 2022 par wilaya : les pourcentages deviennent des effectifs budgétables.</P>
- <P k="Normalisation min-max">Chaque composante de l'IPE est normalisée 0-100 avant pondération, pour rendre les trois dimensions comparables.</P>
- <P k="Clusters interprétables">k retenu par silhouette (k=3 : 0.331) pour un équilibre entre lisibilité statistique et richesse des profils.</P>
+ <P k={t("methodologie.choix1.k")}>{t("methodologie.choix1.text")}</P>
+ <P k={t("methodologie.choix2.k")}>{t("methodologie.choix2.text")}</P>
+ <P k={t("methodologie.choix3.k")}>{t("methodologie.choix3.text")}</P>
+ <P k={t("methodologie.choix4.k")}>{t("methodologie.choix4.text")}</P>
  </div>
  </Card>
  <Card>
- <h2 className="mb-3 text-sm font-bold text-fg">Sources des données</h2>
+ <h2 className="mb-3 text-sm font-bold text-fg">{t("methodologie.sources")}</h2>
  <div className="space-y-3">
- <Src name="EPCV 2019" org="ONS Mauritanie Enquête Permanente sur les Conditions de Vie" type="microdonnées ménages (SPSS)" link="catalog ANADRIM RGPH5" />
- <Src name="Population 2022 par wilaya" org="ONS / HDX (COD-PS Mauritanie)" type="projections démographiques" link="HDX : b228e130-8703-4126-8dfd-547124dca6fc" />
- <Src name="Découpage administratif" org="HDX COD-AB" type="GeoJSON des 15 wilayas" link="HDX Mauritania admin" />
- <Src name="Établissements scolaires" org="OpenStreetMap (HOTOSM)" type="646 points éducation" link="geo.osm.org" />
- <Src name="Indicateurs nationaux" org="Banque mondiale (WDI)" type="23 indicateurs, 1990-2023" link="data.worldbank.org" />
+ <Src name="EPCV 2019" org={t("methodologie.src_epcv.org")} type={t("methodologie.src_epcv.type")} link="catalog ANADRIM RGPH5" />
+ <Src name={t("methodologie.src_pop.title")} org="ONS / HDX (COD-PS Mauritanie)" type={t("methodologie.src_pop.type")} link="HDX : b228e130-8703-4126-8dfd-547124dca6fc" />
+ <Src name={t("methodologie.src_admin.title")} org="HDX COD-AB" type={t("methodologie.src_admin.type")} link="HDX Mauritania admin" />
+ <Src name={t("methodologie.src_etab.title")} org="OpenStreetMap (HOTOSM)" type={t("methodologie.src_etab.type")} link="geo.osm.org" />
+ <Src name={t("methodologie.src_wdi.title")} org={t("methodologie.src_wdi.org")} type={t("methodologie.src_wdi.type")} link="data.worldbank.org" />
  </div>
  </Card>
  </div>

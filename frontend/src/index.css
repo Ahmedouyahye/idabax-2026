@@ -232,3 +232,32 @@ body::after {
 .leaflet-tooltip-top:before {
  border-top-color: rgba(226, 199, 150, 0.22) !important;
 }
+
+/* ─── RTL (arabe) ──────────────────────────────────────────────────────── */
+
+[dir="rtl"] body,
+[dir="rtl"] .leaflet-container,
+[dir="rtl"] .leaflet-tooltip {
+ font-family: "Noto Naskh Arabic", "Cairo", "Segoe UI", Tahoma, sans-serif;
+}
+
+[dir="rtl"] aside.fixed {
+ left: auto;
+ right: 0;
+}
+
+[dir="rtl"] .md\:pl-64 {
+ padding-left: 0;
+ padding-right: 16rem;
+}
+
+[dir="rtl"] .chart-print,
+[dir="rtl"] .echarts-for-react {
+ direction: ltr;
+}
+
+[dir="rtl"] .num,
+[dir="rtl"] td.num,
+[dir="rtl"] .grad-text {
+ unicode-bidi: plaintext;
+}

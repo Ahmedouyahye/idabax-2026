@@ -2,12 +2,14 @@ import ReactECharts from "echarts-for-react";
 import type { EChartsOption } from "echarts";
 import { useIndicateurs } from "../lib/api";
 import { Card, ErrorBox, Loading, PageHeader } from "../components/ui";
+import { useI18n } from "../lib/i18n";
 
 export default function Indicateurs() {
+ const { t } = useI18n();
  const data = useIndicateurs();
 
  if (data.error) return <ErrorBox message={data.error} />;
- if (data.loading) return <Loading label="Calcul des corrélations…" />;
+ if (data.loading) return <Loading label={t("indicateurs.loading")} />;
 
  const d = data.data!;
 
@@ -18,12 +20,12 @@ export default function Indicateurs() {
  borderColor: "rgba(226,199,150,0.22)",
  textStyle: { color: "#f4edde" },
  formatter: (p: any) =>
- `<b>${p.data[1]}</b> × <b>${p.data[0]}</b><br/>r = ${p.data[2].toFixed(3)}`,
+ `<b>${t(p.data[1])}</b> × <b>${t(p.data[0])}</b><br/>r = ${p.data[2].toFixed(3)}`,
  },
  grid: { left: 120, right: 16, top: 10, bottom: 80 },
  xAxis: {
  type: "category",
- data: d.indicators.map((i) => i.label),
+ data: d.indicators.map((i) => t(i.label)),
  axisLabel: { color: "#a19077", fontSize: 9, rotate: 45 },
  axisLine: { show: false },
  splitArea: { show: false },
@@ -31,7 +33,7 @@ export default function Indicateurs() {
  },
  yAxis: {
  type: "category",
- data: d.indicators.map((i) => i.label),
+ data: d.indicators.map((i) => t(i.label)),
  axisLabel: { color: "#d8cbb0", fontSize: 9, fontWeight: 600 },
  axisLine: { show: false },
  splitArea: { show: false },
@@ -52,7 +54,7 @@ export default function Indicateurs() {
  type: "heatmap",
  data: d.matrix
  .filter((cell) => d.indicators.findIndex((i) => i.label === cell.y) < d.indicators.findIndex((i) => i.label === cell.x))
- .map((cell) => [cell.x, cell.y, cell.value]),
+ .map((cell) => [t(cell.x), t(cell.y), cell.value]),
  label: {
  show: true,
  color: "#f4edde",
@@ -73,33 +75,33 @@ export default function Indicateurs() {
  return (
  <div>
  <PageHeader
- eyebrow="Matrice de corrélation · Pearson"
- title="Ce qui fait l'exclusion, ce qui ne la fait pas"
- subtitle="La matrice de corrélation de 12 indicateurs (r de Pearson, couleur = force) révèle les déterminants structurels. Une heatmap symétrique, triée pour la lisibilité."
+ eyebrow={t("indicateurs.eyebrow")}
+ title={t("indicateurs.title")}
+ subtitle={t("indicateurs.subtitle")}
  />
 
  <Card>
- <h2 className="font-display text-base font-semibold text-fg">Heatmap de corrélation 12 indicateurs × 13 wilayas</h2>
+ <h2 className="font-display text-base font-semibold text-fg">{t("indicateurs.heatmap_title")}</h2>
  <p className="mt-1 mb-2 text-[11px] text-mut">
- Vert = corrélation négative, orange = positive, noir = neutre. Ne lisez que le triangle inférieur (l'image est symétrique).
+ {t("indicateurs.heatmap_sub")}
  </p>
  <ReactECharts option={heatmap} style={{ height: 620 }} />
  </Card>
 
  <div className="mt-6 grid gap-6 lg:grid-cols-5">
  <Card className="lg:col-span-3">
- <h2 className="mb-3 font-display text-base font-semibold text-fg">Les corrélations les plus fortes</h2>
+ <h2 className="mb-3 font-display text-base font-semibold text-fg">{t("indicateurs.top_title")}</h2>
  <div className="space-y-1.5">
- {top.map((t, i) => {
- const positive = t.r > 0;
+ {top.map((c, i) => {
+ const positive = c.r > 0;
  return (
  <div key={i} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2 text-xs">
- <span className="font-semibold text-fg">{t.a}</span>
+ <span className="font-semibold text-fg">{t(c.a)}</span>
  <span className="text-mut">↔</span>
- <span className="font-semibold text-fg">{t.b}</span>
+ <span className="font-semibold text-fg">{t(c.b)}</span>
  <span className={`ml-auto num font-bold ${positive ? "text-warn" : "text-accent2"}`}>
- {t.r > 0 ? "+" : ""}
- {t.r.toFixed(2)}
+ {c.r > 0 ? "+" : ""}
+ {c.r.toFixed(2)}
  </span>
  </div>
  );
@@ -109,20 +111,20 @@ export default function Indicateurs() {
 
  <div className="space-y-4 lg:col-span-2">
  <Insight
- title="La ruralité est le socle"
- text="Le taux hors école est porté par la dépendance jeunes (0-14 / 15-64), elle-même adossée à la ruralité : la famille rurale, nombreuse et pauvre est la cible structurelle."
+ title={t("indicateurs.insight1.title")}
+ text={t("indicateurs.insight1.text")}
  />
  <Insight
- title="Population jeune et dépendance : jumeaux"
- text="La part de 0-14 ans et la dépendance jeunes sont corrélées à 1.00 : ce n'est qu'un seul et même déterminant démographique, à traiter comme un bloc."
+ title={t("indicateurs.insight2.title")}
+ text={t("indicateurs.insight2.text")}
  />
  <Insight
- title="Ce qui ne corrèle pas"
- text="Le genre n'apparaît nulle part : il ne discrimine pas le hors école. De même, le nombre d'écoles n'est pas le premier levier la distance et l'offre mahadra le sont."
+ title={t("indicateurs.insight3.title")}
+ text={t("indicateurs.insight3.text")}
  />
  <Insight
- title="Attention aux corrélations parfaites"
- text="Les r de 1.00 proviennent d'indicateurs construits l'un à partir de l'autre : nous les écartons des recommandations."
+ title={t("indicateurs.insight4.title")}
+ text={t("indicateurs.insight4.text")}
  />
  </div>
  </div>

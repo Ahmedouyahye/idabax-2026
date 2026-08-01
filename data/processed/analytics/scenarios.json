@@ -49,7 +49,7 @@
       "reduction_enfants_vs_2022": 57913,
       "ecoles_a_creer": 643,
       "cout_mro": 16075000000.0,
-      "cout_meuro": 40.2
+      "cout_meuro": 34.9
     }
   ],
   "par_wilaya": [
@@ -61,7 +61,7 @@
       "ecoles_pour_1000_enfants": 0.14,
       "ecoles_a_creer": 125,
       "cout_mro": 3125000000.0,
-      "cout_meuro": 7.8
+      "cout_meuro": 6.8
     },
     {
       "wilaya": "Gorgol",
@@ -71,7 +71,7 @@
       "ecoles_pour_1000_enfants": 0.2,
       "ecoles_a_creer": 90,
       "cout_mro": 2250000000.0,
-      "cout_meuro": 5.6
+      "cout_meuro": 4.9
     },
     {
       "wilaya": "Assaba",
@@ -81,7 +81,7 @@
       "ecoles_pour_1000_enfants": 0.27,
       "ecoles_a_creer": 83,
       "cout_mro": 2075000000.0,
-      "cout_meuro": 5.2
+      "cout_meuro": 4.5
     },
     {
       "wilaya": "Hodh El Gharbi",
@@ -91,7 +91,7 @@
       "ecoles_pour_1000_enfants": 0.15,
       "ecoles_a_creer": 80,
       "cout_mro": 2000000000.0,
-      "cout_meuro": 5.0
+      "cout_meuro": 4.3
     },
     {
       "wilaya": "Trarza",
@@ -101,7 +101,7 @@
       "ecoles_pour_1000_enfants": 0.15,
       "ecoles_a_creer": 68,
       "cout_mro": 1700000000.0,
-      "cout_meuro": 4.2
+      "cout_meuro": 3.7
     },
     {
       "wilaya": "Brakna",
@@ -111,7 +111,7 @@
       "ecoles_pour_1000_enfants": 0.29,
       "ecoles_a_creer": 66,
       "cout_mro": 1650000000.0,
-      "cout_meuro": 4.1
+      "cout_meuro": 3.6
     },
     {
       "wilaya": "Guidimakha",
@@ -121,7 +121,7 @@
       "ecoles_pour_1000_enfants": 0.32,
       "ecoles_a_creer": 66,
       "cout_mro": 1650000000.0,
-      "cout_meuro": 4.1
+      "cout_meuro": 3.6
     },
     {
       "wilaya": "Dakhlet Nouadhibou",
@@ -131,7 +131,7 @@
       "ecoles_pour_1000_enfants": 0.09,
       "ecoles_a_creer": 30,
       "cout_mro": 750000000.0,
-      "cout_meuro": 1.9
+      "cout_meuro": 1.6
     },
     {
       "wilaya": "Nouakchott",
@@ -141,7 +141,7 @@
       "ecoles_pour_1000_enfants": 0.93,
       "ecoles_a_creer": 22,
       "cout_mro": 550000000.0,
-      "cout_meuro": 1.4
+      "cout_meuro": 1.2
     },
     {
       "wilaya": "Tagant",
@@ -151,7 +151,7 @@
       "ecoles_pour_1000_enfants": 0.65,
       "ecoles_a_creer": 8,
       "cout_mro": 200000000.0,
-      "cout_meuro": 0.5
+      "cout_meuro": 0.4
     },
     {
       "wilaya": "Inchiri",

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.svg";
+import { useI18n } from "../lib/i18n";
 
 export function Logo({
  className = "h-12 w-12",
@@ -9,10 +10,11 @@ export function Logo({
  className?: string;
  glow?: boolean;
 }) {
+ const { t } = useI18n();
  return (
  <img
  src={logo}
- alt="EduFocus+ Soleil sur le livre"
+ alt={t("logo.alt")}
  className={className}
  style={{ filter: glow ? "drop-shadow(0 6px 18px rgba(232,143,58,0.35))" : undefined }}
  />
@@ -246,26 +248,29 @@ export function Badge({ children, color = "bg-accent/15 text-accent" }: { childr
  );
 }
 
-export function Loading({ label = "Chargement…" }: { label?: string }) {
+export function Loading({ label }: { label?: string }) {
+ const { t } = useI18n();
+ const text = label ?? t("app.loading");
  return (
  <div className="flex flex-col items-center justify-center gap-4 py-20 text-mut">
  <div className="relative h-9 w-9">
  <div className="absolute inset-0 animate-spin rounded-full border-2 border-accent/25 border-t-accent" />
  <div className="absolute inset-[10px] rounded-full bg-accent/20 blur-sm" />
  </div>
- <span className="font-display text-sm italic">{label}</span>
+ <span className="font-display text-sm italic">{text}</span>
  </div>
  );
 }
 
 export function ErrorBox({ message }: { message: string }) {
+ const { t } = useI18n();
  return (
  <div className="rounded-2xl border border-danger/30 bg-danger/10 p-6 text-center">
  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-danger/15 text-danger">
  <Icon name="sun" className="h-5 w-5" />
  </div>
- <div className="mt-3 text-sm text-danger">Erreur : {message}</div>
- <div className="mt-1 text-xs text-mut">Vérifiez que l'API tourne sur le port 8000.</div>
+ <div className="mt-3 text-sm text-danger">{t("app.error.prefix", { msg: message })}</div>
+ <div className="mt-1 text-xs text-mut">{t("app.error.api")}</div>
  </div>
  );
 }

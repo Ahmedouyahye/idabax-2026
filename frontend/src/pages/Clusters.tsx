@@ -3,14 +3,16 @@ import ReactECharts from "echarts-for-react";
 import { useClusters, pct } from "../lib/api";
 import type { EChartsOption } from "echarts";
 import { Badge, Card, ErrorBox, Loading, PageHeader } from "../components/ui";
+import { useI18n } from "../lib/i18n";
 
 const COLORS = ["#4ec3a3", "#eeb74f", "#ef6f5f"];
 
 export default function Clusters() {
+ const { t } = useI18n();
  const clusters = useClusters();
 
  if (clusters.error) return <ErrorBox message={clusters.error} />;
- if (clusters.loading || !clusters.data) return <Loading label="Typologie des wilayas…" />;
+ if (clusters.loading || !clusters.data) return <Loading label={t("clusters.loading")} />;
 
  const profiles = clusters.data.profiles;
  const wl = clusters.data.wilayas;
@@ -23,25 +25,25 @@ export default function Clusters() {
  yAxis: { type: "value", axisLine: { lineStyle: { color: "rgba(148,163,184,0.25)" } }, axisLabel: { color: "#8ea0bd", fontSize: 11 }, splitLine: { lineStyle: { color: "rgba(148,163,184,0.1)" } } },
  series: [
  {
- name: "Hors école",
- type: "bar",
+  name: t("clusters.bar_hors_ecole"),
+  type: "bar",
  barWidth: 14,
  data: profiles.map((p, i) => ({ value: +p.hors_ecole_moyen_pct.toFixed(1), itemStyle: { color: COLORS[i] } })),
  },
  {
- name: "Mahadra / coranique",
+  name: t("clusters.bar_mahadra"),
  type: "bar",
  barWidth: 14,
  data: profiles.map((p, i) => ({ value: +p.mahadra_moyen_pct.toFixed(1), itemStyle: { color: COLORS[i], opacity: 0.5 } })),
  },
  {
- name: "Aucune instruction",
+  name: t("clusters.bar_aucune"),
  type: "bar",
  barWidth: 14,
  data: profiles.map((p, i) => ({ value: +p.aucune_instruction_moyen_pct.toFixed(1), itemStyle: { color: COLORS[i], opacity: 0.22 } })),
  },
  {
- name: "Hors école total",
+  name: t("clusters.bar_hors_ecole_total"),
  type: "bar",
  barWidth: 14,
  data: profiles.map((p, i) => ({ value: +p.hors_ecole_moyen_pct.toFixed(1), itemStyle: { color: COLORS[i], opacity: 0.8 } })),
@@ -52,9 +54,9 @@ export default function Clusters() {
  return (
  <div>
  <PageHeader
- eyebrow="Typologie des wilayas"
- title="Typologie : 3 Mauritanie scolaires"
- subtitle={`Classification ascendante hiérarchique (k-moyennes, k=${clusters.data.k}) sur 13 wilayas. Les wilayas se regroupent non par géographie, mais par mécanisme d'exclusion.`}
+ eyebrow={t("clusters.eyebrow")}
+ title={t("clusters.title")}
+ subtitle={t("clusters.subtitle", { k: clusters.data.k })}
  />
 
  <div className="mb-6 grid gap-6 lg:grid-cols-3">
@@ -62,27 +64,24 @@ export default function Clusters() {
  <Card key={p.cluster} className="relative overflow-hidden">
  <div className="absolute inset-x-0 top-0 h-1" style={{ background: COLORS[i] }} />
  <div className="flex items-center justify-between">
- <Badge color={`text-${["accent", "warn", "danger"][i]}`}>Profil C{p.cluster}</Badge>
- <span className="text-[11px] text-mut">{p.taille} wilayas</span>
+ <Badge color={`text-${["accent", "warn", "danger"][i]}`}>{t("clusters.profil")} C{p.cluster}</Badge>
+ <span className="text-[11px] text-mut">{p.taille} {t("clusters.wilayas")}</span>
  </div>
- <h3 className="mt-3 text-base font-extrabold text-fg">{p.label}</h3>
+ <h3 className="mt-3 text-base font-extrabold text-fg">{t(p.label)}</h3>
  <p className="mt-2 text-xs leading-relaxed text-mut">
- {i === 0 &&
- "Exclusion résiduelle et urbaine : le formel est la norme, il ne reste qu'à consolider et suivre."}
- {i === 1 &&
- "L'exclusion passe d'abord par l'éducation traditionnelle (mahadra) : le problème n'est pas un manque d'école mais l'absence de passerelle vers le formel."}
- {i === 2 &&
- "L'exclusion massive des enfants 'sans aucune instruction' appelle une construction d'écoles de proximité."}
+ {i === 0 && t("clusters.c0_desc")}
+ {i === 1 && t("clusters.c1_desc")}
+ {i === 2 && t("clusters.c2_desc")}
  </p>
  <div className="mt-4 grid grid-cols-2 gap-2 text-center">
- <MStat label="Hors école" v={pct(p.hors_ecole_moyen_pct)} />
- <MStat label="Pauvreté" v={pct(p.pauvrete_moyen_pct)} />
- <MStat label="Ruralité" v={pct(p.ruralite_moyen_pct)} />
- <MStat label="Dépendance jeunes" v={`${p.dependance_jeunes_moyen} /100`} />
+ <MStat label={t("clusters.hors_ecole")} v={pct(p.hors_ecole_moyen_pct)} />
+ <MStat label={t("clusters.pauvrete")} v={pct(p.pauvrete_moyen_pct)} />
+ <MStat label={t("clusters.ruralite")} v={pct(p.ruralite_moyen_pct)} />
+ <MStat label={t("clusters.dependance_jeunes")} v={`${p.dependance_jeunes_moyen} /100`} />
  </div>
  <div className="mt-4 rounded-xl bg-accent/10 p-3">
- <div className="text-[10px] font-semibold uppercase tracking-wider text-accent">Levier recommandé</div>
- <div className="mt-0.5 text-sm font-bold text-fg">{p.levier}</div>
+ <div className="text-[10px] font-semibold uppercase tracking-wider text-accent">{t("clusters.levier_recommande")}</div>
+ <div className="mt-0.5 text-sm font-bold text-fg">{t(p.levier)}</div>
  </div>
  <div className="mt-3 flex flex-wrap gap-1.5">
  {p.wilayas.map((w) => (
@@ -97,28 +96,28 @@ export default function Clusters() {
 
  <div className="grid gap-6 lg:grid-cols-2">
  <Card>
- <h2 className="mb-1 font-display text-base font-semibold text-fg">Signature de chaque profil</h2>
- <p className="mb-3 text-[11px] text-mut">Part moyenne de la population 6-14 ans selon le type d'instruction.</p>
+ <h2 className="mb-1 font-display text-base font-semibold text-fg">{t("clusters.signature")}</h2>
+ <p className="mb-3 text-[11px] text-mut">{t("clusters.signature_desc")}</p>
  <ReactECharts option={bar} style={{ height: 320 }} />
  </Card>
  <Card>
- <h2 className="mb-1 font-display text-base font-semibold text-fg">Qualité de la partition</h2>
- <p className="mb-3 text-[11px] text-mut">Silhouette moyenne des k-moyennes.</p>
+ <h2 className="mb-1 font-display text-base font-semibold text-fg">{t("clusters.qualite")}</h2>
+ <p className="mb-3 text-[11px] text-mut">{t("clusters.qualite_desc")}</p>
  <div className="flex items-center gap-4">
  <div className="num text-5xl font-black grad-text">{clusters.data.silhouette.toFixed(2)}</div>
  <div className="max-w-56 text-xs leading-relaxed text-mut">
- {clusters.data.silhouette >= 0.33 ? "Structure lisible" : "Structure partielle"}{" "}
- les profils se distinguent nettement sur le type d'exclusion mais restent poreux sur la pauvreté, présente dans tous les groupes.
+ {clusters.data.silhouette >= 0.33 ? t("clusters.structure_lisible") : t("clusters.structure_partielle")}{" "}
+ {t("clusters.qualite_texte")}
  </div>
  </div>
- <h3 className="mt-6 mb-2 font-display text-base font-semibold text-fg">Affectation détaillée</h3>
+ <h3 className="mt-6 mb-2 font-display text-base font-semibold text-fg">{t("clusters.affectation")}</h3>
  <div className="space-y-1.5">
  {[...wl].sort((a, b) => a.cluster - b.cluster || a.rang_ipe - b.rang_ipe).map((w) => (
  <div key={w.wilaya} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2 text-xs">
  <span className="h-2.5 w-2.5 rounded-full" style={{ background: COLORS[w.cluster] }} />
  <span className="font-semibold text-fg">{w.wilaya}</span>
  <span className="ml-auto text-mut">
- IPE <span className="num">{w.ipe.toLocaleString("fr-FR")}</span> · rang{" "}
+ {t("clusters.ipe")} <span className="num">{w.ipe.toLocaleString("fr-FR")}</span> · {t("clusters.rang")}{" "}
  <span className="num">#{w.rang_ipe}</span>
  </span>
  </div>
