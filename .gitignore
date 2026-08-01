@@ -32,6 +32,9 @@ info:*
 mele3bak-platform-report.pdf
 *.tsbuildinfo
 
+# Modèle de soumission IndabaX (fichier personnel, hors repo public)
+src/modéle_Document_àsoumetre_IndabaX_2026.pdf
+
 # Entrepôt régénérable : binaire de 2,8 Mo réécrit intégralement à chaque
 # `python -m backend.analytics.run_all`. Les JSON/CSV d'analytique restent versionnés
 # (petits et lisibles en diff) ; la base et son export Parquet, non.
