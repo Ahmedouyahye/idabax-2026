@@ -6,6 +6,13 @@ export const ACCENT2 = "#147a66";
 export const TERRACOTTA = "#cc6a2b";
 export const CORAL = "#c03d3a";
 
+// Palette catégorielle validée — ordre FIXE, jamais recyclé au-delà de 3 séries.
+// Contrôlée par le validateur de palette (bande de clarté, plancher de chroma,
+// séparation daltonisme, seuil vision normale, contraste) : toutes les vérifications
+// passent en clair comme en sombre. ACCENT2 est ici remonté en chroma (#0a8468 au
+// lieu de #147a66) pour franchir le plancher au-delà duquel un vert lit « gris ».
+export const SERIES = ["#c03d3a", "#0a8468", "#b5770e"] as const;
+
 export const INK = "#22303a";
 export const MUT = "#66737d";
 export const AXIS_LINE = "rgba(37,50,58,0.14)";

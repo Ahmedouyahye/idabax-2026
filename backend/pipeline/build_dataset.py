@@ -70,6 +70,15 @@ def canonical(name: str | None) -> str | None:
 
 
 # ---- 1. EPCV loader ---------------------------------------------------------
+# ATTENTION `nivcm` est étiquetée « Niveau d'éducation du CM » dans le fichier SPSS,
+# mais ce n'est PAS le niveau du chef de ménage : le croisement C4N x nivcm sur les
+# 60 600 individus est exactement bloc-diagonal (aucune cellule hors diagonale).
+# `nivcm` est un simple regroupement du niveau C4N de l'individu lui-même :
+#   C4N Primaire -> primaire | Collège, Lycée -> secondaire général
+#   Coranique, Mahadra -> traditionnel | jamais scolarisé -> Aucun ...
+# Elle est donc chargée sous son vrai nom (`niveau_groupe`) et ne doit jamais servir
+# de proxy de l'éducation parentale : croisée avec la scolarisation de l'enfant elle
+# produit une tautologie (« un enfant sans niveau d'instruction est hors école »).
 def load_epcv() -> pd.DataFrame:
     df, meta = pyreadstat.read_sav(f"{RAW}/EPCV2019_60600_individuals.sav")
     labels = meta.variable_value_labels
@@ -86,7 +95,7 @@ def load_epcv() -> pd.DataFrame:
             "wilaya": df["wilaya"].map(CANONICAL),
             "educ_statut": lab("C2"),
             "niveau": lab("C4N"),
-            "nivcm": lab("nivcm"),
+            "niveau_groupe": lab("nivcm"),  # regroupement de `niveau`, cf. note ci-dessus
             "dejall": lab("dejall"),
             "chomage": df["chom"],
             "pauvre": df["pauv"],
@@ -135,7 +144,15 @@ def build_epcv_indicators(epcv: pd.DataFrame) -> pd.DataFrame:
         rec["taux_pauvrete"] = round(grp["pauvre"].mean() * 100, 2)
         rec["part_rurale"] = round((grp["milieu"] == "Rural").mean() * 100, 2)
         rec["taux_chomage"] = round(grp["chomage"].mean() * 100, 2)
-        rec["part_cm_sans_education"] = round((grp["nivcm"] == "Aucun").mean() * 100, 2)
+        # Part de la population sans aucune instruction (niveau propre de l'individu).
+        # La version « adultes 15+ » est celle à utiliser en corrélation avec la
+        # scolarisation des 6-14 : la version tous âges contient les enfants eux-mêmes
+        # et la corrélation serait en partie mécanique.
+        rec["part_sans_instruction"] = round((grp["niveau_groupe"] == "Aucun").mean() * 100, 2)
+        adultes = grp[grp["age"] >= 15]
+        rec["part_adultes_sans_instruction"] = (
+            round((adultes["niveau_groupe"] == "Aucun").mean() * 100, 2) if len(adultes) else None
+        )
 
         rec.update(educ_composition(kgrp, "scol"))
 

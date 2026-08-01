@@ -1,0 +1,384 @@
+{
+  "n_children_6_14": 16451,
+  "theil": {
+    "theil_total": 0.0872,
+    "theil_inter_wilaya": 0.055,
+    "theil_intra_wilaya": 0.0322,
+    "part_inter_pct": 63.0,
+    "part_intra_pct": 37.0,
+    "par_wilaya": [
+      {
+        "wilaya": "Assaba",
+        "theil_interne": 0.0766,
+        "contribution_intra": 0.00858,
+        "taux_urbain": 16.9,
+        "taux_rural": 50.5,
+        "ecart_urbain_rural": 33.6
+      },
+      {
+        "wilaya": "Trarza",
+        "theil_interne": 0.0718,
+        "contribution_intra": 0.00494,
+        "taux_urbain": 15.6,
+        "taux_rural": 39.5,
+        "ecart_urbain_rural": 23.9
+      },
+      {
+        "wilaya": "Hodh El Gharbi",
+        "theil_interne": 0.0406,
+        "contribution_intra": 0.00486,
+        "taux_urbain": 22.2,
+        "taux_rural": 53.3,
+        "ecart_urbain_rural": 31.1
+      },
+      {
+        "wilaya": "Tagant",
+        "theil_interne": 0.1194,
+        "contribution_intra": 0.0032,
+        "taux_urbain": 12.0,
+        "taux_rural": 40.6,
+        "ecart_urbain_rural": 28.6
+      },
+      {
+        "wilaya": "Guidimakha",
+        "theil_interne": 0.0178,
+        "contribution_intra": 0.00273,
+        "taux_urbain": 23.8,
+        "taux_rural": 47.3,
+        "ecart_urbain_rural": 23.5
+      },
+      {
+        "wilaya": "Hodh Ech Chargui",
+        "theil_interne": 0.0149,
+        "contribution_intra": 0.00255,
+        "taux_urbain": 26.2,
+        "taux_rural": 43.8,
+        "ecart_urbain_rural": 17.6
+      },
+      {
+        "wilaya": "Gorgol",
+        "theil_interne": 0.0198,
+        "contribution_intra": 0.00216,
+        "taux_urbain": 23.5,
+        "taux_rural": 37.6,
+        "ecart_urbain_rural": 14.1
+      },
+      {
+        "wilaya": "Brakna",
+        "theil_interne": 0.0285,
+        "contribution_intra": 0.0019,
+        "taux_urbain": 15.1,
+        "taux_rural": 28.7,
+        "ecart_urbain_rural": 13.6
+      },
+      {
+        "wilaya": "Tiris Zemmour",
+        "theil_interne": 0.0423,
+        "contribution_intra": 0.00061,
+        "taux_urbain": 14.9,
+        "taux_rural": 37.9,
+        "ecart_urbain_rural": 23.0
+      },
+      {
+        "wilaya": "Adrar",
+        "theil_interne": 0.0462,
+        "contribution_intra": 0.00031,
+        "taux_urbain": 7.7,
+        "taux_rural": 4.0,
+        "ecart_urbain_rural": -3.7
+      },
+      {
+        "wilaya": "Dakhlet Nouadhibou",
+        "theil_interne": 0.0131,
+        "contribution_intra": 0.0003,
+        "taux_urbain": 20.5,
+        "taux_rural": 40.9,
+        "ecart_urbain_rural": 20.4
+      },
+      {
+        "wilaya": "Inchiri",
+        "theil_interne": 0.0088,
+        "contribution_intra": 7e-05,
+        "taux_urbain": 18.0,
+        "taux_rural": 12.9,
+        "ecart_urbain_rural": -5.1
+      },
+      {
+        "wilaya": "Nouakchott",
+        "theil_interne": 0.0,
+        "contribution_intra": 0.0,
+        "taux_urbain": 24.8,
+        "taux_rural": null,
+        "ecart_urbain_rural": null
+      }
+    ],
+    "lecture": "63 % de l'inégalité d'exclusion se joue entre les wilayas, 37 % à l'intérieur de chacune (fracture urbain/rural). Un ciblage purement territorial ne peut donc pas atteindre la totalité du problème."
+  },
+  "hoi": {
+    "couverture_pct": 66.9,
+    "d_index": 0.09,
+    "hoi_pct": 60.9,
+    "penalite_inegalite_pts": 6.0,
+    "contributions": [
+      {
+        "circonstance": "Wilaya",
+        "d_index_sans": 0.0772,
+        "part_de_D_pct": 14.2
+      },
+      {
+        "circonstance": "Milieu (urbain/rural)",
+        "d_index_sans": 0.0775,
+        "part_de_D_pct": 13.9
+      },
+      {
+        "circonstance": "Pauvreté du ménage",
+        "d_index_sans": 0.0864,
+        "part_de_D_pct": 4.0
+      },
+      {
+        "circonstance": "Sexe",
+        "d_index_sans": 0.0895,
+        "part_de_D_pct": 0.5
+      }
+    ],
+    "par_wilaya": [
+      {
+        "wilaya": "Adrar",
+        "couverture_pct": 93.8,
+        "hoi_pct": 85.4
+      },
+      {
+        "wilaya": "Tiris Zemmour",
+        "couverture_pct": 83.7,
+        "hoi_pct": 76.2
+      },
+      {
+        "wilaya": "Inchiri",
+        "couverture_pct": 83.1,
+        "hoi_pct": 75.7
+      },
+      {
+        "wilaya": "Dakhlet Nouadhibou",
+        "couverture_pct": 78.8,
+        "hoi_pct": 71.7
+      },
+      {
+        "wilaya": "Nouakchott",
+        "couverture_pct": 75.2,
+        "hoi_pct": 68.4
+      },
+      {
+        "wilaya": "Brakna",
+        "couverture_pct": 74.5,
+        "hoi_pct": 67.8
+      },
+      {
+        "wilaya": "Tagant",
+        "couverture_pct": 69.8,
+        "hoi_pct": 63.5
+      },
+      {
+        "wilaya": "Trarza",
+        "couverture_pct": 68.4,
+        "hoi_pct": 62.3
+      },
+      {
+        "wilaya": "Gorgol",
+        "couverture_pct": 66.5,
+        "hoi_pct": 60.5
+      },
+      {
+        "wilaya": "Hodh Ech Chargui",
+        "couverture_pct": 59.3,
+        "hoi_pct": 53.9
+      },
+      {
+        "wilaya": "Assaba",
+        "couverture_pct": 58.4,
+        "hoi_pct": 53.2
+      },
+      {
+        "wilaya": "Guidimakha",
+        "couverture_pct": 55.6,
+        "hoi_pct": 50.6
+      },
+      {
+        "wilaya": "Hodh El Gharbi",
+        "couverture_pct": 52.8,
+        "hoi_pct": 48.0
+      }
+    ],
+    "lecture": "66.9 % des enfants de 6-14 ans ont accès à l'école formelle, mais une fois corrigée de l'inégalité des circonstances cette couverture ne « vaut » que 60.9 % : 6.0 points sont perdus du seul fait que l'accès dépend d'où et de qui l'on naît."
+  },
+  "offre_besoin": {
+    "dissimilarite_ecoles_enfants": 0.356,
+    "dissimilarite_ecoles_besoin": 0.444,
+    "courbe_concentration": [
+      {
+        "x": 0.0,
+        "ecoles": 0.0,
+        "enfants": 0.0,
+        "wilaya": null
+      },
+      {
+        "x": 7.7,
+        "ecoles": 2.8,
+        "enfants": 11.8,
+        "wilaya": "Hodh El Gharbi"
+      },
+      {
+        "x": 15.4,
+        "ecoles": 9.1,
+        "enfants": 23.2,
+        "wilaya": "Guidimakha"
+      },
+      {
+        "x": 23.1,
+        "ecoles": 15.2,
+        "enfants": 35.8,
+        "wilaya": "Assaba"
+      },
+      {
+        "x": 30.8,
+        "ecoles": 19.2,
+        "enfants": 51.6,
+        "wilaya": "Hodh Ech Chargui"
+      },
+      {
+        "x": 38.5,
+        "ecoles": 23.7,
+        "enfants": 61.6,
+        "wilaya": "Gorgol"
+      },
+      {
+        "x": 46.2,
+        "ecoles": 26.1,
+        "enfants": 68.4,
+        "wilaya": "Trarza"
+      },
+      {
+        "x": 53.8,
+        "ecoles": 29.1,
+        "enfants": 70.2,
+        "wilaya": "Tagant"
+      },
+      {
+        "x": 61.5,
+        "ecoles": 34.6,
+        "enfants": 76.5,
+        "wilaya": "Brakna"
+      },
+      {
+        "x": 69.2,
+        "ecoles": 93.3,
+        "enfants": 97.1,
+        "wilaya": "Nouakchott"
+      },
+      {
+        "x": 76.9,
+        "ecoles": 93.9,
+        "enfants": 99.0,
+        "wilaya": "Dakhlet Nouadhibou"
+      },
+      {
+        "x": 84.6,
+        "ecoles": 94.3,
+        "enfants": 99.2,
+        "wilaya": "Inchiri"
+      },
+      {
+        "x": 92.3,
+        "ecoles": 96.4,
+        "enfants": 99.8,
+        "wilaya": "Tiris Zemmour"
+      },
+      {
+        "x": 100.0,
+        "ecoles": 100.0,
+        "enfants": 100.0,
+        "wilaya": "Adrar"
+      }
+    ],
+    "ecarts": [
+      {
+        "wilaya": "Hodh Ech Chargui",
+        "nb_etablissements": 20,
+        "enfants_hors_ecole": 59348,
+        "ecart": -11.75
+      },
+      {
+        "wilaya": "Hodh El Gharbi",
+        "nb_etablissements": 14,
+        "enfants_hors_ecole": 44454,
+        "ecart": -9.0
+      },
+      {
+        "wilaya": "Assaba",
+        "nb_etablissements": 30,
+        "enfants_hors_ecole": 46959,
+        "ecart": -6.43
+      },
+      {
+        "wilaya": "Gorgol",
+        "nb_etablissements": 22,
+        "enfants_hors_ecole": 37690,
+        "ecart": -5.58
+      },
+      {
+        "wilaya": "Guidimakha",
+        "nb_etablissements": 31,
+        "enfants_hors_ecole": 42852,
+        "ecart": -5.13
+      },
+      {
+        "wilaya": "Trarza",
+        "nb_etablissements": 12,
+        "enfants_hors_ecole": 25443,
+        "ecart": -4.35
+      },
+      {
+        "wilaya": "Dakhlet Nouadhibou",
+        "nb_etablissements": 3,
+        "enfants_hors_ecole": 7101,
+        "ecart": -1.28
+      },
+      {
+        "wilaya": "Brakna",
+        "nb_etablissements": 27,
+        "enfants_hors_ecole": 23688,
+        "ecart": -0.84
+      },
+      {
+        "wilaya": "Inchiri",
+        "nb_etablissements": 2,
+        "enfants_hors_ecole": 887,
+        "ecart": 0.17
+      },
+      {
+        "wilaya": "Tagant",
+        "nb_etablissements": 15,
+        "enfants_hors_ecole": 6927,
+        "ecart": 1.19
+      },
+      {
+        "wilaya": "Tiris Zemmour",
+        "nb_etablissements": 10,
+        "enfants_hors_ecole": 2006,
+        "ecart": 1.49
+      },
+      {
+        "wilaya": "Adrar",
+        "nb_etablissements": 18,
+        "enfants_hors_ecole": 915,
+        "ecart": 3.4
+      },
+      {
+        "wilaya": "Nouakchott",
+        "nb_etablissements": 290,
+        "enfants_hors_ecole": 77296,
+        "ecart": 38.12
+      }
+    ],
+    "lecture": "Il faudrait redéployer 44 % des établissements pour que l'offre épouse la carte du hors-école, contre 36 % pour qu'elle épouse simplement la carte des enfants : l'offre est mal alignée sur le besoin, pas seulement sur la population."
+  }
+}

@@ -2,10 +2,17 @@
 
 Sur les 16 451 enfants de 6-14 ans de l'EPCV 2019, on estime la probabilité
 d'être hors de l'école formelle en fonction de : sexe, tranche d'âge, milieu,
-pauvreté, éducation du chef de ménage et wilaya (référence : Nouakchott).
+pauvreté et wilaya (référence : Nouakchott).
 
 Le résultat clé est l'odds-ratio ajusté de chaque facteur l'effet d'un
 facteur toutes choses égales par ailleurs.
+
+Note méthodologique le fichier EPCV fourni ne contient AUCUNE variable
+d'éducation parentale. La variable `nivcm`, étiquetée « Niveau d'éducation du
+CM », est en réalité un regroupement du niveau C4N de l'individu lui-même
+(croisement bloc-diagonal sur les 60 600 lignes). L'introduire ici reviendrait à
+régresser « hors école » sur « n'a aucun niveau d'instruction » : une tautologie.
+Elle est donc exclue du modèle.
 """
 from __future__ import annotations
 
@@ -22,7 +29,6 @@ LABELS = {
     "age_6_9": ("Âge 6-9 ans (réf. 10-14)", "Âge"),
     "milieu_rural": ("Milieu rural (réf. urbain)", "Milieu"),
     "pauvre": ("Ménage pauvre (réf. non pauvre)", "Pauvreté"),
-    "cm_sans_education": ("Chef de ménage sans éducation", "Éducation du chef"),
 }
 
 
@@ -43,7 +49,6 @@ def build_dataset(epcv_path: str = "data/raw/EPCV2019_60600_individuals.sav") ->
             "age_6_9": kids["B4"].between(6, 9).astype(int),
             "milieu_rural": lab("milieu").eq("Rural").astype(int),
             "pauvre": kids["pauv"].astype(bool).astype(int),
-            "cm_sans_education": lab("nivcm").eq("Aucun").astype(int),
             "wilaya": kids["wilaya"].map(dict(zip(range(1, 14), WILAYAS))),
         }
     )
@@ -53,12 +58,7 @@ def build_dataset(epcv_path: str = "data/raw/EPCV2019_60600_individuals.sav") ->
 def run_logit() -> dict:
     df = build_dataset()
     y = df["hors_ecole"]
-    # La variable cm_sans_education est PARFAITEMENT prédictive (séparation
-    # complète : tout enfant dont le CM est sans éducation est hors école)
-    # son coefficient ne peut pas être estimé par maximum de vraisemblance.
-    # Elle est traitée par les règles d'association (confiance 100 %, lift 3,02).
-    df["cm_sans_education_predictive"] = df["cm_sans_education"]
-    X = df.drop(columns=["hors_ecole", "wilaya", "cm_sans_education", "cm_sans_education_predictive"])
+    X = df.drop(columns=["hors_ecole", "wilaya"])
     for w in WILAYAS:
         if w != "Nouakchott":
             X[f"wilaya_{w}"] = (df["wilaya"] == w).astype(int)
@@ -105,11 +105,12 @@ def run_logit() -> dict:
         "features": features,
         "wilayas": wilaya_features,
         "reference_wilaya": "Nouakchott",
-        "facteur_determinant": "cm_sans_education",
-        "facteur_determinant_note": (
-            "Un chef de ménage sans éducation est un facteur parfaitement prédictif "
-            "du hors-école (séparation complète) : son effet n'est pas estimable par "
-            "le modèle et est présenté via les règles d'association (confiance 100 %, lift 3,02)."
+        "limite_donnees": (
+            "Le fichier EPCV fourni ne contient aucune variable d'éducation parentale. "
+            "La variable `nivcm`, étiquetée « Niveau d'éducation du CM », est en réalité un "
+            "regroupement du niveau d'instruction de l'individu lui-même : l'inclure "
+            "reviendrait à expliquer le hors-école par l'absence de niveau scolaire. "
+            "Elle est donc exclue du modèle et des règles d'association."
         ),
         "interpretation": (
             "Un odds-ratio > 1 augmente la probabilité d'exclusion, < 1 la réduit. "

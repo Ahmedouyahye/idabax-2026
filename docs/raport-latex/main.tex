@@ -245,11 +245,12 @@ Trois usages :
         \txt{/rapport} (endpoint \txt{/api/indicateurs}). Paires les plus
         fortes :
         dépendance jeunes $\times$ part 0--14 ans ($r=1{,}00$), aucune
-        instruction $\times$ chef de ménage sans éducation ($r=0{,}96$),
+        instruction $\times$ adultes 15+ sans instruction ($r=0{,}94$),
         ruralité $\times$ dépendance jeunes ($r=0{,}91$).
   \item \txt{backend/analytics/graph.py} : réseau de similarité entre
-        wilayas ($|r|>0{,}85$, top-2 voisins) et graphe de corrélations
-        entre indicateurs ($|r|>0{,}75$). Page \txt{/reseau}.
+        wilayas (profils centrés-réduits, $|r|>0{,}70$, top-2 voisins) et
+        graphe de corrélations entre indicateurs ($|r|>0{,}75$). Page
+        \txt{/reseau}.
   \item \txt{backend/analytics/concentration.py} : n'utilise pas $r$ mais
         quantifie la concentration (voir §~\ref{sec:gini}).
 \end{itemize}
@@ -420,12 +421,16 @@ un $OR>1$ par rapport à l'urbain, \emph{à sexe, âge, pauvreté et wilaya
 égaux}.
 \end{where}
 
-\begin{meth}{Séparation complète et pseudo-R²}
-Le facteur « chef de ménage sans éducation » est \emph{parfaitement
-prédictif} (tout enfant concerné est hors école) : la vraisemblance n'a pas
-de maximum fini, le coefficient n'est pas estimable. Le code le détecte et le
-traite par les règles d'association (confiance 100\,\%, lift 3{,}02, cf.\
-§~\ref{sec:apriori}).
+\begin{meth}{Variable écartée et pseudo-R²}
+La variable \txt{nivcm}, étiquetée « Niveau d'éducation du CM » dans le
+fichier SPSS, n'est \textbf{pas} l'éducation parentale : le croisement
+\txt{C4N}$\,\times\,$\txt{nivcm} sur les 60\,600 individus est exactement
+bloc-diagonal, c'est-à-dire un simple regroupement du niveau d'instruction
+\emph{de l'individu lui-même}. L'introduire dans le modèle reviendrait à
+régresser « hors école » sur « n'a aucun niveau scolaire » : une tautologie,
+qui explique la séparation complète observée. Elle est donc écartée du logit
+comme des règles d'association. Le fichier fourni ne contient aucune variable
+d'éducation parentale, et cet effet n'est pas estimable ici.
 \[
 \text{pseudo-}R^2_{\text{McFadden}} = 1 - \frac{\ln L(\text{modèle complet})}
 {\ln L(\text{modèle constant})}, \qquad
@@ -438,8 +443,8 @@ traite par les règles d'association (confiance 100\,\%, lift 3{,}02, cf.\
 \label{sec:apriori}
 
 \textbf{Idée.} Trouver des \emph{combinaisons de facteurs} fréquemment
-associées au hors-école, sans hypothèse a priori : milieu rural, pauvreté,
-absence d'éducation du chef de ménage, région $\to$ hors école.
+associées au hors-école, sans hypothèse a priori : âge, sexe, milieu rural,
+pauvreté, région $\to$ hors école.
 
 \begin{meth}{Support, confiance, lift}
 Pour une règle $A \Rightarrow B$ (ici $B=\{\text{hors école}\}$) :
@@ -478,11 +483,13 @@ Pour une règle $A \Rightarrow B$ (ici $B=\{\text{hors école}\}$) :
 Filtres : conséquence = exactement \{\txt{hors\_ecole}\}, lift $>1{,}05$.
 Endpoints : \txt{/api/rules}.
 \textbf{Page utilisée} : \txt{/regles} (page dédiée du frontend), qui
-affiche les règles triées par lift, les règles sans la variable « chef de
-ménage » (\emph{sans\_cm}) et les règles par région (\emph{par\_region}).
-Résultat : la variable « chef de ménage sans éducation » produit une règle
-à confiance 100\,\% et lift 3{,}02 -- c'est le facteur individuel le plus
-fort, là où la régression logistique ne pouvait pas l'estimer.
+affiche les règles triées par lift, les profils socio-démographiques les plus
+sûrs (\emph{top\_confiance}) et les règles par région (\emph{par\_region}).
+Résultat : 21 règles non triviales, la plus forte étant
+\{rural, 6--9 ans, Sud-Est\} $\Rightarrow$ hors école, à
+\textbf{69{,}5\,\% de confiance et lift 2{,}10}. Aucune règle n'atteint
+100\,\% : les règles déterministes de la version précédente provenaient
+uniquement de la variable tautologique \txt{nivcm} (cf.\ §~\ref{sec:logit}).
 \end{where}
 
 % ======================================================================

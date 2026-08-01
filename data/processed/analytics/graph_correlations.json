@@ -4,24 +4,24 @@
       "id": "scol_Hors_ecole_formelle",
       "label": "Taux hors école formelle",
       "degre": 2,
-      "taille": 17.5
+      "taille": 21.666666666666668
     },
     {
       "id": "taux_pauvrete",
       "label": "Taux de pauvreté",
       "degre": 2,
-      "taille": 17.5
+      "taille": 21.666666666666668
     },
     {
       "id": "part_rurale",
       "label": "Part rurale",
       "degre": 3,
-      "taille": 23.75
+      "taille": 30.0
     },
     {
       "id": "ratio_dependance_jeunes",
       "label": "Dépendance jeunes",
-      "degre": 4,
+      "degre": 3,
       "taille": 30.0
     },
     {
@@ -34,13 +34,13 @@
       "id": "scol_Aucune instruction",
       "label": "Aucune instruction",
       "degre": 1,
-      "taille": 11.25
+      "taille": 13.333333333333334
     },
     {
-      "id": "part_cm_sans_education",
-      "label": "CM sans éducation",
-      "degre": 4,
-      "taille": 30.0
+      "id": "part_adultes_sans_instruction",
+      "label": "Adultes sans instruction",
+      "degre": 2,
+      "taille": 21.666666666666668
     },
     {
       "id": "ecart_genre_hors_ecole",
@@ -63,7 +63,7 @@
     {
       "id": "part_0_14_pct",
       "label": "Part 0-14 ans",
-      "degre": 4,
+      "degre": 3,
       "taille": 30.0
     },
     {
@@ -97,9 +97,9 @@
     },
     {
       "source": "taux_pauvrete",
-      "target": "part_cm_sans_education",
-      "weight": 0.841,
-      "r": 0.841,
+      "target": "part_adultes_sans_instruction",
+      "weight": 0.836,
+      "r": 0.836,
       "negative": false
     },
     {
@@ -118,13 +118,6 @@
     },
     {
       "source": "ratio_dependance_jeunes",
-      "target": "part_cm_sans_education",
-      "weight": 0.769,
-      "r": 0.769,
-      "negative": false
-    },
-    {
-      "source": "ratio_dependance_jeunes",
       "target": "part_0_14_pct",
       "weight": 0.998,
       "r": 0.998,
@@ -132,16 +125,9 @@
     },
     {
       "source": "scol_Aucune instruction",
-      "target": "part_cm_sans_education",
-      "weight": 0.957,
-      "r": 0.957,
-      "negative": false
-    },
-    {
-      "source": "part_cm_sans_education",
-      "target": "part_0_14_pct",
-      "weight": 0.77,
-      "r": 0.77,
+      "target": "part_adultes_sans_instruction",
+      "weight": 0.94,
+      "r": 0.94,
       "negative": false
     }
   ]

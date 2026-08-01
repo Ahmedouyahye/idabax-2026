@@ -1,0 +1,717 @@
+{
+  "n_total": 16451,
+  "n_entrainement": 12338,
+  "n_test": 4113,
+  "prevalence_pct": 33.1,
+  "modeles": {
+    "Gradient boosting": {
+      "cv_auc_moyenne": 0.763,
+      "cv_auc_ecart_type": 0.007,
+      "auc_entrainement": 0.777,
+      "auc": 0.758,
+      "pr_auc": 0.602,
+      "seuil_youden": 0.309,
+      "sensibilite": 0.747,
+      "specificite": 0.626,
+      "matrice": {
+        "vn": 1723,
+        "fp": 1028,
+        "fn": 344,
+        "vp": 1018
+      },
+      "roc": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.0051,
+          "tpr": 0.058
+        },
+        {
+          "fpr": 0.0156,
+          "tpr": 0.1028
+        },
+        {
+          "fpr": 0.0262,
+          "tpr": 0.1454
+        },
+        {
+          "fpr": 0.0305,
+          "tpr": 0.1725
+        },
+        {
+          "fpr": 0.048,
+          "tpr": 0.2276
+        },
+        {
+          "fpr": 0.0676,
+          "tpr": 0.2878
+        },
+        {
+          "fpr": 0.0789,
+          "tpr": 0.3142
+        },
+        {
+          "fpr": 0.0967,
+          "tpr": 0.3605
+        },
+        {
+          "fpr": 0.1101,
+          "tpr": 0.3847
+        },
+        {
+          "fpr": 0.1301,
+          "tpr": 0.4325
+        },
+        {
+          "fpr": 0.1414,
+          "tpr": 0.4567
+        },
+        {
+          "fpr": 0.1552,
+          "tpr": 0.4831
+        },
+        {
+          "fpr": 0.1734,
+          "tpr": 0.5073
+        },
+        {
+          "fpr": 0.1818,
+          "tpr": 0.525
+        },
+        {
+          "fpr": 0.1887,
+          "tpr": 0.533
+        },
+        {
+          "fpr": 0.2021,
+          "tpr": 0.5551
+        },
+        {
+          "fpr": 0.213,
+          "tpr": 0.5771
+        },
+        {
+          "fpr": 0.2341,
+          "tpr": 0.5999
+        },
+        {
+          "fpr": 0.2505,
+          "tpr": 0.6219
+        },
+        {
+          "fpr": 0.2668,
+          "tpr": 0.638
+        },
+        {
+          "fpr": 0.2893,
+          "tpr": 0.6549
+        },
+        {
+          "fpr": 0.3006,
+          "tpr": 0.6667
+        },
+        {
+          "fpr": 0.3152,
+          "tpr": 0.6791
+        },
+        {
+          "fpr": 0.3242,
+          "tpr": 0.6916
+        },
+        {
+          "fpr": 0.3402,
+          "tpr": 0.7034
+        },
+        {
+          "fpr": 0.3595,
+          "tpr": 0.7269
+        },
+        {
+          "fpr": 0.3813,
+          "tpr": 0.7518
+        },
+        {
+          "fpr": 0.3922,
+          "tpr": 0.7584
+        },
+        {
+          "fpr": 0.4068,
+          "tpr": 0.7753
+        },
+        {
+          "fpr": 0.426,
+          "tpr": 0.7885
+        },
+        {
+          "fpr": 0.4402,
+          "tpr": 0.8054
+        },
+        {
+          "fpr": 0.4482,
+          "tpr": 0.8106
+        },
+        {
+          "fpr": 0.4609,
+          "tpr": 0.8209
+        },
+        {
+          "fpr": 0.4802,
+          "tpr": 0.8341
+        },
+        {
+          "fpr": 0.4933,
+          "tpr": 0.8399
+        },
+        {
+          "fpr": 0.5089,
+          "tpr": 0.8546
+        },
+        {
+          "fpr": 0.5173,
+          "tpr": 0.8583
+        },
+        {
+          "fpr": 0.5322,
+          "tpr": 0.8715
+        },
+        {
+          "fpr": 0.5409,
+          "tpr": 0.8752
+        },
+        {
+          "fpr": 0.5591,
+          "tpr": 0.884
+        },
+        {
+          "fpr": 0.5878,
+          "tpr": 0.8987
+        },
+        {
+          "fpr": 0.5976,
+          "tpr": 0.906
+        },
+        {
+          "fpr": 0.615,
+          "tpr": 0.9119
+        },
+        {
+          "fpr": 0.6409,
+          "tpr": 0.9207
+        },
+        {
+          "fpr": 0.6609,
+          "tpr": 0.9317
+        },
+        {
+          "fpr": 0.6834,
+          "tpr": 0.9398
+        },
+        {
+          "fpr": 0.6954,
+          "tpr": 0.9464
+        },
+        {
+          "fpr": 0.7128,
+          "tpr": 0.9523
+        },
+        {
+          "fpr": 0.7237,
+          "tpr": 0.9559
+        },
+        {
+          "fpr": 0.7361,
+          "tpr": 0.9626
+        },
+        {
+          "fpr": 0.7474,
+          "tpr": 0.9662
+        },
+        {
+          "fpr": 0.7608,
+          "tpr": 0.967
+        },
+        {
+          "fpr": 0.7706,
+          "tpr": 0.9699
+        },
+        {
+          "fpr": 0.7932,
+          "tpr": 0.9736
+        },
+        {
+          "fpr": 0.8092,
+          "tpr": 0.9794
+        },
+        {
+          "fpr": 0.8448,
+          "tpr": 0.9846
+        },
+        {
+          "fpr": 0.8655,
+          "tpr": 0.9897
+        },
+        {
+          "fpr": 0.8811,
+          "tpr": 0.9919
+        },
+        {
+          "fpr": 0.9011,
+          "tpr": 0.9941
+        },
+        {
+          "fpr": 0.9302,
+          "tpr": 0.9956
+        },
+        {
+          "fpr": 0.9426,
+          "tpr": 0.9971
+        },
+        {
+          "fpr": 0.9575,
+          "tpr": 0.9978
+        },
+        {
+          "fpr": 0.9713,
+          "tpr": 0.9993
+        },
+        {
+          "fpr": 0.9866,
+          "tpr": 1.0
+        },
+        {
+          "fpr": 0.9971,
+          "tpr": 1.0
+        }
+      ]
+    },
+    "Régression logistique": {
+      "cv_auc_moyenne": 0.718,
+      "cv_auc_ecart_type": 0.006,
+      "auc_entrainement": 0.718,
+      "auc": 0.725,
+      "pr_auc": 0.563,
+      "seuil_youden": 0.296,
+      "sensibilite": 0.756,
+      "specificite": 0.579,
+      "matrice": {
+        "vn": 1592,
+        "fp": 1159,
+        "fn": 332,
+        "vp": 1030
+      },
+      "roc": [
+        {
+          "fpr": 0.0,
+          "tpr": 0.0
+        },
+        {
+          "fpr": 0.0044,
+          "tpr": 0.0433
+        },
+        {
+          "fpr": 0.0149,
+          "tpr": 0.0969
+        },
+        {
+          "fpr": 0.0233,
+          "tpr": 0.1278
+        },
+        {
+          "fpr": 0.036,
+          "tpr": 0.1579
+        },
+        {
+          "fpr": 0.0462,
+          "tpr": 0.188
+        },
+        {
+          "fpr": 0.0636,
+          "tpr": 0.2364
+        },
+        {
+          "fpr": 0.0752,
+          "tpr": 0.2628
+        },
+        {
+          "fpr": 0.0865,
+          "tpr": 0.3003
+        },
+        {
+          "fpr": 0.0963,
+          "tpr": 0.3238
+        },
+        {
+          "fpr": 0.1094,
+          "tpr": 0.348
+        },
+        {
+          "fpr": 0.121,
+          "tpr": 0.3774
+        },
+        {
+          "fpr": 0.1349,
+          "tpr": 0.4046
+        },
+        {
+          "fpr": 0.1483,
+          "tpr": 0.4266
+        },
+        {
+          "fpr": 0.1578,
+          "tpr": 0.4405
+        },
+        {
+          "fpr": 0.1705,
+          "tpr": 0.4611
+        },
+        {
+          "fpr": 0.1843,
+          "tpr": 0.4846
+        },
+        {
+          "fpr": 0.1963,
+          "tpr": 0.5044
+        },
+        {
+          "fpr": 0.2061,
+          "tpr": 0.5206
+        },
+        {
+          "fpr": 0.2254,
+          "tpr": 0.5382
+        },
+        {
+          "fpr": 0.2406,
+          "tpr": 0.5551
+        },
+        {
+          "fpr": 0.2515,
+          "tpr": 0.5712
+        },
+        {
+          "fpr": 0.2694,
+          "tpr": 0.5874
+        },
+        {
+          "fpr": 0.2821,
+          "tpr": 0.5969
+        },
+        {
+          "fpr": 0.2944,
+          "tpr": 0.6109
+        },
+        {
+          "fpr": 0.3053,
+          "tpr": 0.6256
+        },
+        {
+          "fpr": 0.3155,
+          "tpr": 0.638
+        },
+        {
+          "fpr": 0.3322,
+          "tpr": 0.6564
+        },
+        {
+          "fpr": 0.3431,
+          "tpr": 0.6637
+        },
+        {
+          "fpr": 0.3664,
+          "tpr": 0.6858
+        },
+        {
+          "fpr": 0.3835,
+          "tpr": 0.7012
+        },
+        {
+          "fpr": 0.3922,
+          "tpr": 0.7181
+        },
+        {
+          "fpr": 0.4046,
+          "tpr": 0.7305
+        },
+        {
+          "fpr": 0.4228,
+          "tpr": 0.7562
+        },
+        {
+          "fpr": 0.4369,
+          "tpr": 0.7636
+        },
+        {
+          "fpr": 0.4475,
+          "tpr": 0.7702
+        },
+        {
+          "fpr": 0.458,
+          "tpr": 0.7783
+        },
+        {
+          "fpr": 0.4747,
+          "tpr": 0.7885
+        },
+        {
+          "fpr": 0.4831,
+          "tpr": 0.7944
+        },
+        {
+          "fpr": 0.4998,
+          "tpr": 0.8069
+        },
+        {
+          "fpr": 0.5209,
+          "tpr": 0.8157
+        },
+        {
+          "fpr": 0.5402,
+          "tpr": 0.826
+        },
+        {
+          "fpr": 0.5525,
+          "tpr": 0.8297
+        },
+        {
+          "fpr": 0.5682,
+          "tpr": 0.8363
+        },
+        {
+          "fpr": 0.5881,
+          "tpr": 0.8576
+        },
+        {
+          "fpr": 0.6031,
+          "tpr": 0.8656
+        },
+        {
+          "fpr": 0.6227,
+          "tpr": 0.8737
+        },
+        {
+          "fpr": 0.6412,
+          "tpr": 0.8774
+        },
+        {
+          "fpr": 0.6561,
+          "tpr": 0.8884
+        },
+        {
+          "fpr": 0.6739,
+          "tpr": 0.906
+        },
+        {
+          "fpr": 0.695,
+          "tpr": 0.9156
+        },
+        {
+          "fpr": 0.7114,
+          "tpr": 0.9178
+        },
+        {
+          "fpr": 0.7343,
+          "tpr": 0.9295
+        },
+        {
+          "fpr": 0.7455,
+          "tpr": 0.9376
+        },
+        {
+          "fpr": 0.7706,
+          "tpr": 0.9501
+        },
+        {
+          "fpr": 0.7877,
+          "tpr": 0.9567
+        },
+        {
+          "fpr": 0.8023,
+          "tpr": 0.9626
+        },
+        {
+          "fpr": 0.8172,
+          "tpr": 0.9655
+        },
+        {
+          "fpr": 0.8364,
+          "tpr": 0.9706
+        },
+        {
+          "fpr": 0.8513,
+          "tpr": 0.9736
+        },
+        {
+          "fpr": 0.8746,
+          "tpr": 0.9787
+        },
+        {
+          "fpr": 0.8957,
+          "tpr": 0.9838
+        },
+        {
+          "fpr": 0.9229,
+          "tpr": 0.986
+        },
+        {
+          "fpr": 0.9469,
+          "tpr": 0.9912
+        },
+        {
+          "fpr": 0.9629,
+          "tpr": 0.9941
+        },
+        {
+          "fpr": 0.996,
+          "tpr": 0.9993
+        }
+      ]
+    }
+  },
+  "gain_auc_gbm_vs_logit": 0.033,
+  "calibration": [
+    {
+      "predit": 0.053,
+      "observe": 0.045
+    },
+    {
+      "predit": 0.099,
+      "observe": 0.102
+    },
+    {
+      "predit": 0.163,
+      "observe": 0.166
+    },
+    {
+      "predit": 0.215,
+      "observe": 0.233
+    },
+    {
+      "predit": 0.281,
+      "observe": 0.286
+    },
+    {
+      "predit": 0.34,
+      "observe": 0.342
+    },
+    {
+      "predit": 0.41,
+      "observe": 0.388
+    },
+    {
+      "predit": 0.5,
+      "observe": 0.486
+    },
+    {
+      "predit": 0.578,
+      "observe": 0.553
+    },
+    {
+      "predit": 0.718,
+      "observe": 0.719
+    }
+  ],
+  "shap_importance": [
+    {
+      "feature": "age",
+      "label": "Âge (continu)",
+      "importance": 0.606
+    },
+    {
+      "feature": "rural",
+      "label": "Milieu rural",
+      "importance": 0.3321
+    },
+    {
+      "feature": "pauvre",
+      "label": "Ménage pauvre",
+      "importance": 0.3006
+    },
+    {
+      "feature": "part_rurale_wilaya",
+      "label": "Part rurale (wilaya)",
+      "importance": 0.2875
+    },
+    {
+      "feature": "taux_pauvrete_wilaya",
+      "label": "Taux de pauvreté (wilaya)",
+      "importance": 0.1179
+    },
+    {
+      "feature": "densite_ecoles",
+      "label": "Écoles / 1000 enfants (wilaya)",
+      "importance": 0.1091
+    },
+    {
+      "feature": "feminin",
+      "label": "Sexe féminin",
+      "importance": 0.0585
+    }
+  ],
+  "effet_age": [
+    {
+      "age": 6.0,
+      "effet_shap": 1.4216
+    },
+    {
+      "age": 7.0,
+      "effet_shap": 0.7176
+    },
+    {
+      "age": 8.0,
+      "effet_shap": 0.116
+    },
+    {
+      "age": 9.0,
+      "effet_shap": -0.3047
+    },
+    {
+      "age": 10.0,
+      "effet_shap": -0.3416
+    },
+    {
+      "age": 11.0,
+      "effet_shap": -0.4989
+    },
+    {
+      "age": 12.0,
+      "effet_shap": -0.6283
+    },
+    {
+      "age": 13.0,
+      "effet_shap": -0.5555
+    },
+    {
+      "age": 14.0,
+      "effet_shap": -0.5285
+    }
+  ],
+  "interaction_rural_pauvre": [
+    {
+      "rural": true,
+      "pauvre": true,
+      "n": 501,
+      "proba_moyenne_pct": 49.7
+    },
+    {
+      "rural": true,
+      "pauvre": false,
+      "n": 638,
+      "proba_moyenne_pct": 35.7
+    },
+    {
+      "rural": false,
+      "pauvre": true,
+      "n": 152,
+      "proba_moyenne_pct": 33.5
+    },
+    {
+      "rural": false,
+      "pauvre": false,
+      "n": 709,
+      "proba_moyenne_pct": 19.7
+    }
+  ],
+  "conclusion": "Le gradient boosting atteint une AUC de test de 0.758 contre 0.725 pour la régression logistique, soit +0.033. Le gain est réel : il existe des effets non linéaires ou des interactions que le modèle linéaire ne capte pas, détaillés ci-dessous."
+}

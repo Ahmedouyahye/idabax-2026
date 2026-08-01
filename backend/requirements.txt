@@ -5,6 +5,7 @@ scikit-learn>=1.5
 networkx>=3.3
 python-louvain>=0.16
 mlxtend>=0.23
+statsmodels>=0.14
 pyreadstat>=1.2
 fastapi>=0.115
 uvicorn>=0.30

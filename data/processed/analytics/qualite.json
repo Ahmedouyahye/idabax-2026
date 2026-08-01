@@ -1,0 +1,57 @@
+{
+  "n_controles": 10,
+  "n_ok": 10,
+  "n_echecs": 0,
+  "resultats": [
+    {
+      "controle": "wilayas_completes",
+      "statut": "ok",
+      "detail": "13/13 wilayas présentes"
+    },
+    {
+      "controle": "parts_scolarisation_somment_a_100",
+      "statut": "ok",
+      "detail": "écart maximal à 100 % : 0.010 pt"
+    },
+    {
+      "controle": "taux_dans_intervalle_valide",
+      "statut": "ok",
+      "detail": "26 colonnes de taux dans [0, 100]"
+    },
+    {
+      "controle": "effectifs_coherents_avec_national",
+      "statut": "ok",
+      "detail": "375 566 enfants hors école  cohérent wilayas ↔ national"
+    },
+    {
+      "controle": "effectifs_wilaya_coherents_avec_taux",
+      "statut": "ok",
+      "detail": "effectifs = taux × population, vérifié pour les 13 wilayas"
+    },
+    {
+      "controle": "aucun_nan_dans_les_indicateurs_cles",
+      "statut": "ok",
+      "detail": "7 indicateurs clés sans valeur manquante"
+    },
+    {
+      "controle": "noms_de_wilaya_tous_resolus",
+      "statut": "ok",
+      "detail": "toutes les graphies de wilaya résolues"
+    },
+    {
+      "controle": "sorties_analytiques_presentes_et_lisibles",
+      "statut": "ok",
+      "detail": "24 sorties analytiques présentes et lisibles"
+    },
+    {
+      "controle": "colonnes_attendues_par_l_api",
+      "statut": "ok",
+      "detail": "10 colonnes vérifiées sur 2 fichiers"
+    },
+    {
+      "controle": "entrepot_coherent_avec_le_csv",
+      "statut": "ok",
+      "detail": "entrepôt cohérent (taux 6-14 : 33.1 %)"
+    }
+  ]
+}

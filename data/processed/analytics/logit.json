@@ -316,7 +316,6 @@
     }
   ],
   "reference_wilaya": "Nouakchott",
-  "facteur_determinant": "cm_sans_education",
-  "facteur_determinant_note": "Un chef de ménage sans éducation est un facteur parfaitement prédictif du hors-école (séparation complète) : son effet n'est pas estimable par le modèle et est présenté via les règles d'association (confiance 100 %, lift 3,02).",
+  "limite_donnees": "Le fichier EPCV fourni ne contient aucune variable d'éducation parentale. La variable `nivcm`, étiquetée « Niveau d'éducation du CM », est en réalité un regroupement du niveau d'instruction de l'individu lui-même : l'inclure reviendrait à expliquer le hors-école par l'absence de niveau scolaire. Elle est donc exclue du modèle et des règles d'association.",
   "interpretation": "Un odds-ratio > 1 augmente la probabilité d'exclusion, < 1 la réduit. Tous les effets sont ajustés sur les autres facteurs (toutes choses égales par ailleurs). Références : garçon, 10-14 ans, urbain, ménage non pauvre, wilaya de Nouakchott."
 }

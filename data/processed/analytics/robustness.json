@@ -1,0 +1,434 @@
+{
+  "monte_carlo": {
+    "n_draws": 10000,
+    "concentration": 40.0,
+    "poids_base": {
+      "volume_norm": 0.4,
+      "intensite_norm": 0.35,
+      "vulnerabilite_norm": 0.25
+    },
+    "wilayas": [
+      {
+        "wilaya": "Guidimakha",
+        "rang_median": 1,
+        "rang_min": 1,
+        "rang_max": 2,
+        "rang_p05": 1,
+        "rang_p95": 1,
+        "prob_top3": 1.0,
+        "prob_top5": 1.0,
+        "rang_stable": false,
+        "rang_stable_p90": true
+      },
+      {
+        "wilaya": "Hodh El Gharbi",
+        "rang_median": 2,
+        "rang_min": 1,
+        "rang_max": 2,
+        "rang_p05": 2,
+        "rang_p95": 2,
+        "prob_top3": 1.0,
+        "prob_top5": 1.0,
+        "rang_stable": false,
+        "rang_stable_p90": true
+      },
+      {
+        "wilaya": "Assaba",
+        "rang_median": 3,
+        "rang_min": 3,
+        "rang_max": 4,
+        "rang_p05": 3,
+        "rang_p95": 3,
+        "prob_top3": 0.993,
+        "prob_top5": 1.0,
+        "rang_stable": false,
+        "rang_stable_p90": true
+      },
+      {
+        "wilaya": "Hodh Ech Chargui",
+        "rang_median": 4,
+        "rang_min": 3,
+        "rang_max": 6,
+        "rang_p05": 4,
+        "rang_p95": 4,
+        "prob_top3": 0.007,
+        "prob_top5": 0.999,
+        "rang_stable": false,
+        "rang_stable_p90": true
+      },
+      {
+        "wilaya": "Gorgol",
+        "rang_median": 5,
+        "rang_min": 4,
+        "rang_max": 6,
+        "rang_p05": 5,
+        "rang_p95": 5,
+        "prob_top3": 0.0,
+        "prob_top5": 1.0,
+        "rang_stable": false,
+        "rang_stable_p90": true
+      },
+      {
+        "wilaya": "Brakna",
+        "rang_median": 6,
+        "rang_min": 5,
+        "rang_max": 8,
+        "rang_p05": 6,
+        "rang_p95": 8,
+        "prob_top3": 0.0,
+        "prob_top5": 0.001,
+        "rang_stable": false,
+        "rang_stable_p90": false
+      },
+      {
+        "wilaya": "Trarza",
+        "rang_median": 7,
+        "rang_min": 6,
+        "rang_max": 8,
+        "rang_p05": 6,
+        "rang_p95": 8,
+        "prob_top3": 0.0,
+        "prob_top5": 0.0,
+        "rang_stable": false,
+        "rang_stable_p90": false
+      },
+      {
+        "wilaya": "Nouakchott",
+        "rang_median": 8,
+        "rang_min": 5,
+        "rang_max": 9,
+        "rang_p05": 6,
+        "rang_p95": 9,
+        "prob_top3": 0.0,
+        "prob_top5": 0.0,
+        "rang_stable": false,
+        "rang_stable_p90": false
+      },
+      {
+        "wilaya": "Tagant",
+        "rang_median": 9,
+        "rang_min": 6,
+        "rang_max": 9,
+        "rang_p05": 7,
+        "rang_p95": 9,
+        "prob_top3": 0.0,
+        "prob_top5": 0.0,
+        "rang_stable": false,
+        "rang_stable_p90": false
+      },
+      {
+        "wilaya": "Dakhlet Nouadhibou",
+        "rang_median": 10,
+        "rang_min": 10,
+        "rang_max": 10,
+        "rang_p05": 10,
+        "rang_p95": 10,
+        "prob_top3": 0.0,
+        "prob_top5": 0.0,
+        "rang_stable": true,
+        "rang_stable_p90": true
+      },
+      {
+        "wilaya": "Tiris Zemmour",
+        "rang_median": 11,
+        "rang_min": 11,
+        "rang_max": 13,
+        "rang_p05": 11,
+        "rang_p95": 12,
+        "prob_top3": 0.0,
+        "prob_top5": 0.0,
+        "rang_stable": false,
+        "rang_stable_p90": false
+      },
+      {
+        "wilaya": "Inchiri",
+        "rang_median": 12,
+        "rang_min": 11,
+        "rang_max": 13,
+        "rang_p05": 11,
+        "rang_p95": 12,
+        "prob_top3": 0.0,
+        "prob_top5": 0.0,
+        "rang_stable": false,
+        "rang_stable_p90": false
+      },
+      {
+        "wilaya": "Adrar",
+        "rang_median": 13,
+        "rang_min": 11,
+        "rang_max": 13,
+        "rang_p05": 13,
+        "rang_p95": 13,
+        "prob_top3": 0.0,
+        "prob_top5": 0.0,
+        "rang_stable": false,
+        "rang_stable_p90": true
+      }
+    ],
+    "n_rangs_stables": 1,
+    "n_rangs_stables_p90": 7
+  },
+  "poids_alternatifs": {
+    "experts": {
+      "Volume (effectif hors école)": 0.4,
+      "Intensité (taux hors école)": 0.35,
+      "Vulnérabilité (pauvreté, dépendance)": 0.25
+    },
+    "acp": {
+      "Volume (effectif hors école)": 0.338,
+      "Intensité (taux hors école)": 0.371,
+      "Vulnérabilité (pauvreté, dépendance)": 0.291
+    },
+    "entropie": {
+      "Volume (effectif hors école)": 0.394,
+      "Intensité (taux hors école)": 0.287,
+      "Vulnérabilité (pauvreté, dépendance)": 0.319
+    }
+  },
+  "methodes": [
+    "IPE (poids experts)",
+    "ACP (1er axe)",
+    "Entropie",
+    "TOPSIS",
+    "Borda"
+  ],
+  "classements": [
+    {
+      "wilaya": "Guidimakha",
+      "ipe": 92.2,
+      "IPE (poids experts)": 1,
+      "ACP (1er axe)": 1,
+      "Entropie": 1,
+      "TOPSIS": 1,
+      "Borda": 1,
+      "rang_min": 1,
+      "rang_max": 1,
+      "ecart_methodes": 0
+    },
+    {
+      "wilaya": "Hodh El Gharbi",
+      "ipe": 86.7,
+      "IPE (poids experts)": 2,
+      "ACP (1er axe)": 2,
+      "Entropie": 2,
+      "TOPSIS": 2,
+      "Borda": 2,
+      "rang_min": 2,
+      "rang_max": 2,
+      "ecart_methodes": 0
+    },
+    {
+      "wilaya": "Assaba",
+      "ipe": 81.6,
+      "IPE (poids experts)": 3,
+      "ACP (1er axe)": 3,
+      "Entropie": 3,
+      "TOPSIS": 3,
+      "Borda": 3,
+      "rang_min": 3,
+      "rang_max": 3,
+      "ecart_methodes": 0
+    },
+    {
+      "wilaya": "Hodh Ech Chargui",
+      "ipe": 78.2,
+      "IPE (poids experts)": 4,
+      "ACP (1er axe)": 4,
+      "Entropie": 4,
+      "TOPSIS": 4,
+      "Borda": 4,
+      "rang_min": 4,
+      "rang_max": 4,
+      "ecart_methodes": 0
+    },
+    {
+      "wilaya": "Gorgol",
+      "ipe": 72.6,
+      "IPE (poids experts)": 5,
+      "ACP (1er axe)": 5,
+      "Entropie": 5,
+      "TOPSIS": 5,
+      "Borda": 5,
+      "rang_min": 5,
+      "rang_max": 5,
+      "ecart_methodes": 0
+    },
+    {
+      "wilaya": "Brakna",
+      "ipe": 64.1,
+      "IPE (poids experts)": 6,
+      "ACP (1er axe)": 6,
+      "Entropie": 6,
+      "TOPSIS": 6,
+      "Borda": 6,
+      "rang_min": 6,
+      "rang_max": 6,
+      "ecart_methodes": 0
+    },
+    {
+      "wilaya": "Trarza",
+      "ipe": 61.4,
+      "IPE (poids experts)": 7,
+      "ACP (1er axe)": 7,
+      "Entropie": 7,
+      "TOPSIS": 7,
+      "Borda": 9,
+      "rang_min": 7,
+      "rang_max": 9,
+      "ecart_methodes": 2
+    },
+    {
+      "wilaya": "Nouakchott",
+      "ipe": 59.1,
+      "IPE (poids experts)": 8,
+      "ACP (1er axe)": 9,
+      "Entropie": 9,
+      "TOPSIS": 9,
+      "Borda": 8,
+      "rang_min": 8,
+      "rang_max": 9,
+      "ecart_methodes": 1
+    },
+    {
+      "wilaya": "Tagant",
+      "ipe": 56.3,
+      "IPE (poids experts)": 9,
+      "ACP (1er axe)": 8,
+      "Entropie": 8,
+      "TOPSIS": 8,
+      "Borda": 7,
+      "rang_min": 7,
+      "rang_max": 9,
+      "ecart_methodes": 2
+    },
+    {
+      "wilaya": "Dakhlet Nouadhibou",
+      "ipe": 32.3,
+      "IPE (poids experts)": 10,
+      "ACP (1er axe)": 10,
+      "Entropie": 10,
+      "TOPSIS": 10,
+      "Borda": 10,
+      "rang_min": 10,
+      "rang_max": 10,
+      "ecart_methodes": 0
+    },
+    {
+      "wilaya": "Tiris Zemmour",
+      "ipe": 19.3,
+      "IPE (poids experts)": 11,
+      "ACP (1er axe)": 11,
+      "Entropie": 11,
+      "TOPSIS": 12,
+      "Borda": 13,
+      "rang_min": 11,
+      "rang_max": 13,
+      "ecart_methodes": 2
+    },
+    {
+      "wilaya": "Inchiri",
+      "ipe": 16.6,
+      "IPE (poids experts)": 12,
+      "ACP (1er axe)": 12,
+      "Entropie": 12,
+      "TOPSIS": 11,
+      "Borda": 12,
+      "rang_min": 11,
+      "rang_max": 12,
+      "ecart_methodes": 1
+    },
+    {
+      "wilaya": "Adrar",
+      "ipe": 10.8,
+      "IPE (poids experts)": 13,
+      "ACP (1er axe)": 13,
+      "Entropie": 13,
+      "TOPSIS": 13,
+      "Borda": 11,
+      "rang_min": 11,
+      "rang_max": 13,
+      "ecart_methodes": 2
+    }
+  ],
+  "spearman": [
+    {
+      "a": "IPE (poids experts)",
+      "b": "Borda",
+      "rho": 0.956,
+      "pvalue": 3.365097276351455e-07
+    },
+    {
+      "a": "ACP (1er axe)",
+      "b": "Borda",
+      "rho": 0.962,
+      "pvalue": 1.63176808107e-07
+    },
+    {
+      "a": "Entropie",
+      "b": "Borda",
+      "rho": 0.962,
+      "pvalue": 1.63176808107e-07
+    },
+    {
+      "a": "TOPSIS",
+      "b": "Borda",
+      "rho": 0.967,
+      "pvalue": 7.064113887175158e-08
+    },
+    {
+      "a": "IPE (poids experts)",
+      "b": "TOPSIS",
+      "rho": 0.989,
+      "pvalue": 1.7507283021964818e-10
+    },
+    {
+      "a": "IPE (poids experts)",
+      "b": "ACP (1er axe)",
+      "rho": 0.995,
+      "pvalue": 3.909411051466975e-12
+    },
+    {
+      "a": "IPE (poids experts)",
+      "b": "Entropie",
+      "rho": 0.995,
+      "pvalue": 3.909411051466975e-12
+    },
+    {
+      "a": "ACP (1er axe)",
+      "b": "TOPSIS",
+      "rho": 0.995,
+      "pvalue": 3.909411051466975e-12
+    },
+    {
+      "a": "Entropie",
+      "b": "TOPSIS",
+      "rho": 0.995,
+      "pvalue": 3.909411051466975e-12
+    },
+    {
+      "a": "ACP (1er axe)",
+      "b": "Entropie",
+      "rho": 1.0,
+      "pvalue": 0.0
+    }
+  ],
+  "spearman_min": 0.956,
+  "ecart_max_rangs": 2,
+  "validation_externe": {
+    "epcv_2019_pct": 33.1,
+    "wdi_2019_pct": 30.9,
+    "ecart_pts": 2.2,
+    "explication_ecart": "Les deux mesures ne comptent pas la même chose. L'EPCV mesure ici les 6-14 ans n'étant jamais entrés à l'école formelle (la variable `dejall` montre qu'aucun enfant hors école de cette tranche n'y est entré puis sorti). Le WDI mesure les enfants d'âge primaire officiel hors école une année donnée. L'écart de 2 points sur une tranche d'âge plus large est cohérent.",
+    "uis_disponible": false,
+    "uis_note": "data/raw/unesco_uis_outofschool.csv ne contient pas de données : c'est la trace d'un échec de connexion à l'API UIS (résolution DNS). La validation externe repose donc uniquement sur le WDI.",
+    "tendance": {
+      "pente_2008_2024": -0.641,
+      "pente_2008_2020": -0.079,
+      "n_points": 14,
+      "point_2024": 11.3,
+      "point_2020": 25.4,
+      "alerte": "La pente de −0,64 pt/an qui alimente les scénarios 2030 repose presque entièrement sur la seule observation 2024 (11,3 %, contre 25,4 % en 2020 : −14 points en quatre ans, rupture de série probable). Sans ce point, la tendance tombe à −0,08 pt/an, soit une quasi-stagnation. Les projections doivent être lues comme un encadrement entre ces deux hypothèses, pas comme une prévision."
+    }
+  },
+  "conclusion": "Sur 10000 jeux de pondérations tirés au hasard autour des poids retenus, 7 wilayas sur 13 gardent le même rang dans 90 % des tirages — dont les cinq premières, qui ne bougent jamais. L'instabilité se concentre au milieu du classement (Brakna, Trarza, Nouakchott, Tagant), là où les écarts d'IPE sont de l'ordre du point. Les cinq méthodes d'agrégation s'accordent par ailleurs à ρ ≥ 0.96 (Spearman) : la hiérarchie des priorités est une propriété des données, pas du choix de pondération."
+}

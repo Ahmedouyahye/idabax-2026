@@ -10,7 +10,6 @@ import json
 
 import numpy as np
 import pandas as pd
-from scipy.cluster.hierarchy import fcluster, linkage
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
@@ -88,7 +87,12 @@ def run_clustering(features: pd.DataFrame, k: int | None = None) -> pd.DataFrame
 
 
 if __name__ == "__main__":
-    features = pd.read_csv("data/processed/wilaya_features.csv")
-    out = run_clustering(features)
-    print(out[["wilaya", "cluster"]].sort_values("cluster").to_string(index=False))
+    from backend.analytics.index import build_index
+
+    # On passe par build_index comme le fait run_all : `clusters.csv` doit contenir
+    # `ipe` et `rang_ipe`, que /api/clusters lit. Repartir des seules features
+    # brutes réécrirait le fichier sans ces colonnes et casserait l'endpoint.
+    features = build_index(pd.read_csv("data/processed/wilaya_features.csv"))
+    out = run_clustering(features, k=3)
+    print(out[["wilaya", "cluster", "ipe", "rang_ipe"]].sort_values("cluster").to_string(index=False))
     out.to_csv("data/processed/analytics/clusters.csv", index=False)

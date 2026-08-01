@@ -37,8 +37,8 @@
       "label": "Chômage (%)"
     },
     {
-      "key": "part_cm_sans_education",
-      "label": "Chef de ménage sans éduc. (%)"
+      "key": "part_adultes_sans_instruction",
+      "label": "Adultes 15+ sans instruction (%)"
     },
     {
       "key": "part_0_14_pct",
@@ -96,9 +96,9 @@
       "value": -0.51
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Taux hors école formelle",
-      "value": 0.62
+      "value": 0.52
     },
     {
       "x": "Population 0-14 (%)",
@@ -156,9 +156,9 @@
       "value": -0.08
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Mahadra / coranique (%)",
-      "value": -0.24
+      "value": -0.34
     },
     {
       "x": "Population 0-14 (%)",
@@ -216,9 +216,9 @@
       "value": -0.51
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Aucune instruction (%)",
-      "value": 0.96
+      "value": 0.94
     },
     {
       "x": "Population 0-14 (%)",
@@ -276,7 +276,7 @@
       "value": -0.5
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Pauvreté (%)",
       "value": 0.84
     },
@@ -336,9 +336,9 @@
       "value": -0.68
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Ruralité (%)",
-      "value": 0.67
+      "value": 0.62
     },
     {
       "x": "Population 0-14 (%)",
@@ -396,9 +396,9 @@
       "value": -0.72
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Dépendance jeunes",
-      "value": 0.77
+      "value": 0.71
     },
     {
       "x": "Population 0-14 (%)",
@@ -456,9 +456,9 @@
       "value": 0.28
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Écoles / 1000 enf.",
-      "value": -0.33
+      "value": -0.25
     },
     {
       "x": "Population 0-14 (%)",
@@ -516,9 +516,9 @@
       "value": 0.45
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Écart genre hors école",
-      "value": -0.25
+      "value": -0.23
     },
     {
       "x": "Population 0-14 (%)",
@@ -576,9 +576,9 @@
       "value": 1.0
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Chômage (%)",
-      "value": -0.56
+      "value": -0.52
     },
     {
       "x": "Population 0-14 (%)",
@@ -592,63 +592,63 @@
     },
     {
       "x": "Taux hors école formelle",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": 0.62
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": 0.52
     },
     {
       "x": "Mahadra / coranique (%)",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": -0.24
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": -0.34
     },
     {
       "x": "Aucune instruction (%)",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": 0.96
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": 0.94
     },
     {
       "x": "Pauvreté (%)",
-      "y": "Chef de ménage sans éduc. (%)",
+      "y": "Adultes 15+ sans instruction (%)",
       "value": 0.84
     },
     {
       "x": "Ruralité (%)",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": 0.67
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": 0.62
     },
     {
       "x": "Dépendance jeunes",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": 0.77
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": 0.71
     },
     {
       "x": "Écoles / 1000 enf.",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": -0.33
-    },
-    {
-      "x": "Écart genre hors école",
-      "y": "Chef de ménage sans éduc. (%)",
+      "y": "Adultes 15+ sans instruction (%)",
       "value": -0.25
     },
     {
-      "x": "Chômage (%)",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": -0.56
+      "x": "Écart genre hors école",
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": -0.23
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
-      "y": "Chef de ménage sans éduc. (%)",
+      "x": "Chômage (%)",
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": -0.52
+    },
+    {
+      "x": "Adultes 15+ sans instruction (%)",
+      "y": "Adultes 15+ sans instruction (%)",
       "value": 1.0
     },
     {
       "x": "Population 0-14 (%)",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": 0.77
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": 0.71
     },
     {
       "x": "Effectif hors école (√)",
-      "y": "Chef de ménage sans éduc. (%)",
-      "value": 0.38
+      "y": "Adultes 15+ sans instruction (%)",
+      "value": 0.32
     },
     {
       "x": "Taux hors école formelle",
@@ -696,9 +696,9 @@
       "value": -0.73
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Population 0-14 (%)",
-      "value": 0.77
+      "value": 0.71
     },
     {
       "x": "Population 0-14 (%)",
@@ -756,9 +756,9 @@
       "value": -0.18
     },
     {
-      "x": "Chef de ménage sans éduc. (%)",
+      "x": "Adultes 15+ sans instruction (%)",
       "y": "Effectif hors école (√)",
-      "value": 0.38
+      "value": 0.32
     },
     {
       "x": "Population 0-14 (%)",
@@ -779,8 +779,8 @@
     },
     {
       "a": "Aucune instruction (%)",
-      "b": "Chef de ménage sans éduc. (%)",
-      "r": 0.96
+      "b": "Adultes 15+ sans instruction (%)",
+      "r": 0.94
     },
     {
       "a": "Ruralité (%)",
@@ -794,23 +794,13 @@
     },
     {
       "a": "Pauvreté (%)",
-      "b": "Chef de ménage sans éduc. (%)",
+      "b": "Adultes 15+ sans instruction (%)",
       "r": 0.84
     },
     {
       "a": "Pauvreté (%)",
       "b": "Ruralité (%)",
       "r": 0.81
-    },
-    {
-      "a": "Dépendance jeunes",
-      "b": "Chef de ménage sans éduc. (%)",
-      "r": 0.77
-    },
-    {
-      "a": "Chef de ménage sans éduc. (%)",
-      "b": "Population 0-14 (%)",
-      "r": 0.77
     },
     {
       "a": "Taux hors école formelle",
@@ -858,19 +848,29 @@
       "r": -0.72
     },
     {
+      "a": "Dépendance jeunes",
+      "b": "Adultes 15+ sans instruction (%)",
+      "r": 0.71
+    },
+    {
+      "a": "Adultes 15+ sans instruction (%)",
+      "b": "Population 0-14 (%)",
+      "r": 0.71
+    },
+    {
       "a": "Ruralité (%)",
       "b": "Chômage (%)",
       "r": -0.68
     },
     {
-      "a": "Ruralité (%)",
-      "b": "Chef de ménage sans éduc. (%)",
-      "r": 0.67
-    },
-    {
       "a": "Taux hors école formelle",
       "b": "Écoles / 1000 enf.",
       "r": -0.66
+    },
+    {
+      "a": "Aucune instruction (%)",
+      "b": "Dépendance jeunes",
+      "r": 0.62
     }
   ]
 }

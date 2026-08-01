@@ -1,7 +1,13 @@
 """Data mining : règles d'association (Apriori) sur les enfants 6-14 de l'EPCV.
 
-Questions : quelles combinaisons de facteurs (milieu, pauvreté, éducation du
-chef de ménage, région) sont associées à la non-scolarisation ?
+Questions : quelles combinaisons de facteurs (âge, sexe, milieu, pauvreté,
+région) sont associées à la non-scolarisation ?
+
+Note méthodologique la variable `nivcm` (« Niveau d'éducation du CM ») n'est
+PAS l'éducation parentale mais un regroupement du niveau d'instruction de
+l'enfant lui-même. Les items `cm_sans_education` / `cm_education_traditionnelle`
+qu'elle produisait généraient des règles tautologiques (confiance 100 %) : ils
+sont retirés des transactions.
 """
 from __future__ import annotations
 
@@ -34,8 +40,6 @@ def prepare_transactions(epcv_path: str = "data/raw/EPCV2019_60600_individuals.s
             "sexe_feminin": lab("B2").eq("Féminin"),
             "milieu_rural": lab("milieu").eq("Rural"),
             "pauvre": kids["pauv"].astype(bool),
-            "cm_sans_education": lab("nivcm").eq("Aucun"),
-            "cm_education_traditionnelle": lab("nivcm").isin(["traditionnel", "alphabétisation"]),
             "age_6_9": kids["B4"].between(6, 9),
             "age_10_14": kids["B4"].between(10, 14),
         }
@@ -45,7 +49,12 @@ def prepare_transactions(epcv_path: str = "data/raw/EPCV2019_60600_individuals.s
     return out
 
 
-def run_rules(min_support: float = 0.05, min_confidence: float = 0.60) -> dict:
+def run_rules(min_support: float = 0.02, min_confidence: float = 0.55) -> dict:
+    """Seuils : support 2 % (≈ 330 enfants, un sous-groupe qui pèse) et confiance 55 %
+    (plus d'un enfant sur deux du profil est hors école). L'ancien couple
+    (5 %, 60 %) n'était atteignable que grâce aux items tautologiques issus de
+    `nivcm`, qui plafonnaient à 100 % de confiance ; sans eux, la confiance
+    maximale réelle est de 0,70."""
     trans = prepare_transactions()
     freq = apriori(trans, min_support=min_support, use_colnames=True)
     rules = association_rules(freq, metric="confidence", min_threshold=0.50)
@@ -67,10 +76,15 @@ def run_rules(min_support: float = 0.05, min_confidence: float = 0.60) -> dict:
         rules[["antecedents_str", "consequents_str", "support", "confidence", "lift"]]
         .sort_values("lift", ascending=False)
     )
-    top_lift = out[out["confidence"] >= 0.6].head(10).to_dict("records")
-    no_cm = out[
-        ~out["antecedents_str"].str.contains("cm_", regex=False)
-    ].head(10).to_dict("records")
+    top_lift = out[out["confidence"] >= min_confidence].head(10).to_dict("records")
+    # règles socio-démographiques pures (hors découpage régional) : elles disent
+    # « quel profil d'enfant », indépendamment du territoire.
+    top_confiance = (
+        out[~out["antecedents_str"].str.contains("region_", regex=False)]
+        .sort_values("confidence", ascending=False)
+        .head(10)
+        .to_dict("records")
+    )
     by_region = (
         out[out["antecedents_str"].str.contains("region_", regex=False)]
         .sort_values("lift", ascending=False)
@@ -80,7 +94,7 @@ def run_rules(min_support: float = 0.05, min_confidence: float = 0.60) -> dict:
     return {
         "n_rules": int(len(rules)),
         "rules": top_lift,
-        "sans_cm": no_cm,
+        "top_confiance": top_confiance,
         "par_region": by_region,
         "n_children_6_14": int(len(trans)),
     }
@@ -95,7 +109,7 @@ if __name__ == "__main__":
     for r in res["rules"][:6]:
         print(f"  [{r['antecedents_str']}] -> [{r['consequents_str']}] "
               f"(conf={r['confidence']}, lift={r['lift']})")
-    print("--- sans variable CM ---")
-    for r in res["sans_cm"][:6]:
+    print("--- top confiance (profils socio-démographiques) ---")
+    for r in res["top_confiance"][:6]:
         print(f"  [{r['antecedents_str']}] -> [{r['consequents_str']}] "
               f"(conf={r['confidence']}, lift={r['lift']})")

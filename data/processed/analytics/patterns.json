@@ -1,0 +1,284 @@
+{
+  "regles": {
+    "n_total": 73,
+    "n_significatifs": 73,
+    "n_non_domines": 22,
+    "n_enfants": 16451,
+    "regles": [
+      {
+        "antecedents": "age_6_8 & pauvre & region_Est",
+        "n_couvert": 496,
+        "support": 0.0201,
+        "confidence": 0.667,
+        "lift": 2.02,
+        "pvalue": 1.8624624453686717e-54,
+        "significatif": true
+      },
+      {
+        "antecedents": "pauvre & region_Sud-Est & rural",
+        "n_couvert": 546,
+        "support": 0.021,
+        "confidence": 0.634,
+        "lift": 1.91,
+        "pvalue": 5.5670367488001944e-49,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & fille & pauvre & rural",
+        "n_couvert": 839,
+        "support": 0.0322,
+        "confidence": 0.631,
+        "lift": 1.9,
+        "pvalue": 3.221744289478576e-74,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & fille & region_Est & rural",
+        "n_couvert": 631,
+        "support": 0.024,
+        "confidence": 0.626,
+        "lift": 1.89,
+        "pvalue": 6.522061235297987e-54,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & region_Sud-Est",
+        "n_couvert": 572,
+        "support": 0.0213,
+        "confidence": 0.612,
+        "lift": 1.85,
+        "pvalue": 1.627533200343411e-44,
+        "significatif": true
+      },
+      {
+        "antecedents": "pauvre & region_Sud-Est",
+        "n_couvert": 586,
+        "support": 0.0217,
+        "confidence": 0.609,
+        "lift": 1.84,
+        "pvalue": 8.761898409981511e-45,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & pauvre & rural",
+        "n_couvert": 1745,
+        "support": 0.0646,
+        "confidence": 0.609,
+        "lift": 1.84,
+        "pvalue": 4.870349223329953e-140,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & region_Est & rural",
+        "n_couvert": 1251,
+        "support": 0.046,
+        "confidence": 0.605,
+        "lift": 1.83,
+        "pvalue": 4.508313178155031e-95,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & pauvre",
+        "n_couvert": 2152,
+        "support": 0.0767,
+        "confidence": 0.586,
+        "lift": 1.77,
+        "pvalue": 5.7954737864284356e-151,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & fille & rural",
+        "n_couvert": 1875,
+        "support": 0.0661,
+        "confidence": 0.58,
+        "lift": 1.75,
+        "pvalue": 4.3458222718326403e-123,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & region_Est",
+        "n_couvert": 1505,
+        "support": 0.0519,
+        "confidence": 0.567,
+        "lift": 1.71,
+        "pvalue": 9.720415859820003e-87,
+        "significatif": true
+      },
+      {
+        "antecedents": "age_6_8 & rural",
+        "n_couvert": 3816,
+        "support": 0.1311,
+        "confidence": 0.565,
+        "lift": 1.71,
+        "pvalue": 3.924484744282957e-257,
+        "significatif": true
+      },
+      {
+        "antecedents": "pauvre & region_Est & rural",
+        "n_couvert": 1089,
+        "support": 0.0375,
+        "confidence": 0.567,
+        "lift": 1.71,
+        "pvalue": 2.1482447897608532e-61,
+        "significatif": true
+      },
+      {
+        "antecedents": "pauvre & region_Est",
+        "n_couvert": 1163,
+        "support": 0.0393,
+        "confidence": 0.555,
+        "lift": 1.68,
+        "pvalue": 5.53718319838337e-60,
+        "significatif": true
+      },
+      {
+        "antecedents": "region_Sud-Est & rural",
+        "n_couvert": 1077,
+        "support": 0.0331,
+        "confidence": 0.505,
+        "lift": 1.53,
+        "pvalue": 2.2545434337750587e-34,
+        "significatif": true
+      }
+    ],
+    "methode": "FP-Growth (support ≥ 2 %), test exact de Fisher unilatéral sur chaque motif, correction de Benjamini-Hochberg à 5 %, puis élagage des motifs dominés par un de leurs sous-ensembles à confiance équivalente."
+  },
+  "sous_groupes": {
+    "taux_national_pct": 33.1,
+    "taille_min": 200,
+    "largeur_faisceau": 12,
+    "profondeur_max": 4,
+    "sous_groupes": [
+      {
+        "conditions": [
+          "age_6_8"
+        ],
+        "description": "age_6_8",
+        "n": 6292,
+        "part_population_pct": 38.2,
+        "taux_hors_ecole_pct": 48.6,
+        "ecart_vs_national_pts": 15.5,
+        "wracc": 0.0593,
+        "enfants_concernes_pct_du_total": 56.2
+      },
+      {
+        "conditions": [
+          "age_6_8",
+          "rural"
+        ],
+        "description": "age_6_8 & rural",
+        "n": 3816,
+        "part_population_pct": 23.2,
+        "taux_hors_ecole_pct": 56.5,
+        "ecart_vs_national_pts": 23.4,
+        "wracc": 0.0543,
+        "enfants_concernes_pct_du_total": 39.6
+      },
+      {
+        "conditions": [
+          "rural"
+        ],
+        "description": "rural",
+        "n": 9543,
+        "part_population_pct": 58.0,
+        "taux_hors_ecole_pct": 42.0,
+        "ecart_vs_national_pts": 8.9,
+        "wracc": 0.0516,
+        "enfants_concernes_pct_du_total": 73.6
+      },
+      {
+        "conditions": [
+          "pauvre",
+          "rural"
+        ],
+        "description": "pauvre & rural",
+        "n": 4271,
+        "part_population_pct": 26.0,
+        "taux_hors_ecole_pct": 49.0,
+        "ecart_vs_national_pts": 15.9,
+        "wracc": 0.0412,
+        "enfants_concernes_pct_du_total": 38.4
+      },
+      {
+        "conditions": [
+          "pauvre"
+        ],
+        "description": "pauvre",
+        "n": 5401,
+        "part_population_pct": 32.8,
+        "taux_hors_ecole_pct": 45.4,
+        "ecart_vs_national_pts": 12.3,
+        "wracc": 0.0405,
+        "enfants_concernes_pct_du_total": 45.1
+      },
+      {
+        "conditions": [
+          "age_6_8",
+          "pauvre"
+        ],
+        "description": "age_6_8 & pauvre",
+        "n": 2152,
+        "part_population_pct": 13.1,
+        "taux_hors_ecole_pct": 58.6,
+        "ecart_vs_national_pts": 25.5,
+        "wracc": 0.0334,
+        "enfants_concernes_pct_du_total": 23.2
+      },
+      {
+        "conditions": [
+          "age_6_8",
+          "pauvre",
+          "rural"
+        ],
+        "description": "age_6_8 & pauvre & rural",
+        "n": 1745,
+        "part_population_pct": 10.6,
+        "taux_hors_ecole_pct": 60.9,
+        "ecart_vs_national_pts": 27.8,
+        "wracc": 0.0294,
+        "enfants_concernes_pct_du_total": 19.5
+      },
+      {
+        "conditions": [
+          "region_Est",
+          "rural"
+        ],
+        "description": "region_Est & rural",
+        "n": 3006,
+        "part_population_pct": 18.3,
+        "taux_hors_ecole_pct": 47.3,
+        "ecart_vs_national_pts": 14.2,
+        "wracc": 0.0259,
+        "enfants_concernes_pct_du_total": 26.1
+      },
+      {
+        "conditions": [
+          "age_6_8",
+          "non_pauvre"
+        ],
+        "description": "age_6_8 & non_pauvre",
+        "n": 4140,
+        "part_population_pct": 25.2,
+        "taux_hors_ecole_pct": 43.4,
+        "ecart_vs_national_pts": 10.3,
+        "wracc": 0.0259,
+        "enfants_concernes_pct_du_total": 33.0
+      },
+      {
+        "conditions": [
+          "age_6_8",
+          "non_pauvre",
+          "rural"
+        ],
+        "description": "age_6_8 & non_pauvre & rural",
+        "n": 2071,
+        "part_population_pct": 12.6,
+        "taux_hors_ecole_pct": 52.8,
+        "ecart_vs_national_pts": 19.7,
+        "wracc": 0.0248,
+        "enfants_concernes_pct_du_total": 20.1
+      }
+    ],
+    "methode": "Recherche en faisceau maximisant la WRAcc = (n_S/N) × (p_S − p₀). Ce critère arbitre explicitement entre l'intensité de l'exclusion dans le sous-groupe et le nombre d'enfants qu'il représente — un sous-groupe minuscule à 100 % d'exclusion n'est pas une priorité d'action."
+  }
+}

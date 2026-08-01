@@ -21,7 +21,7 @@ GRAPH_FEATURES = [
     "ratio_dependance_jeunes",
     "scol_Mahadra_trad",
     "scol_Aucune instruction",
-    "part_cm_sans_education",
+    "part_adultes_sans_instruction",
     "ecart_genre_hors_ecole",
     "ecoles_pour_1000_enfants",
 ]
@@ -33,7 +33,7 @@ INDICATOR_NAMES = {
     "ratio_dependance_jeunes": "Dépendance jeunes",
     "scol_Mahadra_trad": "Enseignement traditionnel",
     "scol_Aucune instruction": "Aucune instruction",
-    "part_cm_sans_education": "CM sans éducation",
+    "part_adultes_sans_instruction": "Adultes sans instruction",
     "ecart_genre_hors_ecole": "Écart de genre hors école",
     "ecoles_pour_1000_enfants": "Écoles / 1000 enfants",
     "population_2022": "Population 2022",
@@ -42,11 +42,19 @@ INDICATOR_NAMES = {
 }
 
 
-def wilaya_similarity_graph(features: pd.DataFrame, threshold: float = 0.85, top_k: int = 2) -> dict:
+def wilaya_similarity_graph(features: pd.DataFrame, threshold: float = 0.70, top_k: int = 2) -> dict:
     """Réseau de similarité : chaque wilaya est reliée à ses top_k voisins
-    les plus corrélés (|r| >= threshold). Graphe lisible et interprétable."""
+    les plus corrélés (|r| >= threshold). Graphe lisible et interprétable.
+
+    Les indicateurs sont d'unités hétérogènes (%, ratios, effectifs) : corréler
+    deux wilayas sur leurs profils bruts mesurerait surtout l'ordre de grandeur
+    des colonnes, pas la ressemblance des profils. On centre-réduit donc chaque
+    indicateur (z-score) AVANT de transposer, de sorte que la corrélation porte
+    sur des positions relatives comparables.
+    """
     df = features.set_index("wilaya")
     X = df[GRAPH_FEATURES].astype(float)
+    X = (X - X.mean()) / X.std(ddof=0).replace(0, 1)
     corr = X.T.corr()
 
     selected: set[tuple[str, str]] = set()

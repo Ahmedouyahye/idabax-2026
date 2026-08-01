@@ -11,7 +11,7 @@
     {
       "id": "Assaba",
       "wilaya": "Assaba",
-      "cluster": 2,
+      "cluster": 0,
       "population_2022": 405389,
       "hors_ecole_pct": 41.55,
       "enfants_hors_ecole": 46959
@@ -19,7 +19,7 @@
     {
       "id": "Brakna",
       "wilaya": "Brakna",
-      "cluster": 0,
+      "cluster": 1,
       "population_2022": 334750,
       "hors_ecole_pct": 25.46,
       "enfants_hors_ecole": 23688
@@ -35,7 +35,7 @@
     {
       "id": "Gorgol",
       "wilaya": "Gorgol",
-      "cluster": 0,
+      "cluster": 1,
       "population_2022": 388461,
       "hors_ecole_pct": 33.46,
       "enfants_hors_ecole": 37690
@@ -43,7 +43,7 @@
     {
       "id": "Guidimakha",
       "wilaya": "Guidimakha",
-      "cluster": 0,
+      "cluster": 2,
       "population_2022": 330658,
       "hors_ecole_pct": 44.44,
       "enfants_hors_ecole": 42852
@@ -59,7 +59,7 @@
     {
       "id": "Hodh El Gharbi",
       "wilaya": "Hodh El Gharbi",
-      "cluster": 2,
+      "cluster": 0,
       "population_2022": 340578,
       "hors_ecole_pct": 47.25,
       "enfants_hors_ecole": 44454
@@ -67,7 +67,7 @@
     {
       "id": "Inchiri",
       "wilaya": "Inchiri",
-      "cluster": 2,
+      "cluster": 1,
       "population_2022": 27025,
       "hors_ecole_pct": 16.85,
       "enfants_hors_ecole": 887
@@ -83,7 +83,7 @@
     {
       "id": "Tagant",
       "wilaya": "Tagant",
-      "cluster": 0,
+      "cluster": 2,
       "population_2022": 85961,
       "hors_ecole_pct": 30.23,
       "enfants_hors_ecole": 6927
@@ -108,105 +108,93 @@
   "edges": [
     {
       "source": "Adrar",
-      "target": "Tagant",
-      "weight": 0.938,
-      "r": 0.938
-    },
-    {
-      "source": "Adrar",
-      "target": "Brakna",
-      "weight": 0.961,
-      "r": 0.961
-    },
-    {
-      "source": "Adrar",
-      "target": "Inchiri",
-      "weight": 0.929,
-      "r": 0.929
+      "target": "Assaba",
+      "weight": 0.757,
+      "r": -0.757
     },
     {
       "source": "Assaba",
-      "target": "Inchiri",
-      "weight": 0.906,
-      "r": 0.906
-    },
-    {
-      "source": "Assaba",
-      "target": "Trarza",
-      "weight": 0.981,
-      "r": 0.981
+      "target": "Hodh Ech Chargui",
+      "weight": 0.807,
+      "r": 0.807
     },
     {
       "source": "Assaba",
       "target": "Hodh El Gharbi",
-      "weight": 0.988,
-      "r": 0.988
-    },
-    {
-      "source": "Brakna",
-      "target": "Tagant",
-      "weight": 0.991,
-      "r": 0.991
+      "weight": 0.773,
+      "r": 0.773
     },
     {
       "source": "Brakna",
       "target": "Gorgol",
-      "weight": 0.98,
-      "r": 0.98
+      "weight": 0.806,
+      "r": 0.806
     },
     {
       "source": "Brakna",
-      "target": "Guidimakha",
-      "weight": 0.951,
-      "r": 0.951
-    },
-    {
-      "source": "Dakhlet Nouadhibou",
       "target": "Nouakchott",
-      "weight": 0.984,
-      "r": 0.984
+      "weight": 0.853,
+      "r": -0.853
     },
     {
-      "source": "Dakhlet Nouadhibou",
-      "target": "Tiris Zemmour",
-      "weight": 0.965,
-      "r": 0.965
+      "source": "Brakna",
+      "target": "Dakhlet Nouadhibou",
+      "weight": 0.763,
+      "r": -0.763
     },
     {
       "source": "Gorgol",
-      "target": "Tagant",
-      "weight": 0.984,
-      "r": 0.984
+      "target": "Nouakchott",
+      "weight": 0.81,
+      "r": -0.81
+    },
+    {
+      "source": "Gorgol",
+      "target": "Inchiri",
+      "weight": 0.936,
+      "r": -0.936
     },
     {
       "source": "Guidimakha",
       "target": "Tagant",
-      "weight": 0.978,
-      "r": 0.978
+      "weight": 0.741,
+      "r": 0.741
     },
     {
       "source": "Hodh Ech Chargui",
       "target": "Trarza",
-      "weight": 0.991,
-      "r": 0.991
+      "weight": 0.73,
+      "r": 0.73
     },
     {
       "source": "Hodh Ech Chargui",
-      "target": "Hodh El Gharbi",
-      "weight": 0.985,
-      "r": 0.985
+      "target": "Tagant",
+      "weight": 0.815,
+      "r": -0.815
     },
     {
       "source": "Hodh El Gharbi",
-      "target": "Trarza",
-      "weight": 0.988,
-      "r": 0.988
+      "target": "Tiris Zemmour",
+      "weight": 0.834,
+      "r": -0.834
+    },
+    {
+      "source": "Inchiri",
+      "target": "Tiris Zemmour",
+      "weight": 0.711,
+      "r": 0.711
     },
     {
       "source": "Nouakchott",
       "target": "Tiris Zemmour",
-      "weight": 0.952,
-      "r": 0.952
+      "weight": 0.932,
+      "r": 0.932
+    },
+    {
+      "source": "Tagant",
+      "target": "Trarza",
+      "weight": 0.762,
+      "r": -0.762
     }
   ],
   "n_communities": 3

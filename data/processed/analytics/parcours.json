@@ -1,0 +1,534 @@
+{
+  "retard": {
+    "n_scolarises_6_14": 11005,
+    "n_ages_concernes": 3897,
+    "retard_national_pct": 66.1,
+    "retard_urbain_pct": 57.4,
+    "retard_rural_pct": 75.1,
+    "retard_filles_pct": 69.6,
+    "retard_garcons_pct": 62.4,
+    "par_age": [
+      {
+        "age": 6,
+        "n": 839,
+        "primaire": 661,
+        "college": 0,
+        "part_primaire_pct": 78.8,
+        "en_retard_pct": null
+      },
+      {
+        "age": 7,
+        "n": 1156,
+        "primaire": 1093,
+        "college": 0,
+        "part_primaire_pct": 94.6,
+        "en_retard_pct": null
+      },
+      {
+        "age": 8,
+        "n": 1238,
+        "primaire": 1236,
+        "college": 0,
+        "part_primaire_pct": 99.8,
+        "en_retard_pct": null
+      },
+      {
+        "age": 9,
+        "n": 1178,
+        "primaire": 1176,
+        "college": 0,
+        "part_primaire_pct": 99.8,
+        "en_retard_pct": null
+      },
+      {
+        "age": 10,
+        "n": 1565,
+        "primaire": 1540,
+        "college": 25,
+        "part_primaire_pct": 98.4,
+        "en_retard_pct": null
+      },
+      {
+        "age": 11,
+        "n": 1132,
+        "primaire": 962,
+        "college": 168,
+        "part_primaire_pct": 85.0,
+        "en_retard_pct": null
+      },
+      {
+        "age": 12,
+        "n": 1551,
+        "primaire": 1279,
+        "college": 271,
+        "part_primaire_pct": 82.5,
+        "en_retard_pct": 82.5
+      },
+      {
+        "age": 13,
+        "n": 1187,
+        "primaire": 769,
+        "college": 413,
+        "part_primaire_pct": 64.8,
+        "en_retard_pct": 64.8
+      },
+      {
+        "age": 14,
+        "n": 1159,
+        "primaire": 526,
+        "college": 625,
+        "part_primaire_pct": 45.4,
+        "en_retard_pct": 45.4
+      }
+    ],
+    "par_wilaya": [
+      {
+        "wilaya": "Gorgol",
+        "n": 401,
+        "retard_pct": 87.5,
+        "retard_urbain_pct": 70.4,
+        "retard_rural_pct": 96.9,
+        "retard_filles_pct": 74.7,
+        "retard_garcons_pct": 99.5
+      },
+      {
+        "wilaya": "Hodh Ech Chargui",
+        "n": 445,
+        "retard_pct": 81.8,
+        "retard_urbain_pct": 63.2,
+        "retard_rural_pct": 87.6,
+        "retard_filles_pct": 90.4,
+        "retard_garcons_pct": 72.6
+      },
+      {
+        "wilaya": "Inchiri",
+        "n": 63,
+        "retard_pct": 79.4,
+        "retard_urbain_pct": 75.5,
+        "retard_rural_pct": 92.9,
+        "retard_filles_pct": 97.1,
+        "retard_garcons_pct": 58.6
+      },
+      {
+        "wilaya": "Guidimakha",
+        "n": 316,
+        "retard_pct": 76.3,
+        "retard_urbain_pct": 51.7,
+        "retard_rural_pct": 82.0,
+        "retard_filles_pct": 67.6,
+        "retard_garcons_pct": 86.3
+      },
+      {
+        "wilaya": "Tagant",
+        "n": 105,
+        "retard_pct": 71.4,
+        "retard_urbain_pct": 55.8,
+        "retard_rural_pct": 86.8,
+        "retard_filles_pct": 67.8,
+        "retard_garcons_pct": 76.1
+      },
+      {
+        "wilaya": "Dakhlet Nouadhibou",
+        "n": 156,
+        "retard_pct": 69.9,
+        "retard_urbain_pct": 69.5,
+        "retard_rural_pct": 100.0,
+        "retard_filles_pct": 70.7,
+        "retard_garcons_pct": 68.9
+      },
+      {
+        "wilaya": "Tiris Zemmour",
+        "n": 132,
+        "retard_pct": 61.4,
+        "retard_urbain_pct": 60.7,
+        "retard_rural_pct": 70.0,
+        "retard_filles_pct": 61.3,
+        "retard_garcons_pct": 61.5
+      },
+      {
+        "wilaya": "Trarza",
+        "n": 306,
+        "retard_pct": 61.1,
+        "retard_urbain_pct": 33.9,
+        "retard_rural_pct": 78.9,
+        "retard_filles_pct": 80.3,
+        "retard_garcons_pct": 34.4
+      },
+      {
+        "wilaya": "Brakna",
+        "n": 364,
+        "retard_pct": 61.0,
+        "retard_urbain_pct": 47.1,
+        "retard_rural_pct": 66.4,
+        "retard_filles_pct": 61.8,
+        "retard_garcons_pct": 60.2
+      },
+      {
+        "wilaya": "Nouakchott",
+        "n": 794,
+        "retard_pct": 59.1,
+        "retard_urbain_pct": 59.1,
+        "retard_rural_pct": null,
+        "retard_filles_pct": 60.6,
+        "retard_garcons_pct": 57.5
+      },
+      {
+        "wilaya": "Assaba",
+        "n": 353,
+        "retard_pct": 53.8,
+        "retard_urbain_pct": 49.5,
+        "retard_rural_pct": 55.8,
+        "retard_filles_pct": 50.3,
+        "retard_garcons_pct": 57.5
+      },
+      {
+        "wilaya": "Adrar",
+        "n": 187,
+        "retard_pct": 51.3,
+        "retard_urbain_pct": 45.0,
+        "retard_rural_pct": 60.5,
+        "retard_filles_pct": 80.2,
+        "retard_garcons_pct": 26.7
+      },
+      {
+        "wilaya": "Hodh El Gharbi",
+        "n": 275,
+        "retard_pct": 50.5,
+        "retard_urbain_pct": 51.5,
+        "retard_rural_pct": 50.2,
+        "retard_filles_pct": 69.0,
+        "retard_garcons_pct": 37.7
+      }
+    ],
+    "definition": "Est compté en retard tout élève d'au moins 12 ans encore inscrit au primaire, celui-ci couvrant normalement 6-11 ans (6 années d'études)."
+  },
+  "pyramide": {
+    "ordre": [
+      "Jamais scolarisé",
+      "Traditionnel",
+      "Préscolaire / NSP",
+      "Primaire",
+      "Collège",
+      "Lycée",
+      "Supérieur"
+    ],
+    "par_age": [
+      {
+        "age": 6,
+        "n": 2231,
+        "Jamais scolarisé": 37.9,
+        "Traditionnel": 24.5,
+        "Préscolaire / NSP": 8.0,
+        "Primaire": 29.6,
+        "Collège": 0.0,
+        "Lycée": 0.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 7,
+        "n": 2111,
+        "Jamais scolarisé": 21.2,
+        "Traditionnel": 24.0,
+        "Préscolaire / NSP": 3.0,
+        "Primaire": 51.8,
+        "Collège": 0.0,
+        "Lycée": 0.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 8,
+        "n": 1950,
+        "Jamais scolarisé": 16.8,
+        "Traditionnel": 19.7,
+        "Préscolaire / NSP": 0.1,
+        "Primaire": 63.4,
+        "Collège": 0.0,
+        "Lycée": 0.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 9,
+        "n": 1612,
+        "Jamais scolarisé": 12.6,
+        "Traditionnel": 14.3,
+        "Préscolaire / NSP": 0.1,
+        "Primaire": 73.0,
+        "Collège": 0.0,
+        "Lycée": 0.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 10,
+        "n": 2129,
+        "Jamais scolarisé": 10.9,
+        "Traditionnel": 15.6,
+        "Préscolaire / NSP": 0.0,
+        "Primaire": 72.3,
+        "Collège": 1.2,
+        "Lycée": 0.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 11,
+        "n": 1434,
+        "Jamais scolarisé": 9.6,
+        "Traditionnel": 11.4,
+        "Préscolaire / NSP": 0.1,
+        "Primaire": 67.1,
+        "Collège": 11.7,
+        "Lycée": 0.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 12,
+        "n": 1939,
+        "Jamais scolarisé": 8.7,
+        "Traditionnel": 11.3,
+        "Préscolaire / NSP": 0.1,
+        "Primaire": 66.0,
+        "Collège": 14.0,
+        "Lycée": 0.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 13,
+        "n": 1547,
+        "Jamais scolarisé": 10.9,
+        "Traditionnel": 12.3,
+        "Préscolaire / NSP": 0.0,
+        "Primaire": 49.7,
+        "Collège": 26.7,
+        "Lycée": 0.3,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 14,
+        "n": 1498,
+        "Jamais scolarisé": 10.9,
+        "Traditionnel": 11.7,
+        "Préscolaire / NSP": 0.0,
+        "Primaire": 35.1,
+        "Collège": 41.7,
+        "Lycée": 0.5,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 15,
+        "n": 1619,
+        "Jamais scolarisé": 12.7,
+        "Traditionnel": 15.4,
+        "Préscolaire / NSP": 0.1,
+        "Primaire": 27.0,
+        "Collège": 41.8,
+        "Lycée": 3.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 16,
+        "n": 1379,
+        "Jamais scolarisé": 11.4,
+        "Traditionnel": 14.9,
+        "Préscolaire / NSP": 0.1,
+        "Primaire": 24.7,
+        "Collège": 43.3,
+        "Lycée": 5.7,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 17,
+        "n": 1102,
+        "Jamais scolarisé": 13.3,
+        "Traditionnel": 14.6,
+        "Préscolaire / NSP": 0.2,
+        "Primaire": 24.0,
+        "Collège": 37.9,
+        "Lycée": 10.0,
+        "Supérieur": 0.0
+      },
+      {
+        "age": 18,
+        "n": 1342,
+        "Jamais scolarisé": 15.8,
+        "Traditionnel": 13.9,
+        "Préscolaire / NSP": 0.4,
+        "Primaire": 27.7,
+        "Collège": 27.9,
+        "Lycée": 14.1,
+        "Supérieur": 0.2
+      },
+      {
+        "age": 19,
+        "n": 1041,
+        "Jamais scolarisé": 12.1,
+        "Traditionnel": 14.7,
+        "Préscolaire / NSP": 0.2,
+        "Primaire": 30.0,
+        "Collège": 23.9,
+        "Lycée": 17.9,
+        "Supérieur": 1.2
+      },
+      {
+        "age": 20,
+        "n": 1240,
+        "Jamais scolarisé": 18.4,
+        "Traditionnel": 17.6,
+        "Préscolaire / NSP": 0.1,
+        "Primaire": 29.9,
+        "Collège": 15.4,
+        "Lycée": 16.5,
+        "Supérieur": 2.1
+      },
+      {
+        "age": 21,
+        "n": 736,
+        "Jamais scolarisé": 12.5,
+        "Traditionnel": 12.6,
+        "Préscolaire / NSP": 0.5,
+        "Primaire": 30.3,
+        "Collège": 18.6,
+        "Lycée": 21.9,
+        "Supérieur": 3.5
+      },
+      {
+        "age": 22,
+        "n": 890,
+        "Jamais scolarisé": 15.6,
+        "Traditionnel": 14.8,
+        "Préscolaire / NSP": 0.2,
+        "Primaire": 29.1,
+        "Collège": 17.3,
+        "Lycée": 18.7,
+        "Supérieur": 4.3
+      },
+      {
+        "age": 23,
+        "n": 694,
+        "Jamais scolarisé": 15.3,
+        "Traditionnel": 12.2,
+        "Préscolaire / NSP": 0.4,
+        "Primaire": 26.5,
+        "Collège": 18.7,
+        "Lycée": 20.3,
+        "Supérieur": 6.5
+      },
+      {
+        "age": 24,
+        "n": 728,
+        "Jamais scolarisé": 14.4,
+        "Traditionnel": 14.8,
+        "Préscolaire / NSP": 0.5,
+        "Primaire": 30.2,
+        "Collège": 15.8,
+        "Lycée": 19.1,
+        "Supérieur": 5.1
+      }
+    ]
+  },
+  "survie": {
+    "n_cohorte_15_24": 10771,
+    "etapes": [
+      {
+        "palier": "Primaire",
+        "part_cohorte_pct": 70.9,
+        "effectif_echantillon": 7635
+      },
+      {
+        "palier": "Collège",
+        "part_cohorte_pct": 43.2,
+        "effectif_echantillon": 4653,
+        "transition_depuis_precedent_pct": 60.9,
+        "perte_pts": 27.7
+      },
+      {
+        "palier": "Lycée",
+        "part_cohorte_pct": 15.0,
+        "effectif_echantillon": 1611,
+        "transition_depuis_precedent_pct": 34.6,
+        "perte_pts": 28.2
+      },
+      {
+        "palier": "Supérieur",
+        "part_cohorte_pct": 1.7,
+        "effectif_echantillon": 188,
+        "transition_depuis_precedent_pct": 11.7,
+        "perte_pts": 13.2
+      }
+    ],
+    "ecarts_college": {
+      "filles": 41.8,
+      "garcons": 44.9,
+      "urbain": 61.3,
+      "rural": 22.0,
+      "pauvre": 26.4,
+      "non_pauvre": 49.7
+    },
+    "par_wilaya": [
+      {
+        "wilaya": "Adrar",
+        "college_pct": 65.0,
+        "n": 394
+      },
+      {
+        "wilaya": "Nouakchott",
+        "college_pct": 63.4,
+        "n": 2550
+      },
+      {
+        "wilaya": "Dakhlet Nouadhibou",
+        "college_pct": 61.7,
+        "n": 483
+      },
+      {
+        "wilaya": "Tiris Zemmour",
+        "college_pct": 59.0,
+        "n": 407
+      },
+      {
+        "wilaya": "Inchiri",
+        "college_pct": 52.3,
+        "n": 197
+      },
+      {
+        "wilaya": "Trarza",
+        "college_pct": 46.5,
+        "n": 731
+      },
+      {
+        "wilaya": "Tagant",
+        "college_pct": 44.3,
+        "n": 345
+      },
+      {
+        "wilaya": "Gorgol",
+        "college_pct": 39.6,
+        "n": 937
+      },
+      {
+        "wilaya": "Brakna",
+        "college_pct": 38.9,
+        "n": 823
+      },
+      {
+        "wilaya": "Assaba",
+        "college_pct": 29.3,
+        "n": 786
+      },
+      {
+        "wilaya": "Hodh El Gharbi",
+        "college_pct": 29.3,
+        "n": 811
+      },
+      {
+        "wilaya": "Hodh Ech Chargui",
+        "college_pct": 22.2,
+        "n": 1225
+      },
+      {
+        "wilaya": "Guidimakha",
+        "college_pct": 19.9,
+        "n": 1082
+      }
+    ],
+    "note": "Pseudo-cohorte : les 15-24 ans observés en 2019 ne sont pas une vraie cohorte suivie dans le temps, et une partie d'entre eux est encore en cours d'études. Les parts atteignant le lycée et le supérieur sont donc sous-estimées pour les plus jeunes de la tranche."
+  }
+}

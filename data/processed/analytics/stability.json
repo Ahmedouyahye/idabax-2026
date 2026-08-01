@@ -1,0 +1,1117 @@
+{
+  "k_retenu": 3,
+  "bootstrap": {
+    "n_boot": 1000,
+    "par_k": [
+      {
+        "k": 2,
+        "ari_moyen": 0.867,
+        "ari_ecart_type": 0.276,
+        "ari_p05": 0.079,
+        "silhouette": 0.366
+      },
+      {
+        "k": 3,
+        "ari_moyen": 0.731,
+        "ari_ecart_type": 0.256,
+        "ari_p05": 0.352,
+        "silhouette": 0.331
+      },
+      {
+        "k": 4,
+        "ari_moyen": 0.758,
+        "ari_ecart_type": 0.216,
+        "ari_p05": 0.374,
+        "silhouette": 0.324
+      },
+      {
+        "k": 5,
+        "ari_moyen": 0.723,
+        "ari_ecart_type": 0.195,
+        "ari_p05": 0.372,
+        "silhouette": 0.306
+      },
+      {
+        "k": 6,
+        "ari_moyen": 0.652,
+        "ari_ecart_type": 0.197,
+        "ari_p05": 0.311,
+        "silhouette": 0.253
+      }
+    ],
+    "k_le_plus_stable": 2
+  },
+  "co_assignation": {
+    "wilayas": [
+      "Adrar",
+      "Assaba",
+      "Brakna",
+      "Dakhlet Nouadhibou",
+      "Gorgol",
+      "Guidimakha",
+      "Hodh Ech Chargui",
+      "Hodh El Gharbi",
+      "Inchiri",
+      "Nouakchott",
+      "Tagant",
+      "Tiris Zemmour",
+      "Trarza"
+    ],
+    "matrice": [
+      {
+        "x": "Adrar",
+        "y": "Adrar",
+        "value": 1.0
+      },
+      {
+        "x": "Assaba",
+        "y": "Adrar",
+        "value": 0.0
+      },
+      {
+        "x": "Brakna",
+        "y": "Adrar",
+        "value": 0.03
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Adrar",
+        "value": 0.69
+      },
+      {
+        "x": "Gorgol",
+        "y": "Adrar",
+        "value": 0.03
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Adrar",
+        "value": 0.02
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Adrar",
+        "value": 0.0
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Adrar",
+        "value": 0.0
+      },
+      {
+        "x": "Inchiri",
+        "y": "Adrar",
+        "value": 0.71
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Adrar",
+        "value": 0.72
+      },
+      {
+        "x": "Tagant",
+        "y": "Adrar",
+        "value": 0.03
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Adrar",
+        "value": 0.72
+      },
+      {
+        "x": "Trarza",
+        "y": "Adrar",
+        "value": 0.03
+      },
+      {
+        "x": "Adrar",
+        "y": "Assaba",
+        "value": 0.0
+      },
+      {
+        "x": "Assaba",
+        "y": "Assaba",
+        "value": 1.0
+      },
+      {
+        "x": "Brakna",
+        "y": "Assaba",
+        "value": 0.47
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Assaba",
+        "value": 0.02
+      },
+      {
+        "x": "Gorgol",
+        "y": "Assaba",
+        "value": 0.49
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Assaba",
+        "value": 0.28
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Assaba",
+        "value": 0.98
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Assaba",
+        "value": 0.99
+      },
+      {
+        "x": "Inchiri",
+        "y": "Assaba",
+        "value": 0.02
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Assaba",
+        "value": 0.01
+      },
+      {
+        "x": "Tagant",
+        "y": "Assaba",
+        "value": 0.39
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Assaba",
+        "value": 0.01
+      },
+      {
+        "x": "Trarza",
+        "y": "Assaba",
+        "value": 0.9
+      },
+      {
+        "x": "Adrar",
+        "y": "Brakna",
+        "value": 0.03
+      },
+      {
+        "x": "Assaba",
+        "y": "Brakna",
+        "value": 0.47
+      },
+      {
+        "x": "Brakna",
+        "y": "Brakna",
+        "value": 1.0
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Brakna",
+        "value": 0.01
+      },
+      {
+        "x": "Gorgol",
+        "y": "Brakna",
+        "value": 0.98
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Brakna",
+        "value": 0.79
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Brakna",
+        "value": 0.45
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Brakna",
+        "value": 0.48
+      },
+      {
+        "x": "Inchiri",
+        "y": "Brakna",
+        "value": 0.01
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Brakna",
+        "value": 0.01
+      },
+      {
+        "x": "Tagant",
+        "y": "Brakna",
+        "value": 0.91
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Brakna",
+        "value": 0.01
+      },
+      {
+        "x": "Trarza",
+        "y": "Brakna",
+        "value": 0.39
+      },
+      {
+        "x": "Adrar",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.69
+      },
+      {
+        "x": "Assaba",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.02
+      },
+      {
+        "x": "Brakna",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.01
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Dakhlet Nouadhibou",
+        "value": 1.0
+      },
+      {
+        "x": "Gorgol",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.01
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.0
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.03
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.02
+      },
+      {
+        "x": "Inchiri",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.98
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.97
+      },
+      {
+        "x": "Tagant",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.01
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.96
+      },
+      {
+        "x": "Trarza",
+        "y": "Dakhlet Nouadhibou",
+        "value": 0.11
+      },
+      {
+        "x": "Adrar",
+        "y": "Gorgol",
+        "value": 0.03
+      },
+      {
+        "x": "Assaba",
+        "y": "Gorgol",
+        "value": 0.49
+      },
+      {
+        "x": "Brakna",
+        "y": "Gorgol",
+        "value": 0.98
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Gorgol",
+        "value": 0.01
+      },
+      {
+        "x": "Gorgol",
+        "y": "Gorgol",
+        "value": 1.0
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Gorgol",
+        "value": 0.78
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Gorgol",
+        "value": 0.47
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Gorgol",
+        "value": 0.5
+      },
+      {
+        "x": "Inchiri",
+        "y": "Gorgol",
+        "value": 0.01
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Gorgol",
+        "value": 0.01
+      },
+      {
+        "x": "Tagant",
+        "y": "Gorgol",
+        "value": 0.9
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Gorgol",
+        "value": 0.0
+      },
+      {
+        "x": "Trarza",
+        "y": "Gorgol",
+        "value": 0.4
+      },
+      {
+        "x": "Adrar",
+        "y": "Guidimakha",
+        "value": 0.02
+      },
+      {
+        "x": "Assaba",
+        "y": "Guidimakha",
+        "value": 0.28
+      },
+      {
+        "x": "Brakna",
+        "y": "Guidimakha",
+        "value": 0.79
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Guidimakha",
+        "value": 0.0
+      },
+      {
+        "x": "Gorgol",
+        "y": "Guidimakha",
+        "value": 0.78
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Guidimakha",
+        "value": 1.0
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Guidimakha",
+        "value": 0.26
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Guidimakha",
+        "value": 0.29
+      },
+      {
+        "x": "Inchiri",
+        "y": "Guidimakha",
+        "value": 0.0
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Guidimakha",
+        "value": 0.0
+      },
+      {
+        "x": "Tagant",
+        "y": "Guidimakha",
+        "value": 0.88
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Guidimakha",
+        "value": 0.0
+      },
+      {
+        "x": "Trarza",
+        "y": "Guidimakha",
+        "value": 0.21
+      },
+      {
+        "x": "Adrar",
+        "y": "Hodh Ech Chargui",
+        "value": 0.0
+      },
+      {
+        "x": "Assaba",
+        "y": "Hodh Ech Chargui",
+        "value": 0.98
+      },
+      {
+        "x": "Brakna",
+        "y": "Hodh Ech Chargui",
+        "value": 0.45
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Hodh Ech Chargui",
+        "value": 0.03
+      },
+      {
+        "x": "Gorgol",
+        "y": "Hodh Ech Chargui",
+        "value": 0.47
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Hodh Ech Chargui",
+        "value": 0.26
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Hodh Ech Chargui",
+        "value": 1.0
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Hodh Ech Chargui",
+        "value": 0.97
+      },
+      {
+        "x": "Inchiri",
+        "y": "Hodh Ech Chargui",
+        "value": 0.03
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Hodh Ech Chargui",
+        "value": 0.03
+      },
+      {
+        "x": "Tagant",
+        "y": "Hodh Ech Chargui",
+        "value": 0.37
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Hodh Ech Chargui",
+        "value": 0.02
+      },
+      {
+        "x": "Trarza",
+        "y": "Hodh Ech Chargui",
+        "value": 0.92
+      },
+      {
+        "x": "Adrar",
+        "y": "Hodh El Gharbi",
+        "value": 0.0
+      },
+      {
+        "x": "Assaba",
+        "y": "Hodh El Gharbi",
+        "value": 0.99
+      },
+      {
+        "x": "Brakna",
+        "y": "Hodh El Gharbi",
+        "value": 0.48
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Hodh El Gharbi",
+        "value": 0.02
+      },
+      {
+        "x": "Gorgol",
+        "y": "Hodh El Gharbi",
+        "value": 0.5
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Hodh El Gharbi",
+        "value": 0.29
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Hodh El Gharbi",
+        "value": 0.97
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Hodh El Gharbi",
+        "value": 1.0
+      },
+      {
+        "x": "Inchiri",
+        "y": "Hodh El Gharbi",
+        "value": 0.01
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Hodh El Gharbi",
+        "value": 0.01
+      },
+      {
+        "x": "Tagant",
+        "y": "Hodh El Gharbi",
+        "value": 0.4
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Hodh El Gharbi",
+        "value": 0.01
+      },
+      {
+        "x": "Trarza",
+        "y": "Hodh El Gharbi",
+        "value": 0.89
+      },
+      {
+        "x": "Adrar",
+        "y": "Inchiri",
+        "value": 0.71
+      },
+      {
+        "x": "Assaba",
+        "y": "Inchiri",
+        "value": 0.02
+      },
+      {
+        "x": "Brakna",
+        "y": "Inchiri",
+        "value": 0.01
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Inchiri",
+        "value": 0.98
+      },
+      {
+        "x": "Gorgol",
+        "y": "Inchiri",
+        "value": 0.01
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Inchiri",
+        "value": 0.0
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Inchiri",
+        "value": 0.03
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Inchiri",
+        "value": 0.01
+      },
+      {
+        "x": "Inchiri",
+        "y": "Inchiri",
+        "value": 1.0
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Inchiri",
+        "value": 0.98
+      },
+      {
+        "x": "Tagant",
+        "y": "Inchiri",
+        "value": 0.01
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Inchiri",
+        "value": 0.98
+      },
+      {
+        "x": "Trarza",
+        "y": "Inchiri",
+        "value": 0.1
+      },
+      {
+        "x": "Adrar",
+        "y": "Nouakchott",
+        "value": 0.72
+      },
+      {
+        "x": "Assaba",
+        "y": "Nouakchott",
+        "value": 0.01
+      },
+      {
+        "x": "Brakna",
+        "y": "Nouakchott",
+        "value": 0.01
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Nouakchott",
+        "value": 0.97
+      },
+      {
+        "x": "Gorgol",
+        "y": "Nouakchott",
+        "value": 0.01
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Nouakchott",
+        "value": 0.0
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Nouakchott",
+        "value": 0.03
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Nouakchott",
+        "value": 0.01
+      },
+      {
+        "x": "Inchiri",
+        "y": "Nouakchott",
+        "value": 0.98
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Nouakchott",
+        "value": 1.0
+      },
+      {
+        "x": "Tagant",
+        "y": "Nouakchott",
+        "value": 0.01
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Nouakchott",
+        "value": 0.99
+      },
+      {
+        "x": "Trarza",
+        "y": "Nouakchott",
+        "value": 0.1
+      },
+      {
+        "x": "Adrar",
+        "y": "Tagant",
+        "value": 0.03
+      },
+      {
+        "x": "Assaba",
+        "y": "Tagant",
+        "value": 0.39
+      },
+      {
+        "x": "Brakna",
+        "y": "Tagant",
+        "value": 0.91
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Tagant",
+        "value": 0.01
+      },
+      {
+        "x": "Gorgol",
+        "y": "Tagant",
+        "value": 0.9
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Tagant",
+        "value": 0.88
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Tagant",
+        "value": 0.37
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Tagant",
+        "value": 0.4
+      },
+      {
+        "x": "Inchiri",
+        "y": "Tagant",
+        "value": 0.01
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Tagant",
+        "value": 0.01
+      },
+      {
+        "x": "Tagant",
+        "y": "Tagant",
+        "value": 1.0
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Tagant",
+        "value": 0.01
+      },
+      {
+        "x": "Trarza",
+        "y": "Tagant",
+        "value": 0.31
+      },
+      {
+        "x": "Adrar",
+        "y": "Tiris Zemmour",
+        "value": 0.72
+      },
+      {
+        "x": "Assaba",
+        "y": "Tiris Zemmour",
+        "value": 0.01
+      },
+      {
+        "x": "Brakna",
+        "y": "Tiris Zemmour",
+        "value": 0.01
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Tiris Zemmour",
+        "value": 0.96
+      },
+      {
+        "x": "Gorgol",
+        "y": "Tiris Zemmour",
+        "value": 0.0
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Tiris Zemmour",
+        "value": 0.0
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Tiris Zemmour",
+        "value": 0.02
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Tiris Zemmour",
+        "value": 0.01
+      },
+      {
+        "x": "Inchiri",
+        "y": "Tiris Zemmour",
+        "value": 0.98
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Tiris Zemmour",
+        "value": 0.99
+      },
+      {
+        "x": "Tagant",
+        "y": "Tiris Zemmour",
+        "value": 0.01
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Tiris Zemmour",
+        "value": 1.0
+      },
+      {
+        "x": "Trarza",
+        "y": "Tiris Zemmour",
+        "value": 0.09
+      },
+      {
+        "x": "Adrar",
+        "y": "Trarza",
+        "value": 0.03
+      },
+      {
+        "x": "Assaba",
+        "y": "Trarza",
+        "value": 0.9
+      },
+      {
+        "x": "Brakna",
+        "y": "Trarza",
+        "value": 0.39
+      },
+      {
+        "x": "Dakhlet Nouadhibou",
+        "y": "Trarza",
+        "value": 0.11
+      },
+      {
+        "x": "Gorgol",
+        "y": "Trarza",
+        "value": 0.4
+      },
+      {
+        "x": "Guidimakha",
+        "y": "Trarza",
+        "value": 0.21
+      },
+      {
+        "x": "Hodh Ech Chargui",
+        "y": "Trarza",
+        "value": 0.92
+      },
+      {
+        "x": "Hodh El Gharbi",
+        "y": "Trarza",
+        "value": 0.89
+      },
+      {
+        "x": "Inchiri",
+        "y": "Trarza",
+        "value": 0.1
+      },
+      {
+        "x": "Nouakchott",
+        "y": "Trarza",
+        "value": 0.1
+      },
+      {
+        "x": "Tagant",
+        "y": "Trarza",
+        "value": 0.31
+      },
+      {
+        "x": "Tiris Zemmour",
+        "y": "Trarza",
+        "value": 0.09
+      },
+      {
+        "x": "Trarza",
+        "y": "Trarza",
+        "value": 1.0
+      }
+    ],
+    "paires_ambigues": [
+      {
+        "a": "Gorgol",
+        "b": "Hodh El Gharbi",
+        "frequence": 0.5
+      },
+      {
+        "a": "Assaba",
+        "b": "Gorgol",
+        "frequence": 0.49
+      },
+      {
+        "a": "Brakna",
+        "b": "Hodh El Gharbi",
+        "frequence": 0.48
+      },
+      {
+        "a": "Assaba",
+        "b": "Brakna",
+        "frequence": 0.47
+      },
+      {
+        "a": "Gorgol",
+        "b": "Hodh Ech Chargui",
+        "frequence": 0.47
+      },
+      {
+        "a": "Brakna",
+        "b": "Hodh Ech Chargui",
+        "frequence": 0.45
+      },
+      {
+        "a": "Gorgol",
+        "b": "Trarza",
+        "frequence": 0.4
+      },
+      {
+        "a": "Hodh El Gharbi",
+        "b": "Tagant",
+        "frequence": 0.4
+      }
+    ]
+  },
+  "melange_gaussien": {
+    "par_k": [
+      {
+        "k": 2,
+        "bic": 292.5,
+        "aic": 273.8
+      },
+      {
+        "k": 3,
+        "bic": 208.0,
+        "aic": 179.7
+      },
+      {
+        "k": 4,
+        "bic": 219.1,
+        "aic": 181.3
+      },
+      {
+        "k": 5,
+        "bic": 138.4,
+        "aic": 91.0
+      },
+      {
+        "k": 6,
+        "bic": 78.8,
+        "aic": 21.7
+      }
+    ],
+    "k_bic_optimal": 6,
+    "avertissement": "Avec 13 observations pour 8 variables, le BIC continue de décroître jusqu'à k=6 : le mélange gaussien surajuste et son optimum n'est pas interprétable ici. Il est conservé comme contre-épreuve, pas comme critère de décision."
+  },
+  "hierarchique": {
+    "ordre_feuilles": [
+      "Adrar",
+      "Nouakchott",
+      "Tiris Zemmour",
+      "Dakhlet Nouadhibou",
+      "Inchiri",
+      "Hodh El Gharbi",
+      "Assaba",
+      "Hodh Ech Chargui",
+      "Trarza",
+      "Guidimakha",
+      "Tagant",
+      "Brakna",
+      "Gorgol"
+    ],
+    "fusions": [
+      {
+        "etape": 1,
+        "a": 9,
+        "b": 11,
+        "distance": 1.419,
+        "taille": 2
+      },
+      {
+        "etape": 2,
+        "a": 2,
+        "b": 4,
+        "distance": 1.512,
+        "taille": 2
+      },
+      {
+        "etape": 3,
+        "a": 6,
+        "b": 12,
+        "distance": 1.777,
+        "taille": 2
+      },
+      {
+        "etape": 4,
+        "a": 1,
+        "b": 15,
+        "distance": 1.97,
+        "taille": 3
+      },
+      {
+        "etape": 5,
+        "a": 3,
+        "b": 8,
+        "distance": 2.245,
+        "taille": 2
+      },
+      {
+        "etape": 6,
+        "a": 10,
+        "b": 14,
+        "distance": 2.437,
+        "taille": 3
+      },
+      {
+        "etape": 7,
+        "a": 7,
+        "b": 16,
+        "distance": 2.72,
+        "taille": 4
+      },
+      {
+        "etape": 8,
+        "a": 13,
+        "b": 17,
+        "distance": 3.108,
+        "taille": 4
+      },
+      {
+        "etape": 9,
+        "a": 5,
+        "b": 18,
+        "distance": 3.78,
+        "taille": 4
+      },
+      {
+        "etape": 10,
+        "a": 0,
+        "b": 20,
+        "distance": 4.775,
+        "taille": 5
+      },
+      {
+        "etape": 11,
+        "a": 19,
+        "b": 21,
+        "distance": 5.941,
+        "taille": 8
+      },
+      {
+        "etape": 12,
+        "a": 22,
+        "b": 23,
+        "distance": 9.81,
+        "taille": 13
+      }
+    ],
+    "sauts": [
+      {
+        "de_k": 6,
+        "a_k": 5,
+        "saut_distance": 2.72
+      },
+      {
+        "de_k": 5,
+        "a_k": 4,
+        "saut_distance": 3.108
+      },
+      {
+        "de_k": 4,
+        "a_k": 3,
+        "saut_distance": 3.78
+      },
+      {
+        "de_k": 3,
+        "a_k": 2,
+        "saut_distance": 4.775
+      },
+      {
+        "de_k": 2,
+        "a_k": 1,
+        "saut_distance": 5.941
+      },
+      {
+        "de_k": 1,
+        "a_k": 0,
+        "saut_distance": 9.81
+      }
+    ]
+  },
+  "verdict": "À k=3, la partition résiste au rééchantillonnage avec un ARI moyen de 0.731 (silhouette 0.331). Le k le plus stable au sens de l'ARI est k=2 — mais k=2 sépare seulement les wilayas urbaines des autres, ce qui n'oriente aucune décision. k=3 reste donc un choix éditorial, justifié par la lisibilité des leviers d'action plutôt que par l'optimalité statistique. La matrice de co-assignation ci-contre montre quels regroupements sont acquis quel que soit le k."
+}

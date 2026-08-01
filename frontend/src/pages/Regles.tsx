@@ -29,7 +29,11 @@ function RulesContent() {
         <KpiStat label={t("regles.regles_extraites")} value={`${data.n_rules}`} hint={t("regles.algo_apriori")} />
         <KpiStat label={t("regles.enfants_analyses")} value={fmt(data.n_children_6_14)} hint={t("regles.microdonnees")} />
         <KpiStat label={t("regles.meilleur_lift")} value={maxLift(data.rules).toFixed(2)} hint={t("regles.hint_lift")} />
-        <KpiStat label={t("regles.regles_confiance_100")} value={`${data.rules.filter((r) => r.confidence >= 1).length}`} hint={t("regles.regles_deterministes")} />
+        <KpiStat
+          label={t("regles.confiance_max")}
+          value={`${Math.round(maxConfidence(data.rules) * 100)} %`}
+          hint={t("regles.confiance_max_hint")}
+        />
       </div>
 
       <RuleSection
@@ -39,10 +43,10 @@ function RulesContent() {
         rules={data.rules}
       />
       <RuleSection
-        title={t("regles.sans_cm.title")}
-        subtitle={t("regles.sans_cm.subtitle")}
+        title={t("regles.top_confiance.title")}
+        subtitle={t("regles.top_confiance.subtitle")}
         accent="warn"
-        rules={data.sans_cm}
+        rules={data.top_confiance}
         columns={["Ruralité", "Pauvreté", "Âge"]}
       />
       <RuleSection
@@ -76,7 +80,7 @@ function RuleRow({ r, accent, columns }: { r: Rule; accent: string; columns?: st
   return (
     <div className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-ink/[0.045] px-3 py-2.5 text-xs">
       {ants.map((a) => (
-        <Chip key={a} accent={a === "cm_sans_education" || a === "cm_education_traditionnelle" ? accent : "mut"} label={t(a)} />
+        <Chip key={a} accent={a.startsWith("region_") ? accent : "mut"} label={t(a)} />
       ))}
       <span className="font-bold text-mut">⟶</span>
       <Chip accent={accent} label={t("hors_ecole")} />
@@ -121,4 +125,8 @@ function KpiStat({ label, value, hint }: { label: string; value: string; hint: s
 
 function maxLift(rules: Rule[]) {
   return Math.max(...rules.map((r) => r.lift));
+}
+
+function maxConfidence(rules: Rule[]) {
+  return Math.max(...rules.map((r) => r.confidence));
 }

@@ -1,0 +1,505 @@
+{
+  "voisinage": {
+    "wilayas": [
+      "Adrar",
+      "Assaba",
+      "Brakna",
+      "Dakhlet Nouadhibou",
+      "Gorgol",
+      "Guidimakha",
+      "Hodh Ech Chargui",
+      "Hodh El Gharbi",
+      "Inchiri",
+      "Nouakchott",
+      "Tagant",
+      "Tiris Zemmour",
+      "Trarza"
+    ],
+    "voisins": {
+      "Adrar": [
+        "Brakna",
+        "Dakhlet Nouadhibou",
+        "Hodh Ech Chargui",
+        "Inchiri",
+        "Tagant",
+        "Tiris Zemmour",
+        "Trarza"
+      ],
+      "Assaba": [
+        "Brakna",
+        "Gorgol",
+        "Guidimakha",
+        "Hodh El Gharbi",
+        "Tagant"
+      ],
+      "Brakna": [
+        "Adrar",
+        "Assaba",
+        "Gorgol",
+        "Tagant",
+        "Trarza"
+      ],
+      "Dakhlet Nouadhibou": [
+        "Adrar",
+        "Inchiri"
+      ],
+      "Gorgol": [
+        "Assaba",
+        "Brakna",
+        "Guidimakha"
+      ],
+      "Guidimakha": [
+        "Assaba",
+        "Gorgol"
+      ],
+      "Hodh Ech Chargui": [
+        "Adrar",
+        "Hodh El Gharbi",
+        "Tagant"
+      ],
+      "Hodh El Gharbi": [
+        "Assaba",
+        "Hodh Ech Chargui",
+        "Tagant"
+      ],
+      "Inchiri": [
+        "Adrar",
+        "Dakhlet Nouadhibou",
+        "Nouakchott",
+        "Trarza"
+      ],
+      "Nouakchott": [
+        "Inchiri",
+        "Trarza"
+      ],
+      "Tagant": [
+        "Adrar",
+        "Assaba",
+        "Brakna",
+        "Hodh Ech Chargui",
+        "Hodh El Gharbi",
+        "Trarza"
+      ],
+      "Tiris Zemmour": [
+        "Adrar"
+      ],
+      "Trarza": [
+        "Adrar",
+        "Brakna",
+        "Inchiri",
+        "Nouakchott",
+        "Tagant"
+      ]
+    },
+    "n_liens": 48,
+    "methode": "contiguïté reine, normalisée en ligne"
+  },
+  "variables": {
+    "ipe": {
+      "label": "Indice de Priorité Éducative",
+      "moran": {
+        "I": 0.6,
+        "I_attendu_sous_H0": -0.083,
+        "pvalue_permutation": 0.002,
+        "significatif": true,
+        "n_permutations": 999,
+        "distribution_simulee": {
+          "moyenne": -0.084,
+          "ecart_type": 0.192,
+          "p05": -0.365,
+          "p95": 0.266
+        }
+      },
+      "lisa": [
+        {
+          "wilaya": "Tiris Zemmour",
+          "z": -1.38,
+          "lag_voisinage": -1.7,
+          "lisa": 2.351,
+          "pvalue": 0.079,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Dakhlet Nouadhibou",
+          "z": -0.9,
+          "lag_voisinage": -1.59,
+          "lisa": 1.427,
+          "pvalue": 0.018,
+          "significatif": true,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Guidimakha",
+          "z": 1.35,
+          "lag_voisinage": 0.78,
+          "lisa": 1.05,
+          "pvalue": 0.19,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Inchiri",
+          "z": -1.48,
+          "lag_voisinage": -0.57,
+          "lisa": 0.852,
+          "pvalue": 0.187,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Hodh El Gharbi",
+          "z": 1.14,
+          "lag_voisinage": 0.59,
+          "lisa": 0.673,
+          "pvalue": 0.271,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Assaba",
+          "z": 0.95,
+          "lag_voisinage": 0.68,
+          "lisa": 0.644,
+          "pvalue": 0.079,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Adrar",
+          "z": -1.7,
+          "lag_voisinage": -0.35,
+          "lisa": 0.596,
+          "pvalue": 0.194,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Gorgol",
+          "z": 0.61,
+          "lag_voisinage": 0.86,
+          "lisa": 0.528,
+          "pvalue": 0.104,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Brakna",
+          "z": 0.29,
+          "lag_voisinage": 0.01,
+          "lisa": 0.003,
+          "pvalue": 0.982,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Tagant",
+          "z": 0.0,
+          "lag_voisinage": 0.28,
+          "lisa": 0.001,
+          "pvalue": 0.402,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Nouakchott",
+          "z": 0.11,
+          "lag_voisinage": -0.65,
+          "lisa": -0.069,
+          "pvalue": 0.423,
+          "significatif": false,
+          "quadrant": "haut-bas"
+        },
+        {
+          "wilaya": "Trarza",
+          "z": 0.19,
+          "lag_voisinage": -0.56,
+          "lisa": -0.107,
+          "pvalue": 0.162,
+          "significatif": false,
+          "quadrant": "haut-bas"
+        },
+        {
+          "wilaya": "Hodh Ech Chargui",
+          "z": 0.82,
+          "lag_voisinage": -0.19,
+          "lisa": -0.153,
+          "pvalue": 0.733,
+          "significatif": false,
+          "quadrant": "haut-bas"
+        }
+      ]
+    },
+    "scol_Hors_ecole_formelle": {
+      "label": "Taux hors école formelle",
+      "moran": {
+        "I": 0.552,
+        "I_attendu_sous_H0": -0.083,
+        "pvalue_permutation": 0.002,
+        "significatif": true,
+        "n_permutations": 999,
+        "distribution_simulee": {
+          "moyenne": -0.085,
+          "ecart_type": 0.186,
+          "p05": -0.357,
+          "p95": 0.248
+        }
+      },
+      "lisa": [
+        {
+          "wilaya": "Tiris Zemmour",
+          "z": -1.1,
+          "lag_voisinage": -1.95,
+          "lisa": 2.139,
+          "pvalue": 0.083,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Hodh El Gharbi",
+          "z": 1.52,
+          "lag_voisinage": 0.7,
+          "lisa": 1.067,
+          "pvalue": 0.171,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Dakhlet Nouadhibou",
+          "z": -0.68,
+          "lag_voisinage": -1.5,
+          "lisa": 1.019,
+          "pvalue": 0.034,
+          "significatif": true,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Guidimakha",
+          "z": 1.29,
+          "lag_voisinage": 0.7,
+          "lisa": 0.901,
+          "pvalue": 0.299,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Inchiri",
+          "z": -1.05,
+          "lag_voisinage": -0.7,
+          "lisa": 0.735,
+          "pvalue": 0.093,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Assaba",
+          "z": 1.04,
+          "lag_voisinage": 0.59,
+          "lisa": 0.612,
+          "pvalue": 0.122,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Adrar",
+          "z": -1.95,
+          "lag_voisinage": -0.27,
+          "lisa": 0.526,
+          "pvalue": 0.348,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Gorgol",
+          "z": 0.36,
+          "lag_voisinage": 0.67,
+          "lisa": 0.24,
+          "pvalue": 0.227,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Nouakchott",
+          "z": -0.37,
+          "lag_voisinage": -0.42,
+          "lisa": 0.159,
+          "pvalue": 0.599,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Tagant",
+          "z": 0.08,
+          "lag_voisinage": 0.24,
+          "lisa": 0.021,
+          "pvalue": 0.464,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Brakna",
+          "z": -0.32,
+          "lag_voisinage": -0.05,
+          "lisa": 0.017,
+          "pvalue": 0.885,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Hodh Ech Chargui",
+          "z": 0.97,
+          "lag_voisinage": -0.11,
+          "lisa": -0.111,
+          "pvalue": 0.847,
+          "significatif": false,
+          "quadrant": "haut-bas"
+        },
+        {
+          "wilaya": "Trarza",
+          "z": 0.2,
+          "lag_voisinage": -0.72,
+          "lisa": -0.144,
+          "pvalue": 0.049,
+          "significatif": true,
+          "quadrant": "haut-bas"
+        }
+      ]
+    },
+    "taux_pauvrete": {
+      "label": "Taux de pauvreté",
+      "moran": {
+        "I": 0.204,
+        "I_attendu_sous_H0": -0.083,
+        "pvalue_permutation": 0.318,
+        "significatif": false,
+        "n_permutations": 999,
+        "distribution_simulee": {
+          "moyenne": -0.076,
+          "ecart_type": 0.179,
+          "p05": -0.35,
+          "p95": 0.24
+        }
+      },
+      "lisa": [
+        {
+          "wilaya": "Guidimakha",
+          "z": 2.12,
+          "lag_voisinage": 0.35,
+          "lisa": 0.733,
+          "pvalue": 0.574,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Assaba",
+          "z": 0.43,
+          "lag_voisinage": 0.96,
+          "lisa": 0.41,
+          "pvalue": 0.001,
+          "significatif": true,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Nouakchott",
+          "z": -1.37,
+          "lag_voisinage": -0.28,
+          "lisa": 0.384,
+          "pvalue": 0.66,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Gorgol",
+          "z": 0.26,
+          "lag_voisinage": 1.16,
+          "lisa": 0.307,
+          "pvalue": 0.026,
+          "significatif": true,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Dakhlet Nouadhibou",
+          "z": -1.66,
+          "lag_voisinage": -0.13,
+          "lisa": 0.214,
+          "pvalue": 0.849,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Brakna",
+          "z": 0.95,
+          "lag_voisinage": 0.22,
+          "lisa": 0.211,
+          "pvalue": 0.573,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Hodh El Gharbi",
+          "z": 0.53,
+          "lag_voisinage": 0.32,
+          "lisa": 0.167,
+          "pvalue": 0.563,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Tagant",
+          "z": 0.93,
+          "lag_voisinage": 0.16,
+          "lisa": 0.153,
+          "pvalue": 0.614,
+          "significatif": false,
+          "quadrant": "haut-haut"
+        },
+        {
+          "wilaya": "Inchiri",
+          "z": -0.16,
+          "lag_voisinage": -0.88,
+          "lisa": 0.137,
+          "pvalue": 0.051,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Tiris Zemmour",
+          "z": -1.11,
+          "lag_voisinage": -0.1,
+          "lisa": 0.114,
+          "pvalue": 1.0,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Adrar",
+          "z": -0.1,
+          "lag_voisinage": -0.27,
+          "lisa": 0.027,
+          "pvalue": 0.349,
+          "significatif": false,
+          "quadrant": "bas-bas"
+        },
+        {
+          "wilaya": "Trarza",
+          "z": -0.41,
+          "lag_voisinage": 0.05,
+          "lisa": -0.021,
+          "pvalue": 0.908,
+          "significatif": false,
+          "quadrant": "bas-haut"
+        },
+        {
+          "wilaya": "Hodh Ech Chargui",
+          "z": -0.41,
+          "lag_voisinage": 0.45,
+          "lisa": -0.184,
+          "pvalue": 0.39,
+          "significatif": false,
+          "quadrant": "bas-haut"
+        }
+      ]
+    }
+  },
+  "conclusion": "I de Moran sur l'IPE = 0.6 (attendu sous l'hypothèse nulle : -0.083), p = 0.002 sur 999 permutations. L'exclusion scolaire est donc spatialement structurée : les wilayas en difficulté sont voisines les unes des autres, ce qui plaide pour des programmes de corridor plutôt que wilaya par wilaya. Les foyers d'exclusion (haut-haut) sont : Guidimakha, Hodh El Gharbi, Assaba, Gorgol, Brakna, Tagant, aucun significatif individuellement."
+}

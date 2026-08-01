@@ -45,6 +45,11 @@ def root() -> dict:
         "/api/rules", "/api/trends",
         "/api/decomposition", "/api/matrice", "/api/concentration",
         "/api/logit", "/api/scenarios", "/api/indicateurs",
+        "/api/uncertainty", "/api/robustesse", "/api/equite",
+        "/api/parcours", "/api/rendement", "/api/cohortes",
+        "/api/ml", "/api/patterns", "/api/deviants", "/api/stabilite", "/api/optimisation",
+        "/api/spatial", "/api/projection", "/api/acces", "/api/moughataa-geojson",
+        "/api/qualite", "/api/briefs", "/api/cube", "/api/ask",
     ]}
 
 
@@ -148,3 +153,160 @@ def scenarios() -> dict:
 @app.get("/api/indicateurs")
 def indicateurs() -> dict:
     return load_json(f"{ANALYTICS}/indicateurs.json")
+
+
+@app.get("/api/uncertainty")
+def uncertainty() -> dict:
+    """Intervalles de confiance bootstrap et rétrécissement empirical Bayes."""
+    return load_json(f"{ANALYTICS}/uncertainty.json")
+
+
+@app.get("/api/robustesse")
+def robustesse() -> dict:
+    """Sensibilité de l'IPE aux pondérations, classements alternatifs, validation externe."""
+    return load_json(f"{ANALYTICS}/robustness.json")
+
+
+@app.get("/api/equite")
+def equite() -> dict:
+    """Theil décomposé, Human Opportunity Index, adéquation offre/besoin."""
+    return load_json(f"{ANALYTICS}/equity.json")
+
+
+@app.get("/api/parcours")
+def parcours() -> dict:
+    """Retard scolaire, pyramide des niveaux, survie éducative."""
+    return load_json(f"{ANALYTICS}/parcours.json")
+
+
+@app.get("/api/rendement")
+def rendement() -> dict:
+    """Chômage et pauvreté par niveau, décomposition d'Oaxaca-Blinder, logit pauvreté."""
+    return load_json(f"{ANALYTICS}/rendement.json")
+
+
+@app.get("/api/cohortes")
+def cohortes() -> dict:
+    """Progression intergénérationnelle et rattrapage par wilaya."""
+    return load_json(f"{ANALYTICS}/cohortes.json")
+
+
+@app.get("/api/ml")
+def ml() -> dict:
+    """Gradient boosting validé (AUC test, calibration) et interprétation SHAP."""
+    return load_json(f"{ANALYTICS}/ml.json")
+
+
+@app.get("/api/patterns")
+def patterns() -> dict:
+    """FP-Growth testé (Fisher + Benjamini-Hochberg) et découverte de sous-groupes."""
+    return load_json(f"{ANALYTICS}/patterns.json")
+
+
+@app.get("/api/deviants")
+def deviants() -> dict:
+    """Résidus attendu/observé : déviants positifs et sous-performances."""
+    return load_json(f"{ANALYTICS}/deviants.json")
+
+
+@app.get("/api/stabilite")
+def stabilite() -> dict:
+    """Stabilité de la typologie : bootstrap ARI, dendrogramme, BIC, co-assignation."""
+    return load_json(f"{ANALYTICS}/stability.json")
+
+
+@app.get("/api/optimisation")
+def optimisation() -> dict:
+    """Allocation budgétaire optimale, frontière d'efficience, DEA."""
+    return load_json(f"{ANALYTICS}/optim.json")
+
+
+@app.get("/api/spatial")
+def spatial() -> dict:
+    """I de Moran, LISA et matrice de voisinage."""
+    return load_json(f"{ANALYTICS}/spatial.json")
+
+
+@app.get("/api/projection")
+def projection() -> dict:
+    """Projection par composantes de cohorte des 6-14 ans à 2030."""
+    return load_json(f"{ANALYTICS}/projection.json")
+
+
+@app.get("/api/acces")
+def acces() -> dict:
+    """Accessibilité scolaire par moughataa (63 unités)."""
+    return load_json(f"{ANALYTICS}/acces.json")
+
+
+@app.get("/api/moughataa-geojson")
+def moughataa_geojson() -> FileResponse:
+    return FileResponse(f"{PROC}/moughataa_acces.geojson", media_type="application/json")
+
+
+@app.get("/api/qualite")
+def qualite() -> dict:
+    """Rapport des contrôles qualité exécutés en fin de pipeline."""
+    return load_json(f"{ANALYTICS}/qualite.json")
+
+
+@app.get("/api/briefs")
+def briefs() -> dict:
+    """Notes de politique par wilaya (cache hors ligne ; vide sans génération)."""
+    from backend.analytics.briefs import charger_cache
+
+    return charger_cache()
+
+
+@app.get("/api/cube")
+def cube(dims: str = "wilaya,milieu", measure: str = "hors_ecole") -> dict:
+    """Cube OLAP sur les 6-14 ans : agrégation à la demande sur l'entrepôt.
+
+    `dims` est une liste séparée par des virgules parmi wilaya, milieu, sexe,
+    tranche_age, est_pauvre. Aucune valeur libre n'atteint SQL : chaque dimension
+    est validée contre une liste blanche avant construction de la requête.
+    """
+    import duckdb
+
+    autorisees = ["wilaya", "milieu", "sexe", "tranche_age", "est_pauvre"]
+    demandees = [d.strip() for d in dims.split(",") if d.strip()]
+    inconnues = [d for d in demandees if d not in autorisees]
+    if inconnues:
+        raise HTTPException(400, f"dimensions inconnues : {inconnues} (permises : {autorisees})")
+    if not demandees:
+        raise HTTPException(400, "au moins une dimension est requise")
+
+    mesures = {
+        "hors_ecole": "n_hors_ecole",
+        "traditionnel": "n_traditionnel",
+        "enfants": "n_enfants",
+    }
+    if measure not in mesures:
+        raise HTTPException(400, f"mesure inconnue : {measure} (permises : {list(mesures)})")
+
+    cols = ", ".join(demandees)
+    con = duckdb.connect(f"{PROC}/edufocus.duckdb", read_only=True)
+    try:
+        rel = con.execute(
+            f"""SELECT {cols},
+                       sum(n_enfants)      AS n_enfants,
+                       sum({mesures[measure]}) AS mesure,
+                       round(100.0 * sum({mesures[measure]}) / sum(n_enfants), 1) AS pct
+                FROM marts.cube_enfants
+                WHERE tranche_age IS NOT NULL
+                GROUP BY {cols}
+                ORDER BY mesure DESC"""
+        )
+        colonnes = [d[0] for d in rel.description]
+        lignes = [dict(zip(colonnes, r)) for r in rel.fetchall()]
+    finally:
+        con.close()
+    return {"dimensions": demandees, "mesure": measure, "colonnes": colonnes, "cellules": lignes}
+
+
+@app.get("/api/ask")
+def ask(q: str) -> dict:
+    """Question en langage naturel traduite en SQL sur l'entrepôt (lecture seule)."""
+    from backend.warehouse.ask import run_ask
+
+    return run_ask(q)

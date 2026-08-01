@@ -1,0 +1,223 @@
+{
+  "r2_leave_one_out": 0.385,
+  "ecart_type_residus_pts": 9.64,
+  "coefficients": [
+    {
+      "variable": "ecoles_pour_1000_enfants",
+      "label": "Écoles / 1000 enfants",
+      "coefficient_standardise": -3.3
+    },
+    {
+      "variable": "ratio_dependance_jeunes",
+      "label": "Dépendance des jeunes",
+      "coefficient_standardise": 3.15
+    },
+    {
+      "variable": "part_rurale",
+      "label": "Part rurale",
+      "coefficient_standardise": 2.09
+    },
+    {
+      "variable": "taux_pauvrete",
+      "label": "Taux de pauvreté",
+      "coefficient_standardise": 0.81
+    }
+  ],
+  "wilayas": [
+    {
+      "wilaya": "Adrar",
+      "observe_pct": 6.2,
+      "attendu_pct": 24.8,
+      "residu_pts": -18.6,
+      "residu_z": -1.93,
+      "statut": "deviant_positif",
+      "atypie": 0.57,
+      "profil_atypique": true,
+      "taux_pauvrete": 28.1,
+      "part_rurale": 41.2,
+      "ecoles_pour_1000_enfants": 1.22,
+      "enfants_hors_ecole": 915
+    },
+    {
+      "wilaya": "Brakna",
+      "observe_pct": 25.5,
+      "attendu_pct": 37.4,
+      "residu_pts": -11.9,
+      "residu_z": -1.23,
+      "statut": "deviant_positif",
+      "atypie": 0.43,
+      "profil_atypique": false,
+      "taux_pauvrete": 40.5,
+      "part_rurale": 75.3,
+      "ecoles_pour_1000_enfants": 0.29,
+      "enfants_hors_ecole": 23688
+    },
+    {
+      "wilaya": "Inchiri",
+      "observe_pct": 16.9,
+      "attendu_pct": 23.4,
+      "residu_pts": -6.6,
+      "residu_z": -0.68,
+      "statut": "conforme",
+      "atypie": 0.549,
+      "profil_atypique": false,
+      "taux_pauvrete": 27.5,
+      "part_rurale": 22.8,
+      "ecoles_pour_1000_enfants": 0.38,
+      "enfants_hors_ecole": 887
+    },
+    {
+      "wilaya": "Gorgol",
+      "observe_pct": 33.5,
+      "attendu_pct": 39.1,
+      "residu_pts": -5.6,
+      "residu_z": -0.59,
+      "statut": "conforme",
+      "atypie": 0.439,
+      "profil_atypique": false,
+      "taux_pauvrete": 32.4,
+      "part_rurale": 67.2,
+      "ecoles_pour_1000_enfants": 0.2,
+      "enfants_hors_ecole": 37690
+    },
+    {
+      "wilaya": "Dakhlet Nouadhibou",
+      "observe_pct": 21.2,
+      "attendu_pct": 24.9,
+      "residu_pts": -3.6,
+      "residu_z": -0.38,
+      "statut": "conforme",
+      "atypie": 0.561,
+      "profil_atypique": false,
+      "taux_pauvrete": 9.6,
+      "part_rurale": 3.9,
+      "ecoles_pour_1000_enfants": 0.09,
+      "enfants_hors_ecole": 7101
+    },
+    {
+      "wilaya": "Tiris Zemmour",
+      "observe_pct": 16.3,
+      "attendu_pct": 17.4,
+      "residu_pts": -1.1,
+      "residu_z": -0.12,
+      "statut": "conforme",
+      "atypie": 0.533,
+      "profil_atypique": false,
+      "taux_pauvrete": 16.1,
+      "part_rurale": 7.2,
+      "ecoles_pour_1000_enfants": 0.81,
+      "enfants_hors_ecole": 2006
+    },
+    {
+      "wilaya": "Trarza",
+      "observe_pct": 31.6,
+      "attendu_pct": 32.7,
+      "residu_pts": -1.1,
+      "residu_z": -0.11,
+      "statut": "conforme",
+      "atypie": 0.454,
+      "profil_atypique": false,
+      "taux_pauvrete": 24.5,
+      "part_rurale": 64.5,
+      "ecoles_pour_1000_enfants": 0.15,
+      "enfants_hors_ecole": 25443
+    },
+    {
+      "wilaya": "Tagant",
+      "observe_pct": 30.2,
+      "attendu_pct": 30.2,
+      "residu_pts": -0.0,
+      "residu_z": -0.0,
+      "statut": "conforme",
+      "atypie": 0.491,
+      "profil_atypique": false,
+      "taux_pauvrete": 40.3,
+      "part_rurale": 66.5,
+      "ecoles_pour_1000_enfants": 0.65,
+      "enfants_hors_ecole": 6927
+    },
+    {
+      "wilaya": "Hodh Ech Chargui",
+      "observe_pct": 40.7,
+      "attendu_pct": 34.4,
+      "residu_pts": 6.4,
+      "residu_z": 0.66,
+      "statut": "conforme",
+      "atypie": 0.467,
+      "profil_atypique": false,
+      "taux_pauvrete": 24.5,
+      "part_rurale": 82.0,
+      "ecoles_pour_1000_enfants": 0.14,
+      "enfants_hors_ecole": 59348
+    },
+    {
+      "wilaya": "Assaba",
+      "observe_pct": 41.5,
+      "attendu_pct": 34.2,
+      "residu_pts": 7.4,
+      "residu_z": 0.76,
+      "statut": "conforme",
+      "atypie": 0.409,
+      "profil_atypique": false,
+      "taux_pauvrete": 34.4,
+      "part_rurale": 69.3,
+      "ecoles_pour_1000_enfants": 0.27,
+      "enfants_hors_ecole": 46959
+    },
+    {
+      "wilaya": "Guidimakha",
+      "observe_pct": 44.4,
+      "attendu_pct": 35.0,
+      "residu_pts": 9.4,
+      "residu_z": 0.97,
+      "statut": "conforme",
+      "atypie": 0.562,
+      "profil_atypique": true,
+      "taux_pauvrete": 54.3,
+      "part_rurale": 85.9,
+      "ecoles_pour_1000_enfants": 0.32,
+      "enfants_hors_ecole": 42852
+    },
+    {
+      "wilaya": "Hodh El Gharbi",
+      "observe_pct": 47.2,
+      "attendu_pct": 35.6,
+      "residu_pts": 11.6,
+      "residu_z": 1.21,
+      "statut": "sous_performance",
+      "atypie": 0.436,
+      "profil_atypique": false,
+      "taux_pauvrete": 35.5,
+      "part_rurale": 79.6,
+      "ecoles_pour_1000_enfants": 0.15,
+      "enfants_hors_ecole": 44454
+    },
+    {
+      "wilaya": "Nouakchott",
+      "observe_pct": 24.8,
+      "attendu_pct": 10.1,
+      "residu_pts": 14.8,
+      "residu_z": 1.53,
+      "statut": "sous_performance",
+      "atypie": 0.559,
+      "profil_atypique": false,
+      "taux_pauvrete": 13.2,
+      "part_rurale": 0.0,
+      "ecoles_pour_1000_enfants": 0.93,
+      "enfants_hors_ecole": 77296
+    }
+  ],
+  "deviants_positifs": [
+    "Adrar",
+    "Brakna"
+  ],
+  "sous_performances": [
+    "Hodh El Gharbi",
+    "Nouakchott"
+  ],
+  "profils_atypiques": [
+    "Adrar",
+    "Guidimakha"
+  ],
+  "lecture": "Le profil socio-économique explique 39 % de la variance du taux de hors-école en validation croisée (écart-type des résidus : 9.6 points). Déviants positifs — font nettement mieux que leur profil : Adrar, Brakna. Sous-performances — font nettement moins bien : Hodh El Gharbi, Nouakchott. Les premières sont des cas à documenter et à transposer ; les secondes signalent un problème qui ne s'explique pas par la pauvreté ni par l'éloignement."
+}

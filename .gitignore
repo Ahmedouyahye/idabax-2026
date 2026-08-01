@@ -31,3 +31,17 @@ Thumbs.db
 info:*
 mele3bak-platform-report.pdf
 *.tsbuildinfo
+
+# Entrepôt régénérable : binaire de 2,8 Mo réécrit intégralement à chaque
+# `python -m backend.analytics.run_all`. Les JSON/CSV d'analytique restent versionnés
+# (petits et lisibles en diff) ; la base et son export Parquet, non.
+data/processed/edufocus.duckdb
+data/processed/parquet/
+
+# Fichiers intermédiaires LaTeX (le PDF, lui, reste versionné)
+docs/raport-latex/*.aux
+docs/raport-latex/*.fdb_latexmk
+docs/raport-latex/*.fls
+docs/raport-latex/*.out
+docs/raport-latex/*.toc
+docs/raport-latex/*.xdv

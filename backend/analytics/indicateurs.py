@@ -17,7 +17,7 @@ INDICATEURS = [
     ("ecoles_pour_1000_enfants", "Écoles / 1000 enf."),
     ("ecart_genre_hors_ecole", "Écart genre hors école"),
     ("taux_chomage", "Chômage (%)"),
-    ("part_cm_sans_education", "Chef de ménage sans éduc. (%)"),
+    ("part_adultes_sans_instruction", "Adultes 15+ sans instruction (%)"),
     ("part_0_14_pct", "Population 0-14 (%)"),
     ("enfants_hors_ecole", "Effectif hors école"),
 ]
