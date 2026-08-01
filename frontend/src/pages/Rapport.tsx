@@ -95,7 +95,7 @@ export default function Rapport() {
  <Logo className="h-14 w-14" glow={false} />
  <div>
  <div className="font-display text-2xl font-bold tracking-tight text-[#15110a]">
- EduFocus<span className="text-[#b96a1f]">+</span>
+  EduFocus<span className="text-[#b96a1f]">🌙</span>
  </div>
   <div className="text-[10px] uppercase tracking-[0.22em] text-[#6b5b3f]">{t("rapport.cover.subtitle")}</div>
  </div>
@@ -433,7 +433,7 @@ export default function Rapport() {
  <div className="flex items-center gap-3">
  <Logo className="h-10 w-10" glow={false} />
                 <div className="text-[10px] uppercase tracking-[0.2em] text-[#6b5b3f]">
-                  EduFocus+ · IndabaX Mauritanie 2026
+                  EduFocus🌙 · IndabaX Mauritanie 2026
                   <br />
                   {t("rapport.cover.team")}
                   <br />

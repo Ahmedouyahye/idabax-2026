@@ -1,10 +1,10 @@
-# EduFocus+ Où investir dans l'éducation en Mauritanie
+# EduFocus🌙 Où investir dans l'éducation en Mauritanie
 
 **Datathon IndabaX Mauritanie 2026 · Thème « Population & Démographie »**
 
 **Réalisé par l'équipe DataSphere** · dépôt `idabax-2026`
 
-EduFocus+ transforme des **pourcentages en enfants, et des enfants en décisions d'investissement**.
+EduFocus🌙 transforme des **pourcentages en enfants, et des enfants en décisions d'investissement**.
 À partir des microdonnées de l'**EPCV 2019** (60 600 individus), projetées sur la population 2022,
 le projet classe les 13 wilayas de Mauritanie selon un **Indice de Priorité Éducative (IPE)**,
 identifie **3 profils territoriaux d'exclusion scolaire** et fournit un levier d'action pour chacun.

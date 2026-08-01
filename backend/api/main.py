@@ -1,4 +1,4 @@
-"""API EduFocus+ FastAPI serving precomputed analytics as JSON.
+"""API EduFocus🌙 FastAPI serving precomputed analytics as JSON.
 
 Run: uvicorn backend.api.main:app --reload --port 8000
 """
@@ -15,7 +15,7 @@ ANALYTICS = "data/processed/analytics"
 PROC = "data/processed"
 
 app = FastAPI(
-    title="EduFocus+ Datathon IndabaX Mauritanie 2026",
+    title="EduFocus🌙 Datathon IndabaX Mauritanie 2026",
     description="Indice de Priorité Éducative, clustering, analyse de graphe et "
                 "règles d'association sur la Mauritanie.",
     version="1.0.0",
@@ -39,7 +39,7 @@ def load_df(path: str) -> list[dict]:
 
 @app.get("/")
 def root() -> dict:
-    return {"name": "EduFocus+ API", "docs": "/docs", "endpoints": [
+    return {"name": "EduFocus🌙 API", "docs": "/docs", "endpoints": [
         "/api/summary", "/api/wilayas", "/api/wilayas/{wilaya}", "/api/geojson",
         "/api/clusters", "/api/graph/similarite", "/api/graph/correlations",
         "/api/rules", "/api/trends",

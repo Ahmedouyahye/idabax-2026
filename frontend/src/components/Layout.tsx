@@ -27,7 +27,7 @@ export default function Layout() {
             <Logo className="h-11 w-11" />
             <div>
               <div className="font-display text-lg font-semibold leading-tight tracking-tight">
-                EduFocus<span className="grad-text">+</span>
+                EduFocus<span className="grad-text">🌙</span>
               </div>
               <div className="font-grotesk text-[10px] uppercase tracking-[0.16em] text-mut">{t("layout.subtitle")}</div>
             </div>
